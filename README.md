@@ -4,5 +4,5 @@ Trabajo Practico materia Introducción al desarrollo web
 
 Integrantes:
 Leandro David Gaitán
-Rojas Andrea
+Rojas Andrea Vanesa
 Perez Cristina Mariela
