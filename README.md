@@ -7,3 +7,4 @@ Integrantes:
     Rojas Andrea
     Perez Cristina Mariela
     Cuevas Abril 
+    Olmos Gustavo
