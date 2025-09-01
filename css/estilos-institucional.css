@@ -1,0 +1,17 @@
+.clase-seccion-titulo {
+    background-image: linear-gradient(to right, white 20%, transparent 75%), url("imagen-fondo-institucional/interior-centro-medico.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;  
+    text-align: left;
+    font-size: larger;
+    padding: 2rem 3rem 2rem 14rem;  
+}
+
+.clase-titulo-1 {
+    color: black;
+}
+
+.clase-titulo-2 {
+    color: grey;
+}
