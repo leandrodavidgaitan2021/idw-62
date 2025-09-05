@@ -141,3 +141,8 @@ header h1 {
   font-size: 1rem; /* Tamaño del icono */
   color: #dafcb3; /* Color del icono */
 }
+
+.mapa {
+  margin-top: 25px;
+  margin-bottom: 200px;
+}
