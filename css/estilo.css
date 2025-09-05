@@ -25,6 +25,7 @@ body {
   color: var(--color-texto-negro);
   line-height: 1.6;
   background: var(--color-fondo-body);
+  height: 1100px; 
 }
 
 /* Header */
