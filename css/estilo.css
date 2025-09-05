@@ -112,38 +112,3 @@ header h1 {
   transition: color 0.3s;
 }
 
-/* Estilos para el contenedor principal de contacto */
-.clase-contacto {
-  background-color: #0d47a1; /* Azul oscuro */
-  color: #b3e5fc;
-  padding: 40px 20px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-/* Estilos para el título "Contacto" */
-.clase-contacto h2 {
-  color: white;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-/* Estilos para los íconos de ubicación, teléfono y horarios */
-.item-icono {
-  margin: 30px auto;
-}
-
-.item-icono a {
-  color: inherit; /* Hereda el color del contenedor padre */
-}
-
-.item-icono i {
-  font-size: 1rem; /* Tamaño del icono */
-  color: #dafcb3; /* Color del icono */
-}
-
-.mapa {
-  margin-top: 25px;
-  margin-bottom: 200px;
-}
-
