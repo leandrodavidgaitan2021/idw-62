@@ -2,16 +2,79 @@
     background-image: linear-gradient(to right, white 20%, transparent 75%), url("imagen-fondo-institucional/interior-centro-medico.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;  
+    background-position: center center;
+    min-height: 30vh; 
     text-align: left;
-    font-size: larger;
-    padding: 2rem 3rem 2rem 14rem;  
+    padding: 8rem 0 0 16rem;
 }
 
 .clase-titulo-1 {
-    color: black;
+    color: #1E3A5F;
+    font-size: 300%;
 }
 
 .clase-titulo-2 {
     color: grey;
+    font-size: x-large;
+    margin-top: -1rem;
+}
+
+section {
+    padding: 2.5rem;
+    background-color: #f5f6f7;
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    color: #2a2a2a;
+    padding-bottom: 13rem;
+}
+
+section h2 {
+    color: #1E3A5F;
+    font-size: xx-large;
+}
+
+section h3 {
+    color: #000000;
+}
+
+.grilla-institucional {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: fit-content;
+    margin: 5% 10% 10%
+}
+
+.estilos-contenedores {
+    background-color: #b9c7d8fb;
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+    padding: 2rem 3rem 3rem;
+    text-align: center;
+}
+
+li {
+    text-align: left;
+    list-style-type: square;
+}
+
+.estilos-contenedores img {
+    width: 96px;
+    height: 96px;
+    margin: 0.5rem auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #e0e0e0;
+}
+
+.icono-titulo {
+    display: block;
+    text-align: center;
+    color: #1E3A5F;
+    padding-top: 1rem;
+}
+
+.imagen-directores {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
