@@ -2,21 +2,22 @@
 .clase-contacto { 
     background-color: #0d47a1; /* Azul oscuro */
     color: #b3e5fc;
-    padding: 100px 50px;
+    padding: 100px 5px ;
+    padding-top: 10px; /* Solo se ajusta el relleno superior */
     text-align: center;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 /* Estilos para el título "Contacto" */
 .clase-contacto h2 {
     color: white;
     font-size: 2rem;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 
 /* Estilos para los íconos de ubicación, teléfono y horarios */
 .item-icono {
-    margin: 30px auto;
+    margin: 10px auto;
 }
 
 .item-icono a {
@@ -26,4 +27,17 @@
 .item-icono i {
     font-size: 1rem; /* Tamaño del icono */
     color: #dafcb3; /* Color del icono */
+}
+
+.mapa {
+    width: 800px; /* Ancho fijo para que no ocupe el 100% */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.texto-izquierda {
+    width: 200px; /* Le da un ancho para que no ocupe toda la línea */
+    margin-left: 350px; /* Empuja el elemento desde la izquierda */
 }
