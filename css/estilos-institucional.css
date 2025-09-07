@@ -1,80 +1,99 @@
 .clase-seccion-titulo {
-    background-image: linear-gradient(to right, white 20%, transparent 75%), url("imagen-fondo-institucional/interior-centro-medico.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    min-height: 30vh; 
-    text-align: left;
-    padding: 8rem 0 0 16rem;
-}
-
-.clase-titulo-1 {
-    color: #1E3A5F;
-    font-size: 300%;
-}
-
-.clase-titulo-2 {
-    color: grey;
-    font-size: x-large;
-    margin-top: -1rem;
-}
-
-section {
-    padding: 2.5rem;
-    background-color: #f5f6f7;
-    font-family: 'Inter', 'Helvetica Neue', sans-serif;
-    color: #2a2a2a;
-    padding-bottom: 13rem;
-}
-
-section h2 {
-    color: #1E3A5F;
-    font-size: xx-large;
-}
-
-section h3 {
-    color: #000000;
-}
-
-.grilla-institucional {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: fit-content;
-    margin: 5% 10% 10%
-}
-
-.estilos-contenedores {
-    background-color: #b9c7d8fb;
-    border: 1px solid #e3e3e3;
-    border-radius: 10px;
-    padding: 2rem 3rem 3rem;
-    text-align: center;
-}
-
-li {
-    text-align: left;
-    list-style-type: square;
-}
-
-.estilos-contenedores img {
-    width: 96px;
-    height: 96px;
-    margin: 0.5rem auto 0;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: #e0e0e0;
+  background-image: linear-gradient(to right, white 20%, transparent 75%),
+    url("imagen-fondo-institucional/interior-centro-medico.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 30vh;
+  text-align: left; /* alineamos todo a la izquierda */
+  padding: 0.5rem 2rem 0 2rem; /* muy poco padding arriba */
+  display: flex;
+  flex-direction: column; /* para que los títulos queden uno debajo del otro */
+  justify-content: center; /* alinea al inicio verticalmente */
 }
 
 .icono-titulo {
-    display: block;
-    text-align: center;
-    color: #1E3A5F;
-    padding-top: 1rem;
+  size: 4rem;
+}
+.estilos-directores {
+  text-align: center;
+  padding: 1rem;
 }
 
 .imagen-directores {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  max-width: 300px;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.clase-titulo-1 {
+  color: #ff0000;
+  font-size: xx-large;
+  margin: 0;
+}
+
+.clase-titulo-2 {
+  color: #000000;
+  font-size: x-large;
+  margin: 0;
+}
+
+.grilla-institucional {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 5% 10% 10%;
+}
+
+estilos-contenedores {
+  background-color: var(--color-fondo-secciones);
+  padding: 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: justify;
+}
+
+/* -------------------
+   MEDIA QUERIES
+------------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .clase-seccion-titulo {
+    padding: 0.5rem 1rem 0 1rem; /* poco padding arriba y lateral */
+  }
+  .icono-titulo {
+    justify-content: center;
+  }
+  .grilla-institucional {
+    margin: 2rem;
+    gap: 1.5rem;
+  }
+}
+
+/* Celulares */
+@media (max-width: 576px) {
+  .clase-seccion-titulo {
+    padding: 0.5rem 1rem 0 1rem; /* poco padding arriba y lateral */
+    min-height: 10vh;
+  }
+  .clase-titulo-1,
+  .clase-titulo-2 {
+    display: none;
+  }
+
+  .grilla-institucional {
+    margin: 1rem;
+    gap: 1rem;
+  }
+
+  .estilos-contenedores {
+    padding: 1.5rem;
+  }
+
+  .imagen-directores {
+    max-width: 200px;
+    margin: auto;
+  }
 }
