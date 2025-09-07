@@ -1,7 +1,9 @@
 # idw-2025
 
 Trabajo Practico materia Introducción al desarrollo web
+    <br>
 Grupo 62:
+    <br>
 Integrantes:
     <br>
     <br>
