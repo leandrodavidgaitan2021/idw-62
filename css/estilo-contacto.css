@@ -1,107 +1,160 @@
-/* Estilos para el contenedor principal de contacto */
-.clase-contacto { 
-    background-color: #ffffff; 
-    color:#574545;
-    padding: 15px; 
-    padding-top: 20px; /* Solo se ajusta el relleno superior */
-    text-align: left;
-    border-radius: 10px; /* Bordes redondeados */
-    margin: 40px auto; /* Centra el contenedor horizontalmente */
-    ;
+/* Contenedor principal de contacto */
+.clase-contacto {
+  background-color: #ffffff;
+  color: #574545;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
-/* Estilos para el título "Comunicate con nosotros" */
-.clase-contacto h2 {
-    color: #1E3A5F;
-    font-size: 28px;
-    margin-bottom: 0px;
-}
-
-/* Estilos para el título "Como llegar" */
-.clase-contacto h4 {
-    color: #477696;
-    font-size: 20px;
-    margin-bottom: 0px;
-}
-
+/* Línea centrada interna */
 .linea-centrada {
-    width: 900px; /* Define un ancho para la línea */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-/* Nuevo: Estilo para la línea azul debajo del título */
+/* Título principal */
 .titulo-con-linea {
-    border-bottom: 2.5px solid #007bff;
-    padding-bottom: 10px;
-    margin-bottom: 40px;
+  border-bottom: 2.5px solid #007bff;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.linea-separadora {
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Línea gris muy fina y transparente */
-    width: 90%; /* Ancho de la línea para que no ocupe todo el espacio */
-    margin: 30px; 
+.titulo-con-linea h2 {
+  color: #bac7d8;
+  font-size: 28px;
+  margin: 0;
 }
 
+/* Detalles de contacto */
 .clase-contacto-details {
-    display: flex;
-    justify-content: center; /* Centra los elementos */
-    gap: 80px; /* Espacio entre los dos bloques */
-    flex-wrap: wrap; /* Permite que los elementos se apilen en pantallas pequeñas */
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-/* Estilos para los íconos de ubicación, teléfono y horarios */
 .item-icono {
-    display: flex; /* Nuevo: Permite alinear el ícono y el texto horizontalmente */
-    align-items: flex-start; /* Nuevo: Alinea los elementos en la parte superior */
-    width: 220px; /* Nuevo: Ancho fijo para cada bloque */
-    margin: 0; /* Nuevo: Elimina los márgenes automáticos para usar flexbox */
+  display: flex;
+  align-items: flex-start;
+  width: 250px;
+  gap: 15px;
 }
 
 .icono-circulo {
-    background-color: #007bff; /* Fondo azul */
-    color: white; /* Color blanco para el ícono */
-    border-radius: 50%; /* Hace que el fondo sea circular */
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px; /* Tamaño del ícono */
-    margin-right: 15px; /* Espacio entre el ícono y el texto */
-    flex-shrink: 0; /* Evita que el ícono se reduzca en pantallas pequeñas */
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
 }
 
-/* Estilos para el texto de cada bloque (Teléfonos, Dirección) */
 .info-texto h3 {
-    color: #007bff; /* Color azul para los títulos de los bloques */
-    font-size: 18px;
-    margin-top: 10px;
-    margin: 0;
+  color: #007bff;
+  font-size: 18px;
+  margin: 0 0 5px 0;
 }
 
 .info-texto p {
-    margin: 15px 0; /* Reduce el margen superior e inferior del párrafo */
-    line-height: 1.4;
-    color: #555;
+  margin: 0;
+  line-height: 1.4;
+  color: #555;
 }
 
-.mapa {
-    width: 100%; /* Ancho  */
-    margin: 0 auto ; /* Elimina todos los márgenes y centra el mapa */
-}
-
-.mapa iframe {
-    display: block;
-    width: 100%;
-    height: 270px;
-    border-radius: 15px; /* Bordes redondeados */
-    
-}
-
+/* Texto "Cómo llegar" */
 .texto-izquierda {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center; /* Centramos el texto dentro del contenedor */
-    margin-top: 100px ;
+  width: 100%;
+  text-align: left;
+}
 
+.texto-izquierda h4 {
+  color: #477696;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.texto-izquierda p {
+  line-height: 1.5;
+}
+
+/* Línea separadora */
+.linea-separadora {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 30px 0;
+}
+
+/* Mapa */
+.mapa iframe {
+  display: block;
+  width: 100%;
+  height: 270px;
+  border-radius: 15px;
+}
+
+/* ----------------------------
+   MEDIA QUERIES
+---------------------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .clase-contacto-details {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .item-icono {
+    width: 45%;
+  }
+}
+
+/* Celulares */
+@media (max-width: 576px) {
+  .clase-contacto {
+    padding: 15px;
+  }
+
+  .titulo-con-linea h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .clase-contacto-details {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .item-icono {
+    width: 80%;
+    justify-content: flex-start;
+  }
+
+  .texto-izquierda {
+    text-align: center;
+  }
+
+  .texto-izquierda h4 {
+    font-size: 18px;
+  }
+
+  .texto-izquierda p {
+    font-size: 14px;
+  }
+
+  .linea-separadora {
+    margin: 20px 0;
+  }
 }
