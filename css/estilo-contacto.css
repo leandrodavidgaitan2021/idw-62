@@ -30,14 +30,13 @@
 }
 
 .mapa {
-    width: 800px; /* Ancho fijo para que no ocupe el 100% */
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centra el iframe horizontalmente */
 }
 
 .texto-izquierda {
-    width: 200px; /* Le da un ancho para que no ocupe toda la línea */
-    margin-left: 350px; /* Empuja el elemento desde la izquierda */
+    color: white;
+    text-align: left;
+    margin-left: 20px;
 }
