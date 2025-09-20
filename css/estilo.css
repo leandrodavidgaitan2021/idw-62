@@ -48,25 +48,25 @@ footer .fab {
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 /* Tablets */
 @media (min-width: 768px) {
   footer .fab {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
   .navbar .nav-link {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 }
 
 /* Pantallas grandes */
 @media (min-width: 1200px) {
   footer .fab {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
   .navbar .nav-link {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 }
