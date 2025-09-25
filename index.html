@@ -1,264 +1,215 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Font-awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
+  <!-- Font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="css/estilo.css" />
-    <link rel="stylesheet" href="css/info-medicos.css" />
-    <link rel="stylesheet" href="css/estilo-contacto.css" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
 
-    <!-- Titulo -->
-    <title>Clinica La Salud S.A</title>
-  </head>
-  <body>
-    <!--Header-->
-    <header>
-      <!--  Navbar con Bootstrap-->
-      <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><h3>Clinica La Salud S.A</h3></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ms-auto">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="index.html"
-                title="Página Principal"
-                >Principal</a
-              >
-              <a
-                class="nav-link"
-                href="institucional.html"
-                title="Página de Información Institucional"
-                >Institucional</a
-              >
-              <a
-                class="nav-link"
-                href="contacto.html"
-                title="Página de contacto con horarios y dirección"
-                >Contacto</a
-              >
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </div>
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="stylesheet" href="css/info-medicos.css" />
+  <link rel="stylesheet" href="css/estilo-contacto.css" />
+
+  <!-- Titulo -->
+  <title>Clinica La Salud S.A</title>
+</head>
+
+<body>
+  <!--Header-->
+  <header>
+    <!--  Navbar con Bootstrap-->
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <h3>Clinica La Salud S.A</h3>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link active" aria-current="page" href="index.html" title="Página Principal">Principal</a>
+            <a class="nav-link" href="institucional.html" title="Página de Información Institucional">Institucional</a>
+            <a class="nav-link" href="contacto.html" title="Página de contacto con horarios y dirección">Contacto</a>
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
+  </header>
 
-    <!--Main-->
-    <main>
-      <section class="profesionales">
-        <h2 class="profesionales__titulo">
+  <!--Main-->
+  <main>
+    <section class="bg-light py-5">
+      <div class="container-fluid">
+        <h2 class="text-center fw-semibold mb-5">
           Profesionales con los que contamos
         </h2>
-        <div class="profesionales__lista">
-          <div class="profesionales__tarjeta">
-            <div class="profesionales__imagen-contenedor">
-              <img
-                class="profesionales__imagen"
-                src="https://headshots-inc.com/wp-content/uploads/2023/03/physician-Headshot-Example-2-1.jpg"
-                alt="foto de la doctora"
-              />
+        <div class="row g-4 justify-content-center">
+          <!-- Tarjeta Médico 1 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card text-center h-100 shadow-sm border-0">
+              <img src="https://headshots-inc.com/wp-content/uploads/2023/03/physician-Headshot-Example-2-1.jpg"
+                class="card-img-top rounded-circle mx-auto mt-4" alt="foto de la doctora"
+                style="width: 120px; height: 120px; object-fit: cover;" />
+              <div class="card-body">
+                <h5 class="card-title">Dra. Sofía Ramírez</h5>
+                <p class="card-text">Especialidad: Ginecología</p>
+                <p class="card-text"><small class="text-muted">Obra Social: OSDE, Omint</small></p>
+              </div>
             </div>
-            <h3 class="profesionales__nombre">Dra. Sofía Ramírez</h3>
-            <p class="profesionales__especialidad">Especialidad: Ginecología</p>
-            <p class="profesionales__obra-social">Obra Social: OSDE, Omint</p>
           </div>
 
-          <div class="profesionales__tarjeta">
-            <div class="profesionales__imagen-contenedor">
-              <img
-                class="profesionales__imagen"
-                src="https://headshots-inc.com/wp-content/uploads/2021/01/Professional-Headshot-Examples-38.jpg"
-                alt="foto del médico"
-              />
+          <!-- Tarjeta Médico 2 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card text-center h-100 shadow-sm border-0">
+              <img src="https://headshots-inc.com/wp-content/uploads/2021/01/Professional-Headshot-Examples-38.jpg"
+                class="card-img-top rounded-circle mx-auto mt-4" alt="foto del médico"
+                style="width: 120px; height: 120px; object-fit: cover;" />
+              <div class="card-body">
+                <h5 class="card-title">Dr. Martín López</h5>
+                <p class="card-text">Especialidad: Traumatología</p>
+                <p class="card-text"><small class="text-muted">Obra Social: Galeno, Swiss Medical</small></p>
+              </div>
             </div>
-            <h3 class="profesionales__nombre">Dr. Martín López</h3>
-            <p class="profesionales__especialidad">
-              Especialidad: Traumatología
-            </p>
-            <p class="profesionales__obra-social">
-              Obra Social: Galeno, Swiss Medical
-            </p>
           </div>
 
-          <div class="profesionales__tarjeta">
-            <div class="profesionales__imagen-contenedor">
-              <img
-                class="profesionales__imagen"
-                src="https://headshots-inc.com/wp-content/uploads/2021/01/Professional-Headshot-Examples-31-1.jpg"
-                alt="foto de la doctora"
-              />
+          <!-- Tarjeta Médico 3 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card text-center h-100 shadow-sm border-0">
+              <img src="https://headshots-inc.com/wp-content/uploads/2021/01/Professional-Headshot-Examples-31-1.jpg"
+                class="card-img-top rounded-circle mx-auto mt-4" alt="foto de la doctora"
+                style="width: 120px; height: 120px; object-fit: cover;" />
+              <div class="card-body">
+                <h5 class="card-title">Dra. Valeria Torres</h5>
+                <p class="card-text">Especialidad: Dermatología</p>
+                <p class="card-text"><small class="text-muted">Obra Social: PAMI, Accord Salud</small></p>
+              </div>
             </div>
-            <h3 class="profesionales__nombre">Dra. Valeria Torres</h3>
-            <p class="profesionales__especialidad">
-              Especialidad: Dermatología
-            </p>
-            <p class="profesionales__obra-social">
-              Obra Social: PAMI, Accord Salud
-            </p>
           </div>
 
-          <div class="profesionales__tarjeta">
-            <div class="profesionales__imagen-contenedor">
+          <!-- Tarjeta Médico 4 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card text-center h-100 shadow-sm border-0">
               <img
-                class="profesionales__imagen"
                 src="https://images.squarespace-cdn.com/content/v1/631ba8eed2196a6795698665/5cedd6d0-f770-42ed-8c86-93c2bc21ff35/2022-09-06-KP-Yee-Stanford-0889.jpg"
-                alt="foto del médico"
-              />
+                class="card-img-top rounded-circle mx-auto mt-4" alt="foto del médico"
+                style="width: 120px; height: 120px; object-fit: cover;" />
+              <div class="card-body">
+                <h5 class="card-title">Dr. Javier Fernández</h5>
+                <p class="card-text">Especialidad: Oncología</p>
+                <p class="card-text"><small class="text-muted">Obra Social: IOMA, Medicus</small></p>
+              </div>
             </div>
-            <h3 class="profesionales__nombre">Dr. Javier Fernández</h3>
-            <p class="profesionales__especialidad">Especialidad: Oncología</p>
-            <p class="profesionales__obra-social">Obra Social: IOMA, Medicus</p>
           </div>
 
-          <div class="profesionales__tarjeta">
-            <div class="profesionales__imagen-contenedor">
-              <img
-                class="profesionales__imagen"
-                src="https://headshots-inc.com/wp-content/uploads/2023/03/doctor-Headshot-Example-1.jpg"
-                alt="foto de la doctora"
-              />
+          <!-- Tarjeta Médico 5 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card text-center h-100 shadow-sm border-0">
+              <img src="https://headshots-inc.com/wp-content/uploads/2023/03/doctor-Headshot-Example-1.jpg"
+                class="card-img-top rounded-circle mx-auto mt-4" alt="foto de la doctora"
+                style="width: 120px; height: 120px; object-fit: cover;" />
+              <div class="card-body">
+                <h5 class="card-title">Dra. Camila Álvarez</h5>
+                <p class="card-text">Especialidad: Endocrinología</p>
+                <p class="card-text"><small class="text-muted">Obra Social: OSDE, Medicus</small></p>
+              </div>
             </div>
-            <h3 class="profesionales__nombre">Dra. Camila Álvarez</h3>
-            <p class="profesionales__especialidad">
-              Especialidad: Endocrinología
-            </p>
-            <p class="profesionales__obra-social">Obra Social: OSDE, Medicus</p>
           </div>
 
-          <div class="profesionales__tarjeta">
-            <div class="profesionales__imagen-contenedor">
+          <!-- Tarjeta Médico 6 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card text-center h-100 shadow-sm border-0">
               <img
-                class="profesionales__imagen"
                 src="https://i0.wp.com/oohstloustudios.com/wp-content/uploads/2023/07/Soundhealth2019-0087-Edit-jpg.webp?fit=1000%2C667&ssl=1"
-                alt="foto del médico"
-              />
+                class="card-img-top rounded-circle mx-auto mt-4" alt="foto del médico"
+                style="width: 120px; height: 120px; object-fit: cover;" />
+              <div class="card-body">
+                <h5 class="card-title">Dr. Andrés Castro</h5>
+                <p class="card-text">Especialidad: Gastroenterología</p>
+                <p class="card-text"><small class="text-muted">Obra Social: Galeno, OSDE</small></p>
+              </div>
             </div>
-            <h3 class="profesionales__nombre">Dr. Andrés Castro</h3>
-            <p class="profesionales__especialidad">
-              Especialidad: Gastroenterología
-            </p>
-            <p class="profesionales__obra-social">Obra Social: Galeno, OSDE</p>
           </div>
 
-          <div class="profesionales__tarjeta">
-            <div class="profesionales__imagen-contenedor">
+          <!-- Tarjeta Médico 7 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card text-center h-100 shadow-sm border-0">
               <img
-                class="profesionales__imagen"
                 src="https://images.pexels.com/photos/19596247/pexels-photo-19596247/free-photo-of-portrait-of-smiling-black-woman-doctor-in-medical-robe.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=750&w=1260"
-                alt="foto de la doctora"
-              />
+                class="card-img-top rounded-circle mx-auto mt-4" alt="foto de la doctora"
+                style="width: 120px; height: 120px; object-fit: cover;" />
+              <div class="card-body">
+                <h5 class="card-title">Dra. Paula Giménez</h5>
+                <p class="card-text">Especialidad: Reumatología</p>
+                <p class="card-text"><small class="text-muted">Obra Social: Omint, Swiss Medical</small></p>
+              </div>
             </div>
-            <h3 class="profesionales__nombre">Dra. Paula Giménez</h3>
-            <p class="profesionales__especialidad">
-              Especialidad: Reumatología
-            </p>
-            <p class="profesionales__obra-social">
-              Obra Social: Omint, Swiss Medical
-            </p>
           </div>
 
-          <div class="profesionales__tarjeta">
-            <div class="profesionales__imagen-contenedor">
+          <!-- Tarjeta Médico 8 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card text-center h-100 shadow-sm border-0">
               <img
-                class="profesionales__imagen"
                 src="https://www.shutterstock.com/image-photo/healthcare-medical-staff-concept-portrait-600nw-2281024823.jpg"
-                alt="foto del médico"
-              />
+                class="card-img-top rounded-circle mx-auto mt-4" alt="foto del médico"
+                style="width: 120px; height: 120px; object-fit: cover;" />
+              <div class="card-body">
+                <h5 class="card-title">Dr. Federico Ruiz</h5>
+                <p class="card-text">Especialidad: Psiquiatría</p>
+                <p class="card-text"><small class="text-muted">Obra Social: PAMI, Accord Salud</small></p>
+              </div>
             </div>
-            <h3 class="profesionales__nombre">Dr. Federico Ruiz</h3>
-            <p class="profesionales__especialidad">Especialidad: Psiquiatría</p>
-            <p class="profesionales__obra-social">
-              Obra Social: PAMI, Accord Salud
-            </p>
           </div>
         </div>
-      </section>
-    </main>
-
-    <!--Footer-->
-
-    <footer
-      class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3 px-4 border-top bg-light mt-auto my-0"
-    >
-      <!-- Texto -->
-      <div class="mb-2 mb-md-0 text-center text-md-start">
-        <span class="text-body-secondary">© 2025 Clinica La Salud S.A.</span>
       </div>
+    </section>
+  </main>
 
-      <!-- Íconos -->
-      <ul
-        class="nav justify-content-center justify-content-md-end list-unstyled d-flex mb-0"
-      >
-        <li class="ms-3">
-          <a
-            class="text-success fs-4"
-            href="http://"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp de Clínica La Salud"
-          >
-            <i class="fab fa-whatsapp"></i>
-          </a>
-        </li>
-        <li class="ms-3">
-          <a
-            class="text-danger fs-4"
-            href="http://"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram de Clínica La Salud"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-        <li class="ms-3">
-          <a
-            class="text-primary fs-4"
-            href="http://"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook de Clínica La Salud"
-          >
-            <i class="fab fa-facebook"></i>
-          </a>
-        </li>
-      </ul>
-    </footer>
+  <!--Footer-->
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <footer
+    class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3 px-4 border-top bg-light mt-auto my-0">
+    <!-- Texto -->
+    <div class="mb-2 mb-md-0 text-center text-md-start">
+      <span class="text-body-secondary">© 2025 Clinica La Salud S.A.</span>
+    </div>
+
+    <!-- Íconos -->
+    <ul class="nav justify-content-center justify-content-md-end list-unstyled d-flex mb-0">
+      <li class="ms-3">
+        <a class="text-success fs-4" href="http://" target="_blank" rel="noopener noreferrer"
+          aria-label="WhatsApp de Clínica La Salud">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+      <li class="ms-3">
+        <a class="text-danger fs-4" href="http://" target="_blank" rel="noopener noreferrer"
+          aria-label="Instagram de Clínica La Salud">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      <li class="ms-3">
+        <a class="text-primary fs-4" href="http://" target="_blank" rel="noopener noreferrer"
+          aria-label="Facebook de Clínica La Salud">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
