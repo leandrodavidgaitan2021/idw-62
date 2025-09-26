@@ -22,16 +22,16 @@
 
 /* Estilos base para todo el sitio */
 body {
-  font-family: var(--font-primary);
-  color: var(--color-texto-negro);
   line-height: 1.6;
-  background: var(--color-fondo-body);
-
   height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
   padding-bottom: 80px; /* altura aprox del footer para que no tape texto */
+}
+
+.custom-navbar {
+  background-color: var(--color-primario-suave);
 }
 
 footer {
@@ -42,8 +42,8 @@ footer {
   z-index: 1030; /* para que quede encima del contenido */
 }
 
-footer .fab {
-  font-size: 1rem; /* Tamaño base (móvil) */
+footer i {
+  font-size: 1.1rem; /* Tamaño base (móvil) */
 }
 
 .navbar .nav-link,
@@ -53,8 +53,8 @@ footer .fab {
 
 /* Tablets */
 @media (min-width: 768px) {
-  footer .fab {
-    font-size: 1.15rem;
+  footer i {
+    font-size: 1.25rem;
   }
   .navbar .nav-link {
     font-size: 1.15rem;
@@ -63,8 +63,8 @@ footer .fab {
 
 /* Pantallas grandes */
 @media (min-width: 1200px) {
-  footer .fab {
-    font-size: 1.25rem;
+  footer i {
+    font-size: 1.5rem;
   }
   .navbar .nav-link {
     font-size: 1.25rem;
