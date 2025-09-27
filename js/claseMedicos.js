@@ -57,4 +57,15 @@ export class Medico {
     const medicos = JSON.parse(localStorage.getItem("medicos")) || [];
     return medicos.map((m) => new Medico(m));
   }
+
+  // Leer medicos.json y cargar los médicos en LocalStorage
+  static cargarDesdeJSON() {
+    fetch("./data/medicos.json")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data); // acá tenés el JSON como objeto de JS
+        localStorage.setItem("medicos", JSON.stringify(data));
+      })
+      .catch((error) => console.error("Error cargando JSON:", error));
+  }
 }
