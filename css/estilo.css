@@ -3,7 +3,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 2px;
+  /* margin: 2px; afecta a todo el código y los containers de bootsrap pierden lugar necesario */ 
   padding: 0;
 }
 
