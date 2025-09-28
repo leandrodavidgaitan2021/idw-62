@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "matricula": 1001,
+    "apellido": "Ramírez",
+    "nombre": "Sofía",
+    "especialidad": "Ginecología",
+    "descripcion": "Especialista en salud integral de la mujer.",
+    "obrasSociales": ["OSDE", "Omint"],
+    "fotografia": "https://headshots-inc.com/wp-content/uploads/2023/03/physician-Headshot-Example-2-1.jpg",
+    "valorConsulta": 5000
+  },
+  {
+    "id": 2,
+    "matricula": 1002,
+    "apellido": "López",
+    "nombre": "Martín",
+    "especialidad": "Traumatología",
+    "descripcion": "Atención en lesiones musculoesqueléticas y rehabilitación.",
+    "obrasSociales": ["Galeno", "Swiss Medical"],
+    "fotografia": "https://headshots-inc.com/wp-content/uploads/2021/01/Professional-Headshot-Examples-38.jpg",
+    "valorConsulta": 6000
+  },
+  {
+    "id": 3,
+    "matricula": 1003,
+    "apellido": "Torres",
+    "nombre": "Valeria",
+    "especialidad": "Dermatología",
+    "descripcion": "Tratamientos dermatológicos y estética de la piel.",
+    "obrasSociales": ["PAMI", "Accord Salud"],
+    "fotografia": "https://headshots-inc.com/wp-content/uploads/2021/01/Professional-Headshot-Examples-31-1.jpg",
+    "valorConsulta": 5500
+  },
+  {
+    "id": 4,
+    "matricula": 1004,
+    "apellido": "Fernández",
+    "nombre": "Javier",
+    "especialidad": "Oncología",
+    "descripcion": "Diagnóstico y tratamiento de enfermedades oncológicas.",
+    "obrasSociales": ["IOMA", "Medicus"],
+    "fotografia": "https://images.squarespace-cdn.com/content/v1/631ba8eed2196a6795698665/5cedd6d0-f770-42ed-8c86-93c2bc21ff35/2022-09-06-KP-Yee-Stanford-0889.jpg",
+    "valorConsulta": 7000
+  },
+  {
+    "id": 5,
+    "matricula": 1005,
+    "apellido": "Álvarez",
+    "nombre": "Camila",
+    "especialidad": "Endocrinología",
+    "descripcion": "Especialista en trastornos hormonales y metabólicos.",
+    "obrasSociales": ["OSDE", "Medicus"],
+    "fotografia": "https://headshots-inc.com/wp-content/uploads/2023/03/doctor-Headshot-Example-1.jpg",
+    "valorConsulta": 5800
+  },
+  {
+    "id": 6,
+    "matricula": 1006,
+    "apellido": "Castro",
+    "nombre": "Andrés",
+    "especialidad": "Gastroenterología",
+    "descripcion": "Tratamiento de enfermedades digestivas.",
+    "obrasSociales": ["Galeno", "OSDE"],
+    "fotografia": "https://i0.wp.com/oohstloustudios.com/wp-content/uploads/2023/07/Soundhealth2019-0087-Edit-jpg.webp?fit=1000%2C667&ssl=1",
+    "valorConsulta": 6200
+  },
+  {
+    "id": 7,
+    "matricula": 1007,
+    "apellido": "Giménez",
+    "nombre": "Paula",
+    "especialidad": "Reumatología",
+    "descripcion": "Diagnóstico y tratamiento de enfermedades autoinmunes y reumáticas.",
+    "obrasSociales": ["Omint", "Swiss Medical"],
+    "fotografia": "https://images.pexels.com/photos/19596247/pexels-photo-19596247/free-photo-of-portrait-of-smiling-black-woman-doctor-in-medical-robe.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=750&w=1260",
+    "valorConsulta": 6400
+  },
+  {
+    "id": 8,
+    "matricula": 1008,
+    "apellido": "Ruiz",
+    "nombre": "Federico",
+    "especialidad": "Psiquiatría",
+    "descripcion": "Atención integral en salud mental.",
+    "obrasSociales": ["PAMI", "Accord Salud"],
+    "fotografia": "https://www.shutterstock.com/image-photo/healthcare-medical-staff-concept-portrait-600nw-2281024823.jpg",
+    "valorConsulta": 5600
+  }
+]
