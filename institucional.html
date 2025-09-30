@@ -1,204 +1,278 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="light">
-<!-- Inicia en modo claro-->
+  <!-- Inicia en modo claro-->
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Grupo 1 - Proyecto Final" />
-  <meta name="description" content="Página de información Institucional de la clínica" />
-  <meta name="keywords" content="Clínica, Salud, Médicos, Profesionales, Especialidades, Institucional" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Grupo 1 - Proyecto Final" />
+    <meta
+      name="description"
+      content="Página de información Institucional de la clínica"
+    />
+    <meta
+      name="keywords"
+      content="Clínica, Salud, Médicos, Profesionales, Especialidades, Institucional"
+    />
 
+    <!-- Font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-  <!-- Font-awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilo.css" />
+    <link rel="stylesheet" href="css/estilos-institucional.css" />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Titulo -->
+    <title>Clinica La Salud S.A</title>
+  </head>
 
+  <body class="bg-body text-body">
+    <!-- perimite cambiar bg y texto segun el tema-->
+    <!--Header-->
+    <header>
+      <!--  Navbar con Bootstrap-->
+      <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <h3>Clinica La Salud S.A</h3>
+          </a>
 
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="css/estilo.css" />
-  <link rel="stylesheet" href="css/estilos-institucional.css" />
-
-  <!-- Titulo -->
-  <title>Clinica La Salud S.A</title>
-</head>
-
-<body class="bg-body text-body">
-  <!-- perimite cambiar bg y texto segun el tema-->
-  <!--Header-->
-  <header>
-    <!--  Navbar con Bootstrap-->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <h3>Clinica La Salud S.A</h3>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ms-auto">
-            <a class="nav-link" aria-current="page" href="index.html" title="Página Principal">Principal</a>
-            <a class="nav-link active" href="institucional.html"
-              title="Página de Información Institucional">Institucional</a>
-            <a class="nav-link" href="contacto.html" title="Página de contacto con horarios y dirección">Contacto</a>
-            <a class="nav-link" href="login.html" title="Página de Ingreso al sistema">Login</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="index.html"
+                title="Página Principal"
+                >Principal</a
+              >
+              <a
+                class="nav-link active"
+                href="institucional.html"
+                title="Página de Información Institucional"
+                >Institucional</a
+              >
+              <a
+                class="nav-link"
+                href="contacto.html"
+                title="Página de contacto con horarios y dirección"
+                >Contacto</a
+              >
+              <a
+                class="nav-link"
+                href="login.html"
+                title="Página de Ingreso al sistema"
+                >Login</a
+              >
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <!--Main-->
-  <main>
-    <!--Titulo-->
-    <section class="clase-seccion-titulo">
+    <!--Main-->
+    <main>
+      <!--Titulo-->
+      <section class="clase-seccion-titulo">
+        <div class="container">
+          <h3 class="clase-titulo-1">Quienes somos</h3>
+          <h5 class="clase-titulo-2">Comprometidos con tu salud y bienestar</h5>
+        </div>
+      </section>
+
+      <!--Historia-->
+      <section>
+        <div class="container">
+          <div class="row d-flex">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+              <div class="card h-100 border shadow">
+                <div class="card-body">
+                  <h4 class="card-title text-center pt-2">
+                    <span class="fa-solid fa-book-medical"></span> Nuestra
+                    historia
+                  </h4>
+                  <p class="card-text p-2">
+                    Clinica La Salud comenzó en 1993 como un sueño: crear un
+                    espacio de salud donde la atención médica de alta calidad
+                    estuviera al alcance de todos en Neuquén. Fundada por los
+                    visionarios Dr. Inocencio Álvarez de Arenales y Dra. Elvira
+                    Grierson, lo que comenzó como un pequeño consultorio con una
+                    sola especialidad creció con el tiempo, impulsado por el
+                    compromiso inquebrantable de servir a nuestra comunidad.
+                    Desde nuestros primeros días, nos guiamos por un principio
+                    fundamental: la salud de nuestros pacientes es nuestra
+                    máxima prioridad. Hoy, Clinica la salud es un referente en
+                    la atención de salud de Neuquén. Miramos hacia el futuro con
+                    la misma pasión que nos vio nacer, comprometidos a seguir
+                    evolucionando para ofrecer la mejor atención y ser el aliado
+                    de confianza de tu familia en cada etapa de su vida.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--Directores-->
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+              <div class="card h-100 border shadow">
+                <div class="card-body text-center">
+                  <!--div class="estilos-directores"-->
+                  <h4 class="card-title pt-2">
+                    <span class="fa-solid fa-users"></span> Directores
+                  </h4>
+                  <img
+                    class="card-img w-75 p-2 rounded-circle"
+                    src="css/imagen-fondo-institucional/director general.png"
+                    alt="Descripción de la imagen"
+                  />
+                  <h5>Director General</h5>
+                  <p>
+                    Mg. Diego Martínez <br />diegomartinez@clinicasalud.org.ar
+                  </p>
+                  <img
+                    class="card-img w-75 p-2 rounded-circle"
+                    src="css/imagen-fondo-institucional/director admin.jpg"
+                    alt="Descripción de la imagen"
+                  />
+                  <h5>Director administrativo</h5>
+                  <p>
+                    Dr. Ricardo Salvador
+                    <br />ricardosalvador@clinicasalud.org.ar
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!--Mision-->
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+              <div class="card h-100 border shadow">
+                <div class="card-body">
+                  <!--div class="estilos-contenedores"-->
+                  <h4 class="card-title text-center p-2">
+                    <span class="fa-solid fa-handshake"></span> Nuestra misión
+                  </h4>
+                  <ul class="m-2">
+                    <li class="mb-2">
+                      <strong>Excelencia Médica:</strong> <br />Nos
+                      comprometemos a mantener los más altos estándares de
+                      calidad y a estar a la vanguardia de los avances
+                      científicos y tecnológicos para ofrecer diagnósticos
+                      precisos y tratamientos efectivos.
+                    </li>
+
+                    <li class="mb-2">
+                      <strong>Atención Humana y Empatía:</strong> <br />Creemos
+                      en la importancia de tratar a cada paciente con dignidad,
+                      respeto y compasión. Nos esforzamos por escuchar y
+                      entender sus necesidades para brindar un cuidado
+                      verdaderamente personalizado.
+                    </li>
+
+                    <li class="pb-2">
+                      <strong>Compromiso con la Comunidad:</strong> <br />Nos
+                      dedicamos a promover la salud y el bienestar de nuestra
+                      comunidad, participando en iniciativas de prevención y
+                      educación para construir un futuro más saludable para
+                      todos.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="border-top mt-auto py-3 px-4 bg-secondary-subtle text-dark dark:bg-dark text-light"
+    >
       <div class="container">
-        <h3 class="clase-titulo-1">Quienes somos</h2>
-          <h5 class="clase-titulo-2">Comprometidos con tu salud y bienestar
-        </h3>
-      </div>
-    </section>
-
-    <!--Historia-->
-    <section>
-      <div class="container">
-        <div class="row d-flex">
-          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-            <div class="card h-100 border shadow">
-              <div class="card-body">
-                <h4 class="card-title text-center pt-2">
-                  <span class="fa-solid fa-book-medical"></span> Nuestra historia
-                </h4>
-                <p class="card-text p-2">
-                  Clinica La Salud comenzó en 1993 como un sueño: crear un espacio
-                  de salud donde la atención médica de alta calidad estuviera al
-                  alcance de todos en Neuquén. Fundada por los visionarios Dr.
-                  Inocencio Álvarez de Arenales y Dra. Elvira Grierson, lo que
-                  comenzó como un pequeño consultorio con una sola especialidad
-                  creció con el tiempo, impulsado por el compromiso inquebrantable
-                  de servir a nuestra comunidad. Desde nuestros primeros días, nos
-                  guiamos por un principio fundamental: la salud de nuestros
-                  pacientes es nuestra máxima prioridad. Hoy, Clinica la salud es un
-                  referente en la atención de salud de Neuquén. Miramos hacia el
-                  futuro con la misma pasión que nos vio nacer, comprometidos a
-                  seguir evolucionando para ofrecer la mejor atención y ser el
-                  aliado de confianza de tu familia en cada etapa de su vida.
-                </p>
-              </div>
-            </div>
-          </div>
-          <!--Directores-->
-          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-            <div class="card h-100 border shadow">
-              <div class="card-body text-center">
-                <!--div class="estilos-directores"-->
-                <h4 class="card-title pt-2"><span class="fa-solid fa-users"></span> Directores</h4>
-                <img class="card-img w-75 p-2 rounded-circle" src="css/imagen-fondo-institucional/director general.png"
-                  alt="Descripción de la imagen" />
-                <h5>Director General</h5>
-                <p>Mg. Diego Martínez <br>diegomartinez@clinicasalud.org.ar</p>
-                <img class="card-img w-75 p-2 rounded-circle" src="css/imagen-fondo-institucional/director admin.jpg"
-                  alt="Descripción de la imagen" />
-                <h5>Director administrativo</h5>
-                <p>Dr. Ricardo Salvador <br>ricardosalvador@clinicasalud.org.ar</p>
-              </div>
-            </div>
+        <div class="row align-items-center text-center text-md-start">
+          <!-- Texto -->
+          <div class="col-12 col-md-4 mb-2 mb-md-0">
+            <span class="text-body-secondary"
+              >© 2025 Clinica La Salud S.A.</span
+            >
           </div>
 
-          <!--Mision-->
-          <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4">
-            <div class="card h-100 border shadow">
-              <div class="card-body">
-                <!--div class="estilos-contenedores"-->
-                <h4 class="card-title text-center p-2"><span class="fa-solid fa-handshake"></span> Nuestra
-                  misión</h4>
-                <ul class="m-2">
-                  <li class="mb-2">
-                    <strong>Excelencia Médica:</strong> <br>Nos comprometemos a mantener
-                    los más altos estándares de calidad y a estar a la vanguardia de
-                    los avances científicos y tecnológicos para ofrecer diagnósticos
-                    precisos y tratamientos efectivos.
-                  </li>
+          <!-- Redes sociales -->
+          <div class="col-6 col-md-4 mb-md-0">
+            <ul class="nav justify-content-center mb-0">
+              <li class="ms-3">
+                <a
+                  class="text-success"
+                  href="http://"
+                  target="_blank"
+                  aria-label="WhatsApp de Clínica La Salud"
+                >
+                  <i class="fa-brands fa-whatsapp"></i>
+                </a>
+              </li>
+              <li class="ms-3">
+                <a
+                  class="text-danger"
+                  href="http://"
+                  target="_blank"
+                  aria-label="Instagram de Clínica La Salud"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+              <li class="ms-3">
+                <a
+                  class="text-primary"
+                  href="http://"
+                  target="_blank"
+                  aria-label="Facebook de Clínica La Salud"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-                  <li class="mb-2">
-                    <strong>Atención Humana y Empatía:</strong> <br>Creemos en la
-                    importancia de tratar a cada paciente con dignidad, respeto y
-                    compasión. Nos esforzamos por escuchar y entender sus
-                    necesidades para brindar un cuidado verdaderamente
-                    personalizado.
-                  </li>
-
-                  <li class="pb-2">
-                    <strong>Compromiso con la Comunidad:</strong> <br>Nos dedicamos a
-                    promover la salud y el bienestar de nuestra comunidad,
-                    participando en iniciativas de prevención y educación para
-                    construir un futuro más saludable para todos.
-                  </li>
-                </ul>
-              </div>
+          <!-- Switch -->
+          <div
+            class="col-6 col-md-4 d-flex justify-content-center justify-content-md-end align-items-center gap-2"
+          >
+            <i class="fa-solid fa-sun text-warning"></i>
+            <div class="form-check form-switch m-0">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="modoSwitch"
+                aria-label="Cambiar modo oscuro/claro"
+              />
             </div>
+            <i class="fa-solid fa-moon text-primary"></i>
           </div>
         </div>
-
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 px-4 border-top bg-body mt-auto my-0">
-    <!-- Texto -->
-    <div class="mb-2 mb-md-0 text-center text-md-start">
-      <span class="text-body-secondary">© 2025 Clinica La Salud S.A.</span>
-    </div>
-
-    <div class="d-flex align-items-center">
-      <!-- Íconos -->
-      <ul class="nav list-unstyled d-flex mb-0" role="list">
-        <li class="ms-3">
-          <a class="text-success" href="http://" target="_blank" rel="noopener noreferrer"
-            aria-label="WhatsApp de Clínica La Salud">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-        </li>
-        <li class="ms-3">
-          <a class="text-danger" href="http://" target="_blank" rel="noopener noreferrer"
-            aria-label="Instagram de Clínica La Salud">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </li>
-        <li class="ms-3">
-          <a class="text-primary" href="http://" target="_blank" rel="noopener noreferrer"
-            aria-label="Facebook de Clínica La Salud">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- Switch -->
-    <div class="d-flex align-items-center">
-      <!-- Switch -->
-      <div class="d-flex align-items-center gap-2">
-        <i class="fa-solid fa-sun text-warning"></i>
-        <div class="form-check form-switch m-0">
-          <input class="form-check-input" type="checkbox" id="modoSwitch" aria-label="Cambiar modo oscuro/claro" />
-        </div>
-        <i class="fa-solid fa-moon text-primary"></i>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- Bootstrap JS Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/tema.js"></script>
-</body>
-
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/tema.js"></script>
+  </body>
 </html>
-

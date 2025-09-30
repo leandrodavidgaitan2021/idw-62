@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilo.css" />
+
+    <!-- Titulo -->
+    <title>Clinica La Salud S.A</title>
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <!--  Navbar con Bootstrap-->
+      <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><h3>Clinica La Salud S.A</h3></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <span class="navbar-text me-3" id="bienvenida"></span>
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="dashboard.html"
+                title="Página Panel de Control"
+                >Panel de Control</a
+              >
+              <a
+                class="nav-link"
+                aria-current="page"
+                href=""
+                title="Página Turnos"
+                >Turnos</a
+              >
+              <a
+                class="nav-link active"
+                href="medicos.html"
+                title="Página de Medicos"
+                >Medicos</a
+              >
+              <a class="nav-link" href="" title="Página de Obras Sociales"
+                >Obras Sociales</a
+              >
+              <a class="nav-link" href="" id="logaut" title="Salida del sistema"
+                >Salir
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!--Main-->
+    <main class="container py-4">
+      <h2>Médicos</h2>
+      <p>
+        Listado de médicos disponibles en la clínica con sus especialidades
+        respectivas.
+      </p>
+
+      <div class="table-responsive mb-3">
+        <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>Matricula</th>
+              <th>Apellido y Nombre</th>
+              <th>Especialidad</th>
+              <th>Obras Sociales</th>
+            </tr>
+          </thead>
+          <tbody id="medicosTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="mb-4">
+        <button
+          class="btn btn-success me-2"
+          data-bs-toggle="modal"
+          data-bs-target="#modalNuevoMedico"
+        >
+          Nuevo
+        </button>
+        <button
+          class="btn btn-primary me-2"
+          data-bs-toggle="modal"
+          data-bs-target="#modalEditarMedico"
+        >
+          Editar
+        </button>
+        <button
+          class="btn btn-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#modalEliminarMedico"
+        >
+          Eliminar
+        </button>
+      </div>
+    </main>
+
+    <!-- ================= MODAL NUEVO ================= -->
+    <div
+      class="modal fade"
+      id="modalNuevoMedico"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Nuevo Médico</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="formNuevoMedico">
+              <div class="mb-2">
+                <label>Matricula</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="nuevoMatricula"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label>Apellido</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nuevoApellido"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label>Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nuevoNombre"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label>Especialidad</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nuevoEspecialidad"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label>Obras Sociales (separadas por coma)</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nuevoObrasSociales"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button class="btn btn-success" id="btnGuardarNuevo">
+              Guardar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= MODAL EDITAR ================= -->
+    <div
+      class="modal fade"
+      id="modalEditarMedico"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar Médico</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-2">
+              <label>Seleccionar Médico</label>
+              <select class="form-select" id="selectEditarMedico"></select>
+            </div>
+            <form id="formEditarMedico">
+              <div class="mb-2">
+                <label>Matricula</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="editarMatricula"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label>Apellido</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editarApellido"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label>Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editarNombre"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label>Especialidad</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editarEspecialidad"
+                  required
+                />
+              </div>
+              <div class="mb-2">
+                <label>Obras Sociales</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editarObrasSociales"
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button class="btn btn-primary" id="btnGuardarEditar">
+              Guardar Cambios
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= MODAL ELIMINAR ================= -->
+    <div
+      class="modal fade"
+      id="modalEliminarMedico"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Eliminar Médico</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <label>Seleccionar Médico</label>
+            <select class="form-select" id="selectEliminarMedico"></select>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button class="btn btn-danger" id="btnEliminarMedico">
+              Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <h4>FOOTER</h4>
+      <p>Aca NUESTRA EMPRESA y mostrar la fecha y hora actualizandose</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="./js/medicos.js"></script>
+  </body>
+</html>

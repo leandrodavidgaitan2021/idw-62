@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Mostrar "Bienvenido + usuario" en la navbar
   if (bienvenida) {
-    bienvenida.textContent = `Bienvenido, ${usuarioLogueado}`;
+    bienvenida.textContent = `Usuario, ${usuarioLogueado}`;
   }
 
   // Logout
@@ -21,5 +21,3 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "index.html";
   });
 });
-
-

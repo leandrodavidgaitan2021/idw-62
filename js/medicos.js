@@ -1,43 +1,128 @@
-import { Medico } from "./claseMedicos.js";
+// js/medicos.js
+import { Medico } from "./claseMedico.js";
 
-// Ejecutar carga de médicos desde JSON
 document.addEventListener("DOMContentLoaded", async () => {
-  const medicos = await Medico.cargarDesdeJSON();
+  // Sincronizar LocalStorage
+  const medicos = await Medico.sincronizarLocalStorage();
 
-  // Ejemplo: mostrar médicos en consola
-  console.log("Médicos disponibles:", medicos);
-  /*
-  // Renderizar tarjetas en el HTML
-  const contenedor = document.querySelector(".profesionales__lista");
-  contenedor.innerHTML = ""; // limpiar contenido inicial
+  const tbody = document.getElementById("medicosTableBody");
 
-  medicos.forEach((medico) => {
-    const card = document.createElement("div");
-    card.classList.add("profesionales__tarjeta");
+  function renderTabla() {
+    tbody.innerHTML = "";
+    medicos.forEach((medico) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+            <td>${medico.matricula}</td>
+            <td>${medico.nombreCompleto()}</td>
+            <td>${medico.especialidad}</td>
+            <td>${medico.obrasSociales.join(", ")}</td>
+          `;
+      tbody.appendChild(tr);
+    });
+  }
 
-    card.innerHTML = `
-      <div class="profesionales__imagen-contenedor">
-        <img
-          class="profesionales__imagen"
-          src="${medico.fotografia}"
-          alt="Foto de ${medico.nombreCompleto()}"
-        />
-      </div>
-      <h3 class="profesionales__nombre">${medico.nombreCompleto()}</h3>
-      <p class="profesionales__especialidad">
-        Especialidad: ${medico.especialidad}
-      </p>
-      <p class="profesionales__obra-social">
-        Obras Sociales: ${medico.obrasSociales.join(", ")}
-      </p>
-      <p class="profesionales__valor">
-        Valor consulta: $${medico.valorConsulta}
-      </p>
-    `;
+  renderTabla();
 
-    contenedor.appendChild(card);
+  // Rellenar selects
+  function cargarSelectMedicos(selectId) {
+    const select = document.getElementById(selectId);
+    if (!select) return;
+    select.innerHTML = "";
+    medicos.forEach((m) => {
+      const option = document.createElement("option");
+      option.value = m.id;
+      option.textContent = `${m.nombreCompleto()} - ${m.especialidad}`;
+      select.appendChild(option);
+    });
+  }
 
-   
+  cargarSelectMedicos("selectEditarMedico");
+  cargarSelectMedicos("selectEliminarMedico");
+
+  // ================== EDITAR ==================
+  const editarMatricula = document.getElementById("editarMatricula");
+  const editarApellido = document.getElementById("editarApellido");
+  const editarNombre = document.getElementById("editarNombre");
+  const editarEspecialidad = document.getElementById("editarEspecialidad");
+  const editarObrasSociales = document.getElementById("editarObrasSociales");
+
+  document
+    .getElementById("selectEditarMedico")
+    .addEventListener("change", (e) => {
+      const id = parseInt(e.target.value);
+      const medico = medicos.find((m) => m.id === id);
+      if (!medico) return;
+
+      editarMatricula.value = medico.matricula;
+      editarApellido.value = medico.apellido;
+      editarNombre.value = medico.nombre;
+      editarEspecialidad.value = medico.especialidad;
+      editarObrasSociales.value = medico.obrasSociales.join(", ");
+    });
+
+  document.getElementById("btnGuardarEditar").addEventListener("click", () => {
+    const id = parseInt(document.getElementById("selectEditarMedico").value);
+    const medico = medicos.find((m) => m.id === id);
+    if (!medico) return;
+
+    medico.matricula = editarMatricula.value;
+    medico.apellido = editarApellido.value;
+    medico.nombre = editarNombre.value;
+    medico.especialidad = editarEspecialidad.value;
+    medico.obrasSociales = editarObrasSociales.value
+      .split(",")
+      .map((o) => o.trim());
+
+    localStorage.setItem("medicos", JSON.stringify(medicos));
+    renderTabla();
+    cargarSelectMedicos("selectEditarMedico");
+    cargarSelectMedicos("selectEliminarMedico");
+
+    bootstrap.Modal.getInstance(
+      document.getElementById("modalEditarMedico")
+    ).hide();
   });
-   */
+
+  // ================== NUEVO ==================
+  document.getElementById("btnGuardarNuevo").addEventListener("click", () => {
+    const nuevo = new Medico({
+      id: Date.now(),
+      matricula: document.getElementById("nuevoMatricula").value,
+      apellido: document.getElementById("nuevoApellido").value,
+      nombre: document.getElementById("nuevoNombre").value,
+      especialidad: document.getElementById("nuevoEspecialidad").value,
+      obrasSociales: document
+        .getElementById("nuevoObrasSociales")
+        .value.split(",")
+        .map((o) => o.trim()),
+    });
+
+    medicos.push(nuevo);
+    localStorage.setItem("medicos", JSON.stringify(medicos));
+    renderTabla();
+    cargarSelectMedicos("selectEditarMedico");
+    cargarSelectMedicos("selectEliminarMedico");
+
+    bootstrap.Modal.getInstance(
+      document.getElementById("modalNuevoMedico")
+    ).hide();
+    document.getElementById("formNuevoMedico").reset();
+  });
+
+  // ================== ELIMINAR ==================
+  document.getElementById("btnEliminarMedico").addEventListener("click", () => {
+    const id = parseInt(document.getElementById("selectEliminarMedico").value);
+    const index = medicos.findIndex((m) => m.id === id);
+    if (index === -1) return;
+
+    medicos.splice(index, 1);
+    localStorage.setItem("medicos", JSON.stringify(medicos));
+    renderTabla();
+    cargarSelectMedicos("selectEditarMedico");
+    cargarSelectMedicos("selectEliminarMedico");
+
+    bootstrap.Modal.getInstance(
+      document.getElementById("modalEliminarMedico")
+    ).hide();
+  });
 });
