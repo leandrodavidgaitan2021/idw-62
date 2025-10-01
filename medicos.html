@@ -129,7 +129,7 @@
       tabindex="-1"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Nuevo Médico</h5>
@@ -141,49 +141,72 @@
           </div>
           <div class="modal-body">
             <form id="formNuevoMedico">
-              <div class="mb-2">
-                <label>Matricula</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="nuevoMatricula"
-                  required
-                />
+              <div class="row mb-2">
+                <div class="col-md-4 mb-2 mb-md-0">
+                  <label for="nuevoMatricula" class="form-label"
+                    >Matrícula</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nuevoMatricula"
+                    required
+                  />
+                </div>
               </div>
-              <div class="mb-2">
-                <label>Apellido</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nuevoApellido"
-                  required
-                />
+
+              <div class="row mb-2">
+                <div class="col-md-4 mb-2 mb-md-0">
+                  <label for="nuevoApellido" class="form-label">Apellido</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nuevoApellido"
+                    required
+                  />
+                </div>
+                <div class="col-md-8 mb-2 mb-md-0">
+                  <label for="nuevoNombre" class="form-label">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nuevoNombre"
+                    required
+                  />
+                </div>
               </div>
-              <div class="mb-2">
-                <label>Nombre</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nuevoNombre"
-                  required
-                />
+
+              <div class="row mb-2">
+                <div class="col-md-4 mb-2 mb-md-0">
+                  <label for="nuevoEspecialidad" class="form-label"
+                    >Especialidad</label
+                  >
+                  <select class="form-select" id="nuevoEspecialidad" required>
+                    <option value="" selected disabled>
+                      Seleccione una especialidad
+                    </option>
+                  </select>
+                </div>
+                <div class="col-md-8 mb-2 mb-md-0">
+                  <label for="descripcion" class="form-label"
+                    >Descripción</label
+                  >
+                  <textarea
+                    id="nuevoDescripcion"
+                    class="form-control"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
               </div>
-              <div class="mb-2">
-                <label>Especialidad</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nuevoEspecialidad"
-                  required
-                />
-              </div>
-              <div class="mb-2">
-                <label>Obras Sociales (separadas por coma)</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nuevoObrasSociales"
-                />
+              <hr class="my-2" />
+              <div class="row mb-2">
+                <div class="col-12">
+                  <label class="form-label d-block">Obras Sociales</label>
+                  <div class="row" id="obrasSocialesContainer">
+                    <!-- Los checkboxes se cargarán aquí desde JS -->
+                  </div>
+                </div>
               </div>
             </form>
           </div>
@@ -206,7 +229,7 @@
       tabindex="-1"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Editar Médico</h5>
@@ -214,57 +237,90 @@
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
+              aria-label="Cerrar"
             ></button>
           </div>
           <div class="modal-body">
+            <!-- Selección de médico -->
             <div class="mb-2">
               <label>Seleccionar Médico</label>
-              <select class="form-select" id="selectEditarMedico"></select>
+              <select class="form-select" id="selectEditarMedico" required>
+                <option value="" selected disabled>Seleccione un médico</option>
+              </select>
             </div>
+
+            <!-- Formulario -->
             <form id="formEditarMedico">
-              <div class="mb-2">
-                <label>Matricula</label>
-                <input
-                  type="number"
-                  class="form-control"
-                  id="editarMatricula"
-                  required
-                />
+              <div class="row mb-2">
+                <div class="col-md-4 mb-2 mb-md-0">
+                  <label for="editarMatricula" class="form-label"
+                    >Matrícula</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editarMatricula"
+                    required
+                  />
+                </div>
               </div>
-              <div class="mb-2">
-                <label>Apellido</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="editarApellido"
-                  required
-                />
+
+              <div class="row mb-2">
+                <div class="col-md-4 mb-2 mb-md-0">
+                  <label for="editarApellido" class="form-label"
+                    >Apellido</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editarApellido"
+                    required
+                  />
+                </div>
+                <div class="col-md-8 mb-2 mb-md-0">
+                  <label for="editarNombre" class="form-label">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editarNombre"
+                    required
+                  />
+                </div>
               </div>
-              <div class="mb-2">
-                <label>Nombre</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="editarNombre"
-                  required
-                />
+
+              <div class="row mb-2">
+                <div class="col-md-4 mb-2 mb-md-0">
+                  <label for="editarEspecialidad" class="form-label"
+                    >Especialidad</label
+                  >
+                  <select class="form-select" id="editarEspecialidad" required>
+                    <option value="" selected disabled>
+                      Seleccione una especialidad
+                    </option>
+                  </select>
+                </div>
+                <div class="col-md-8 mb-2 mb-md-0">
+                  <label for="editarDescripcion" class="form-label"
+                    >Descripción</label
+                  >
+                  <textarea
+                    id="editarDescripcion"
+                    class="form-control"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
               </div>
-              <div class="mb-2">
-                <label>Especialidad</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="editarEspecialidad"
-                  required
-                />
-              </div>
-              <div class="mb-2">
-                <label>Obras Sociales</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="editarObrasSociales"
-                />
+
+              <hr class="my-2" />
+
+              <div class="row mb-2">
+                <div class="col-12">
+                  <label class="form-label d-block">Obras Sociales</label>
+                  <div class="row" id="editarObrasSocialesContainer">
+                    <!-- Checkboxes se cargarán desde JS -->
+                  </div>
+                </div>
               </div>
             </form>
           </div>

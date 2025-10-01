@@ -1,0 +1,11 @@
+[
+  { "id": 1, "nombre": "OSDE" },
+  { "id": 2, "nombre": "Swiss Medical" },
+  { "id": 3, "nombre": "Galeno" },
+  { "id": 4, "nombre": "PAMI" },
+  { "id": 5, "nombre": "Medifé" },
+  { "id": 6, "nombre": "Omint" },
+  { "id": 7, "nombre": "Accord Salud" },
+  { "id": 8, "nombre": "IOMA" },
+  { "id": 9, "nombre": "Medicus" }
+]
