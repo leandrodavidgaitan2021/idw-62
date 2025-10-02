@@ -51,6 +51,12 @@ footer i {
   font-size: 1rem;
 }
 
+.img-custom {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+} /*  dimesiona la imagen del medico */
+
 /* Tablets */
 @media (min-width: 768px) {
   footer i {
