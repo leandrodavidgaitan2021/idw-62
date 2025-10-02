@@ -1,20 +1,35 @@
 .clase-seccion-titulo {
-  background-image: linear-gradient(to right, white 20%, transparent 75%),
+  margin-top: 70px; /* o padding-top */
+  background-image: linear-gradient(to right, white 25%, transparent 80%),
     url("imagen-fondo-institucional/interior-centro-medico.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   min-height: 30vh;
-  text-align: left; /* alineamos todo a la izquierda */
-  padding: 0.5rem 2rem 0 2rem; /* muy poco padding arriba */
+
   display: flex;
-  flex-direction: column; /* para que los títulos queden uno debajo del otro */
-  justify-content: center; /* alinea al inicio verticalmente */
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0.5rem 2rem;
   margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Título principal */
+.clase-seccion-titulo h3 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtítulo */
+.clase-seccion-titulo h5 {
+  font-weight: 400;
+  color: #444; /* gris para contraste */
 }
 
 .clase-titulo-1 {
-  color: #1E3A5F;
+  color: #1e3a5f;
   font-size: xx-large;
   margin: 0;
 }
@@ -53,7 +68,6 @@
   .clase-titulo-2 {
     display: none;
   }
-
 
   .estilos-contenedores {
     padding: 1.5rem;

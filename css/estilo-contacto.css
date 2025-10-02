@@ -1,13 +1,23 @@
-
-
 .border-bottom {
-    border-bottom-width: 2px !important; 
-    border-bottom-color: #d4cbcb !important; 
-    border-bottom-style: solid !important ;/* cambio de grosor se aplica */
+  border-bottom-width: 2px !important;
+  border-bottom-color: #d4cbcb !important;
+  border-bottom-style: solid !important ; /* cambio de grosor se aplica */
 }
 
-
 .mapa iframe {
-    height: 500px; /* Restablece la altura original del mapa */
-    border-radius: 15px; /* Mantiene las esquinas redondeadas */ 
-  } 
+  height: 500px; /* Restablece la altura original del mapa */
+  border-radius: 15px; /* Mantiene las esquinas redondeadas */
+}
+
+.icon-circle {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Pantallas grandes */
+@media (min-width: 1200px) {
+  .icon-circle {
+    width: 3rem;
+    height: 3rem;
+  }
+}
