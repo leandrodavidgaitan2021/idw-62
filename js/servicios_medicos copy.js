@@ -2,13 +2,16 @@
 import { Medico } from "./claseMedico.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // ================== CARGA INICIAL ==================
-  // Cargar especialidades, obras sociales y médicos desde JSON o LocalStorage
+  // ================== CARGAR DATOS INICIALES ==================
   const medicos = await Medico.cargarDatosIniciales();
 
-  // ================== TABLA ==================
   const tbody = document.getElementById("medicosTableBody");
+  const contenedorObrasSocialesNuevo = document.getElementById(
+    "obrasSocialesContainer"
+  );
+  const selectEspecialidadNuevo = document.getElementById("nuevoEspecialidad");
 
+  // ================== RENDER TABLA ==================
   function renderTabla() {
     tbody.innerHTML = "";
     medicos.forEach((medico) => {
@@ -25,13 +28,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   renderTabla();
 
-  // ================== NUEVO MEDICO ==================
-  const contenedorObrasSocialesNuevo = document.getElementById(
-    "obrasSocialesContainer"
-  );
-  const selectEspecialidadNuevo = document.getElementById("nuevoEspecialidad");
-
-  // Rellenar checkboxes de obras sociales
+  // ================== RENDER ESPECIALIDADES Y OBRAS SOCIALES (NUEVO) ==================
+  // Obras sociales en checkboxes
   contenedorObrasSocialesNuevo.innerHTML = "";
   Medico.obrasSociales.forEach((obra) => {
     const div = document.createElement("div");
@@ -43,8 +41,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     contenedorObrasSocialesNuevo.appendChild(div);
   });
 
-  // Rellenar select de especialidades
-  selectEspecialidadNuevo.innerHTML = "";
+  // Especialidades en select
+  selectEspecialidadNuevo.innerHTML = '<option value="" selected disabled>Seleccione una especialidad</option>';
   Medico.especialidades.forEach((esp) => {
     const option = document.createElement("option");
     option.value = esp.id;
@@ -52,12 +50,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     selectEspecialidadNuevo.appendChild(option);
   });
 
-  // ================== SELECTS MEDICOS ==================
+  // ================== FUNCIONES AUXILIARES ==================
   function cargarSelectMedicos(selectId) {
     const select = document.getElementById(selectId);
     if (!select) return;
-    select.innerHTML =
-      '<option value="" selected disabled>Seleccione un médico</option>';
+
+    select.innerHTML = '<option value="" selected disabled>Seleccione un médico</option>';
+
     medicos.forEach((m) => {
       const option = document.createElement("option");
       option.value = m.id;
@@ -69,42 +68,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   cargarSelectMedicos("selectEditarMedico");
   cargarSelectMedicos("selectEliminarMedico");
 
-  // ================== CREAR NUEVO ==================
-  document.getElementById("btnGuardarNuevo").addEventListener("click", () => {
-    const seleccionadas = Array.from(
-      contenedorObrasSocialesNuevo.querySelectorAll(
-        "input[type=checkbox]:checked"
-      )
-    ).map((chk) => parseInt(chk.value));
-
-    const nuevo = new Medico({
-      id: Date.now(),
-      matricula: document.getElementById("nuevoMatricula").value,
-      apellido: document.getElementById("nuevoApellido").value,
-      nombre: document.getElementById("nuevoNombre").value,
-      especialidad: parseInt(
-        document.getElementById("nuevoEspecialidad").value
-      ),
-      descripcion: document.getElementById("nuevoDescripcion").value,
-      obrasSociales: seleccionadas,
-    });
-
-    // Guardar en LocalStorage usando la clase
-    nuevo.guardarMedico();
-
-    // Agregar al array local y actualizar tabla/selects
-    medicos.push(nuevo);
-    renderTabla();
-    cargarSelectMedicos("selectEditarMedico");
-    cargarSelectMedicos("selectEliminarMedico");
-
-    // Cerrar modal y resetear form
-    bootstrap.Modal.getInstance(
-      document.getElementById("modalNuevoMedico")
-    ).hide();
-    document.getElementById("formNuevoMedico").reset();
-  });
-
   // ================== EDITAR ==================
   const editarMatricula = document.getElementById("editarMatricula");
   const editarApellido = document.getElementById("editarApellido");
@@ -115,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     "editarObrasSocialesContainer"
   );
 
-  // Rellenar select de especialidades
+  // Rellenar select y checkboxes de edición
   editarEspecialidad.innerHTML = "";
   Medico.especialidades.forEach((esp) => {
     const option = document.createElement("option");
@@ -124,7 +87,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     editarEspecialidad.appendChild(option);
   });
 
-  // Rellenar checkboxes de obras sociales
   contenedorObrasSocialesEditar.innerHTML = "";
   Medico.obrasSociales.forEach((obra) => {
     const div = document.createElement("div");
@@ -136,26 +98,22 @@ document.addEventListener("DOMContentLoaded", async () => {
     contenedorObrasSocialesEditar.appendChild(div);
   });
 
-  // Cargar datos al seleccionar un médico
-  document
-    .getElementById("selectEditarMedico")
-    .addEventListener("change", (e) => {
-      const id = parseInt(e.target.value);
-      const medico = medicos.find((m) => m.id === id);
-      if (!medico) return;
+  // Cargar datos al seleccionar un médico para editar
+  document.getElementById("selectEditarMedico").addEventListener("change", (e) => {
+    const id = parseInt(e.target.value);
+    const medico = medicos.find((m) => m.id === id);
+    if (!medico) return;
 
-      editarMatricula.value = medico.matricula;
-      editarApellido.value = medico.apellido;
-      editarNombre.value = medico.nombre;
-      editarEspecialidad.value = medico.especialidad;
-      editarDescripcion.value = medico.descripcion;
+    editarMatricula.value = medico.matricula;
+    editarApellido.value = medico.apellido;
+    editarNombre.value = medico.nombre;
+    editarEspecialidad.value = medico.especialidad;
+    editarDescripcion.value = medico.descripcion;
 
-      contenedorObrasSocialesEditar
-        .querySelectorAll("input[type=checkbox]")
-        .forEach((chk) => {
-          chk.checked = medico.obrasSociales.includes(parseInt(chk.value));
-        });
+    contenedorObrasSocialesEditar.querySelectorAll("input[type=checkbox]").forEach((chk) => {
+      chk.checked = medico.obrasSociales.includes(parseInt(chk.value));
     });
+  });
 
   // Guardar cambios
   document.getElementById("btnGuardarEditar").addEventListener("click", () => {
@@ -163,27 +121,49 @@ document.addEventListener("DOMContentLoaded", async () => {
     const medico = medicos.find((m) => m.id === id);
     if (!medico) return;
 
+    const seleccionadas = Array.from(
+      contenedorObrasSocialesEditar.querySelectorAll("input[type=checkbox]:checked")
+    ).map((chk) => parseInt(chk.value));
+
     medico.matricula = editarMatricula.value;
     medico.apellido = editarApellido.value;
     medico.nombre = editarNombre.value;
     medico.especialidad = parseInt(editarEspecialidad.value);
     medico.descripcion = editarDescripcion.value;
-    medico.obrasSociales = Array.from(
-      contenedorObrasSocialesEditar.querySelectorAll(
-        "input[type=checkbox]:checked"
-      )
-    ).map((chk) => parseInt(chk.value));
+    medico.obrasSociales = seleccionadas;
 
-    // Guardar en LocalStorage
-    medico.guardarMedico();
-
+    localStorage.setItem("medicos", JSON.stringify(medicos));
     renderTabla();
     cargarSelectMedicos("selectEditarMedico");
     cargarSelectMedicos("selectEliminarMedico");
 
-    bootstrap.Modal.getInstance(
-      document.getElementById("modalEditarMedico")
-    ).hide();
+    bootstrap.Modal.getInstance(document.getElementById("modalEditarMedico")).hide();
+  });
+
+  // ================== NUEVO ==================
+  document.getElementById("btnGuardarNuevo").addEventListener("click", () => {
+    const seleccionadas = Array.from(
+      document.querySelectorAll("#obrasSocialesContainer input[type=checkbox]:checked")
+    ).map((chk) => parseInt(chk.value));
+
+    const nuevo = new Medico({
+      id: Date.now(),
+      matricula: document.getElementById("nuevoMatricula").value,
+      apellido: document.getElementById("nuevoApellido").value,
+      nombre: document.getElementById("nuevoNombre").value,
+      especialidad: parseInt(document.getElementById("nuevoEspecialidad").value),
+      descripcion: document.getElementById("descripcion").value,
+      obrasSociales: seleccionadas,
+    });
+
+    medicos.push(nuevo);
+    localStorage.setItem("medicos", JSON.stringify(medicos));
+    renderTabla();
+    cargarSelectMedicos("selectEditarMedico");
+    cargarSelectMedicos("selectEliminarMedico");
+
+    bootstrap.Modal.getInstance(document.getElementById("modalNuevoMedico")).hide();
+    document.getElementById("formNuevoMedico").reset();
   });
 
   // ================== ELIMINAR ==================
@@ -192,16 +172,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const index = medicos.findIndex((m) => m.id === id);
     if (index === -1) return;
 
-    const medico = medicos[index];
-    medico && Medico.eliminarMedico(medico.id);
-
     medicos.splice(index, 1);
+    localStorage.setItem("medicos", JSON.stringify(medicos));
     renderTabla();
     cargarSelectMedicos("selectEditarMedico");
     cargarSelectMedicos("selectEliminarMedico");
 
-    bootstrap.Modal.getInstance(
-      document.getElementById("modalEliminarMedico")
-    ).hide();
+    bootstrap.Modal.getInstance(document.getElementById("modalEliminarMedico")).hide();
   });
 });

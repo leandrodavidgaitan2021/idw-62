@@ -2,8 +2,11 @@
 import { Medico } from "./claseMedico.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // Cargar todo desde LocalStorage o JSON si está vacío
-  const medicos = await Medico.cargarDatosIniciales();
+  // Cargar especialidades y obras sociales primero
+  await Medico.cargarDatosAuxiliares();
+
+  // Ahora podemos sincronizar médicos y usarlos
+  const medicos = await Medico.sincronizarLocalStorage();
   console.log(medicos);
 
   // Renderizar tarjetas en el HTML

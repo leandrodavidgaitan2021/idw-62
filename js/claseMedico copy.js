@@ -3,6 +3,20 @@ export class Medico {
   static especialidades = [];
   static obrasSociales = [];
 
+  static async cargarDatosAuxiliares() {
+    try {
+      const esp = await fetch("./data/especialidades.json");
+      Medico.especialidades = await esp.json();
+
+      const os = await fetch("./data/obrasSociales.json");
+      Medico.obrasSociales = await os.json();
+    } catch (error) {
+      console.error("Error cargando datos auxiliares:", error);
+      Medico.especialidades = [];
+      Medico.obrasSociales = [];
+    }
+  }
+
   constructor({
     id,
     matricula,
@@ -47,6 +61,7 @@ export class Medico {
     return `${this.apellido}, ${this.nombre}`;
   }
 
+  // ❌ Antes: especialidades.find(...)
   getEspecialidadNombre() {
     return (
       Medico.especialidades.find((e) => e.id === parseInt(this.especialidad))
@@ -64,20 +79,33 @@ export class Medico {
       .join(", ");
   }
 
-  guardarMedico() {
+  aceptaObraSocial(idObraSocial) {
+    return this.obrasSociales.includes(idObraSocial);
+  }
+
+  resumen() {
+    return {
+      id: this.id,
+      nombre: this.nombreCompleto(),
+      especialidad: this.getEspecialidadNombre(),
+      valorConsulta: this.valorConsulta,
+    };
+  }
+
+  guardar() {
     const medicos = JSON.parse(localStorage.getItem("medicos")) || [];
     const index = medicos.findIndex((m) => m.id === this.id);
 
     if (index !== -1) {
-      medicos[index] = this;
+      medicos[index] = this; // actualiza
     } else {
-      medicos.push(this);
+      medicos.push(this); // agrega nuevo
     }
 
     localStorage.setItem("medicos", JSON.stringify(medicos));
   }
 
-  static eliminarMedico(id) {
+  static eliminar(id) {
     const medicos = JSON.parse(localStorage.getItem("medicos")) || [];
     const index = medicos.findIndex((m) => m.id === id);
 
@@ -86,52 +114,38 @@ export class Medico {
       localStorage.setItem("medicos", JSON.stringify(medicos));
       return true;
     }
+
     return false;
   }
 
-  static obtenerMedicos() {
+  static obtenerTodos() {
     const medicos = JSON.parse(localStorage.getItem("medicos")) || [];
     return medicos.map((m) => new Medico(m));
   }
 
-  // ======================= NUEVA FUNCIÓN CENTRAL =======================
-  static async cargarDatosIniciales() {
-    try {
-      // Especialidades
-      let espLS = JSON.parse(localStorage.getItem("especialidades"));
-      if (!espLS || !espLS.length) {
-        const espResponse = await fetch("./data/especialidades.json");
-        espLS = await espResponse.json();
-        localStorage.setItem("especialidades", JSON.stringify(espLS));
-      }
-      Medico.especialidades = espLS;
+  static async cargarMedicosDesdeJSON() {
+    return fetch("./data/medicos.json")
+      .then((response) => response.json())
+      .catch((error) => {
+        console.error("Error cargando JSON:", error);
+        return [];
+      });
+  }
 
-      // Obras sociales
-      let osLS = JSON.parse(localStorage.getItem("obrasSociales"));
-      if (!osLS || !osLS.length) {
-        const osResponse = await fetch("./data/obrasSociales.json");
-        osLS = await osResponse.json();
-        localStorage.setItem("obrasSociales", JSON.stringify(osLS));
-      }
-      Medico.obrasSociales = osLS;
+  static async sincronizarLocalStorage() {
+    let medicosLS = JSON.parse(localStorage.getItem("medicos"));
 
-      // Médicos
-      let medicosLS = JSON.parse(localStorage.getItem("medicos")) || [];
-      if (!medicosLS.length) {
-        const medicosResponse = await fetch("./data/medicos.json");
-        const dataJSON = await medicosResponse.json();
-        const instancias = dataJSON.map((m) => new Medico(m));
-        localStorage.setItem("medicos", JSON.stringify(instancias));
-        medicosLS = instancias;
-      }
+    if (!medicosLS || medicosLS.length === 0) {
+      console.log("LocalStorage vacío, cargando desde JSON...");
+      const dataJSON = await Medico.cargarMedicosDesdeJSON();
 
+      // Normalizamos al crear instancias
+      const instancias = dataJSON.map((m) => new Medico(m));
+      localStorage.setItem("medicos", JSON.stringify(instancias));
+      return instancias;
+    } else {
+      console.log("Usando datos desde LocalStorage.");
       return medicosLS.map((m) => new Medico(m));
-    } catch (error) {
-      console.error("Error cargando datos iniciales:", error);
-      Medico.especialidades = [];
-      Medico.obrasSociales = [];
-      localStorage.setItem("medicos", JSON.stringify([]));
-      return [];
     }
   }
 }
