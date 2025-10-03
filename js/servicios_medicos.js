@@ -6,9 +6,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const medicos = await Medico.cargarDatosIniciales();
 
   const tbody = document.getElementById("medicosTableBody");
-  const contenedorObrasSocialesNuevo = document.getElementById("obrasSocialesContainer");
+  const contenedorObrasSocialesNuevo = document.getElementById(
+    "obrasSocialesContainer"
+  );
   const selectEspecialidadNuevo = document.getElementById("nuevoEspecialidad");
-  const contenedorObrasSocialesEditar = document.getElementById("editarObrasSocialesContainer");
+  const contenedorObrasSocialesEditar = document.getElementById(
+    "editarObrasSocialesContainer"
+  );
   const editarEspecialidad = document.getElementById("editarEspecialidad");
 
   // ================== FUNCIONES AUXILIARES ==================
@@ -101,7 +105,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  function guardarMedico({ id = null, matricula, apellido, nombre, especialidad, descripcion, obrasSociales }) {
+  function guardarMedico({
+    id = null,
+    matricula,
+    apellido,
+    nombre,
+    especialidad,
+    descripcion,
+    obrasSociales,
+  }) {
     let medico;
 
     if (id) {
@@ -146,8 +158,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // ================== RENDER INICIAL ==================
   renderTabla();
-  renderCheckboxes(contenedorObrasSocialesNuevo, Medico.obrasSociales, "obraSocial");
-  renderCheckboxes(contenedorObrasSocialesEditar, Medico.obrasSociales, "editarObra");
+  renderCheckboxes(
+    contenedorObrasSocialesNuevo,
+    Medico.obrasSociales,
+    "obraSocial"
+  );
+  renderCheckboxes(
+    contenedorObrasSocialesEditar,
+    Medico.obrasSociales,
+    "editarObra"
+  );
   renderSelect(selectEspecialidadNuevo, Medico.especialidades);
   renderSelect(editarEspecialidad, Medico.especialidades);
   cargarSelectMedicos("selectEditarMedico");
@@ -158,46 +178,56 @@ document.addEventListener("DOMContentLoaded", async () => {
   // NUEVO MEDICO
   document.getElementById("btnGuardarNuevo").addEventListener("click", () => {
     const seleccionadas = Array.from(
-      contenedorObrasSocialesNuevo.querySelectorAll("input[type=checkbox]:checked")
+      contenedorObrasSocialesNuevo.querySelectorAll(
+        "input[type=checkbox]:checked"
+      )
     ).map((chk) => parseInt(chk.value));
 
     guardarMedico({
       matricula: document.getElementById("nuevoMatricula").value,
       apellido: document.getElementById("nuevoApellido").value,
       nombre: document.getElementById("nuevoNombre").value,
-      especialidad: parseInt(document.getElementById("nuevoEspecialidad").value),
+      especialidad: parseInt(
+        document.getElementById("nuevoEspecialidad").value
+      ),
       descripcion: document.getElementById("nuevoDescripcion").value,
       obrasSociales: seleccionadas,
     });
 
-    bootstrap.Modal.getInstance(document.getElementById("modalNuevoMedico")).hide();
+    bootstrap.Modal.getInstance(
+      document.getElementById("modalNuevoMedico")
+    ).hide();
     document.getElementById("formNuevoMedico").reset();
   });
 
   // EDITAR MEDICO - CARGAR DATOS
-  document.getElementById("selectEditarMedico").addEventListener("change", (e) => {
-    const id = parseInt(e.target.value);
-    const medico = medicos.find((m) => m.id === id);
-    if (!medico) return;
+  document
+    .getElementById("selectEditarMedico")
+    .addEventListener("change", (e) => {
+      const id = parseInt(e.target.value);
+      const medico = medicos.find((m) => m.id === id);
+      if (!medico) return;
 
-    document.getElementById("editarMatricula").value = medico.matricula;
-    document.getElementById("editarApellido").value = medico.apellido;
-    document.getElementById("editarNombre").value = medico.nombre;
-    editarEspecialidad.value = medico.especialidad;
-    document.getElementById("editarDescripcion").value = medico.descripcion;
+      document.getElementById("editarMatricula").value = medico.matricula;
+      document.getElementById("editarApellido").value = medico.apellido;
+      document.getElementById("editarNombre").value = medico.nombre;
+      editarEspecialidad.value = medico.especialidad;
+      document.getElementById("editarDescripcion").value = medico.descripcion;
 
-    contenedorObrasSocialesEditar
-      .querySelectorAll("input[type=checkbox]")
-      .forEach((chk) => {
-        chk.checked = medico.obrasSociales.includes(parseInt(chk.value));
-      });
-  });
+      contenedorObrasSocialesEditar
+        .querySelectorAll("input[type=checkbox]")
+        .forEach((chk) => {
+          chk.checked = medico.obrasSociales.includes(parseInt(chk.value));
+        });
+    });
 
   // EDITAR MEDICO - GUARDAR
   document.getElementById("btnGuardarEditar").addEventListener("click", () => {
     const id = parseInt(document.getElementById("selectEditarMedico").value);
     const seleccionadas = Array.from(
-      contenedorObrasSocialesEditar.querySelectorAll("input[type=checkbox]:checked")
+      contenedorObrasSocialesEditar.querySelectorAll(
+        "input[type=checkbox]:checked"
+      )
     ).map((chk) => parseInt(chk.value));
 
     guardarMedico({
@@ -210,13 +240,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       obrasSociales: seleccionadas,
     });
 
-    bootstrap.Modal.getInstance(document.getElementById("modalEditarMedico")).hide();
+    bootstrap.Modal.getInstance(
+      document.getElementById("modalEditarMedico")
+    ).hide();
   });
 
   // ELIMINAR MEDICO
   document.getElementById("btnEliminarMedico").addEventListener("click", () => {
     const id = parseInt(document.getElementById("selectEliminarMedico").value);
     eliminarMedico(id);
-    bootstrap.Modal.getInstance(document.getElementById("modalEliminarMedico")).hide();
+    bootstrap.Modal.getInstance(
+      document.getElementById("modalEliminarMedico")
+    ).hide();
   });
 });
