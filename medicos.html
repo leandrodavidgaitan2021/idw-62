@@ -76,6 +76,7 @@
 
       <div class="mb-4">
         <button
+          type="button"
           class="btn btn-success me-2"
           data-bs-toggle="modal"
           data-bs-target="#modalNuevoMedico"
@@ -83,6 +84,7 @@
           Nuevo
         </button>
         <button
+          type="button"
           class="btn btn-primary me-2"
           data-bs-toggle="modal"
           data-bs-target="#modalEditarMedico"
@@ -90,6 +92,7 @@
           Editar
         </button>
         <button
+          type="button"
           class="btn btn-danger"
           data-bs-toggle="modal"
           data-bs-target="#modalEliminarMedico"
@@ -120,8 +123,10 @@
           <div class="modal-body">
             <form id="formNuevoMedico">
               <div class="row mb-2">
-                <div class="col-md-4">
-                  <label for="nuevoMatricula" class="form-label"
+                <div
+                  class="col-12 col-md-4 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <label for="nuevoMatricula" class="form-label me-2 mb-0"
                     >Matrícula</label
                   >
                   <input
@@ -131,10 +136,12 @@
                     required
                   />
                 </div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-md-4">
-                  <label for="nuevoApellido" class="form-label">Apellido</label>
+                <div
+                  class="col-12 col-md-8 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <label for="nuevoApellido" class="form-label me-2 mb-0"
+                    >Apellido</label
+                  >
                   <input
                     type="text"
                     class="form-control"
@@ -142,8 +149,14 @@
                     required
                   />
                 </div>
-                <div class="col-md-8">
-                  <label for="nuevoNombre" class="form-label">Nombre</label>
+              </div>
+              <div class="row mb-2">
+                <div
+                  class="col-12 col-md-7 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <label for="nuevoNombre" class="form-label me-2 mb-0"
+                    >Nombre</label
+                  >
                   <input
                     type="text"
                     class="form-control"
@@ -151,10 +164,10 @@
                     required
                   />
                 </div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-md-4">
-                  <label for="nuevoEspecialidad" class="form-label"
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <label for="nuevoEspecialidad" class="form-label me-2 mb-0"
                     >Especialidad</label
                   >
                   <select
@@ -163,16 +176,35 @@
                     required
                   ></select>
                 </div>
-                <div class="col-md-8">
+              </div>
+              <div class="row mb-2">
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
                   <label for="nuevoDescripcion" class="form-label"
                     >Descripción</label
                   >
                   <textarea
                     class="form-control"
                     id="nuevoDescripcion"
-                    rows="3"
+                    rows="7"
                     required
                   ></textarea>
+                </div>
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
+                  <label for="nuevoFoto" class="form-label">Fotografía</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="nuevoFoto"
+                    accept="image/*"
+                  />
+                  <div class="text-center mt-2">
+                    <img
+                      id="previewNuevoFoto"
+                      src=""
+                      alt="Vista previa"
+                      class="rounded-circle img-custom"
+                    />
+                  </div>
                 </div>
               </div>
               <hr class="my-2" />
@@ -214,7 +246,18 @@
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Editar Médico</h5>
+            <div class="mb-2 row align-items-center">
+              <label for="selectEditarMedico" class="col-auto col-form-label"
+                >Seleccionar Médico</label
+              >
+              <div class="col">
+                <select
+                  class="form-select"
+                  id="selectEditarMedico"
+                  required
+                ></select>
+              </div>
+            </div>
             <button
               type="button"
               class="btn-close"
@@ -223,32 +266,25 @@
             ></button>
           </div>
           <div class="modal-body">
-            <div class="mb-2">
-              <label>Seleccionar Médico</label>
-              <select
-                class="form-select"
-                id="selectEditarMedico"
-                required
-              ></select>
-            </div>
-
             <form id="formEditarMedico">
               <div class="row mb-2">
-                <div class="col-md-4">
-                  <label for="editarMatricula" class="form-label"
+                <div
+                  class="col-12 col-md-4 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <label for="editarMatricula" class="form-label me-2 mb-0"
                     >Matrícula</label
                   >
                   <input
                     type="text"
                     class="form-control"
                     id="editarMatricula"
-                    required
+                    disabled
                   />
                 </div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-md-4">
-                  <label for="editarApellido" class="form-label"
+                <div
+                  class="col-12 col-md-8 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <label for="editarApellido" class="form-label me-2 mb-0"
                     >Apellido</label
                   >
                   <input
@@ -258,8 +294,14 @@
                     required
                   />
                 </div>
-                <div class="col-md-8">
-                  <label for="editarNombre" class="form-label">Nombre</label>
+              </div>
+              <div class="row mb-2">
+                <div
+                  class="col-12 col-md-7 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <label for="editarNombre" class="form-label me-2 mb-0"
+                    >Nombre</label
+                  >
                   <input
                     type="text"
                     class="form-control"
@@ -267,10 +309,10 @@
                     required
                   />
                 </div>
-              </div>
-              <div class="row mb-2">
-                <div class="col-md-4">
-                  <label for="editarEspecialidad" class="form-label"
+                <div
+                  class="col-12 col-md-5 d-flex align-items-center mb-2 mb-md-0"
+                >
+                  <label for="editarEspecialidad" class="form-label me-2 mb-0"
                     >Especialidad</label
                   >
                   <select
@@ -279,16 +321,37 @@
                     required
                   ></select>
                 </div>
-                <div class="col-md-8">
+              </div>
+              <div class="row mb-2">
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
                   <label for="editarDescripcion" class="form-label"
                     >Descripción</label
                   >
                   <textarea
                     class="form-control"
                     id="editarDescripcion"
-                    rows="3"
+                    rows="7"
                     required
                   ></textarea>
+                </div>
+                <!-- Dentro del Modal Editar Médico -->
+
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
+                  <label for="editarFoto" class="form-label">Fotografía</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="editarFoto"
+                    accept="image/*"
+                  />
+                  <div class="text-center mt-2">
+                    <img
+                      id="previewEditarFoto"
+                      src="https://via.placeholder.com/120"
+                      alt="Vista previa"
+                      class="rounded-circle img-custom"
+                    />
+                  </div>
                 </div>
               </div>
               <hr class="my-2" />

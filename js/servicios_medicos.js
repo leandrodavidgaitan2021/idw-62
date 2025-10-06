@@ -175,6 +175,33 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // ================== EVENTOS ==================
 
+  // VISTA PREVIA FOTO - NUEVO MÉDICO
+  document.getElementById("nuevoFoto").addEventListener("change", function (e) {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (ev) {
+        document.getElementById("previewNuevoFoto").src = ev.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // VISTA PREVIA FOTO - EDITAR MÉDICO
+  document
+    .getElementById("editarFoto")
+    .addEventListener("change", function (e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (ev) {
+          document.getElementById("previewEditarFoto").src = ev.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    
   // NUEVO MEDICO
   document.getElementById("btnGuardarNuevo").addEventListener("click", () => {
     const seleccionadas = Array.from(
@@ -219,6 +246,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         .forEach((chk) => {
           chk.checked = medico.obrasSociales.includes(parseInt(chk.value));
         });
+      document.getElementById("previewEditarFoto").src =
+        medico.fotografia || "";
     });
 
   // EDITAR MEDICO - GUARDAR
