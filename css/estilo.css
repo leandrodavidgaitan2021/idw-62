@@ -3,7 +3,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  /* margin: 2px; afecta a todo el código y los containers de bootsrap pierden lugar necesario */ 
+  /* margin: 2px; afecta a todo el código y los containers de bootsrap pierden lugar necesario */
   padding: 0;
 }
 
@@ -52,10 +52,14 @@ footer i {
 }
 
 .img-custom {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
 } /*  dimesiona la imagen del medico */
+
+.espacio-filtro {
+  width: 42px;
+}
 
 /* Tablets */
 @media (min-width: 768px) {
