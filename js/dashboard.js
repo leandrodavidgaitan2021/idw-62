@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const usuarioLogueado = localStorage.getItem("usuario");
+  const usuarioLogueado = sessionStorage.getItem("usuario");
   const logoutBtn = document.getElementById("logaut");
   const bienvenida = document.getElementById("bienvenida");
 
@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Logout
-  logoutBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    localStorage.removeItem("usuario");
-    window.location.href = "index.html";
-  });
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      sessionStorage.removeItem("usuario");
+      window.location.href = "index.html";
+    });
+  }
 });
