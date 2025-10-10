@@ -61,43 +61,49 @@
       </p>
 
       <div class="table-responsive mb-3">
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover align-middle">
           <thead class="table-dark">
             <tr>
-              <th>Matricula</th>
-              <th>Apellido y Nombre</th>
+              <th class="d-none d-sm-table-cell">Matricula</th>
+              <th>Medico</th>
               <th>Especialidad</th>
               <th>Obras Sociales</th>
             </tr>
           </thead>
-          <tbody id="medicosTableBody"></tbody>
+          <tbody id="medicosTableBody">
+            <!-- Tabla con la lista de los medicos-->
+          </tbody>
         </table>
       </div>
 
-      <div class="mb-4">
+      <div
+        class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-2 mb-4"
+      >
         <button
           type="button"
-          class="btn btn-success me-2"
+          class="btn btn-success"
           data-bs-toggle="modal"
           data-bs-target="#modalNuevoMedico"
         >
-          Nuevo
+          <i class="bi bi-person-plus me-1"></i> Nuevo
         </button>
+
         <button
           type="button"
-          class="btn btn-primary me-2"
+          class="btn btn-primary"
           data-bs-toggle="modal"
           data-bs-target="#modalEditarMedico"
         >
-          Editar
+          <i class="bi bi-pencil-square me-1"></i> Editar
         </button>
+
         <button
           type="button"
           class="btn btn-danger"
           data-bs-toggle="modal"
           data-bs-target="#modalEliminarMedico"
         >
-          Eliminar
+          <i class="bi bi-trash3 me-1"></i> Eliminar
         </button>
       </div>
     </main>
@@ -247,9 +253,10 @@
         <div class="modal-content">
           <div class="modal-header">
             <div class="mb-2 row align-items-center">
-              <label for="selectEditarMedico" class="col-auto col-form-label"
-                >Seleccionar Médico</label
-              >
+              <label
+                for="selectEditarMedico"
+                class="col-auto col-form-label"
+              ></label>
               <div class="col">
                 <select
                   class="form-select"

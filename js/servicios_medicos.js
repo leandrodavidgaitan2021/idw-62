@@ -28,15 +28,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       const tr = document.createElement("tr");
 
       const tdMatricula = document.createElement("td");
+      tdMatricula.classList.add("d-none", "d-sm-table-cell", "fw-semibold");
+
       tdMatricula.textContent = medico.matricula;
 
       const tdNombre = document.createElement("td");
+      tdNombre.classList.add("text-capitalize"); // Primera letra en mayúscula
       tdNombre.textContent = medico.nombreCompleto();
 
       const tdEspecialidad = document.createElement("td");
+      tdEspecialidad.classList.add("text-secondary");
       tdEspecialidad.textContent = medico.getEspecialidadNombre();
 
       const tdObrasSociales = document.createElement("td");
+      tdObrasSociales.classList.add("text-wrap"); // Permite salto de línea si es largo
       tdObrasSociales.textContent = medico.getObrasSocialesNombres();
 
       tr.append(tdMatricula, tdNombre, tdEspecialidad, tdObrasSociales);
@@ -201,7 +206,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
-    
   // NUEVO MEDICO
   document.getElementById("btnGuardarNuevo").addEventListener("click", () => {
     const seleccionadas = Array.from(
