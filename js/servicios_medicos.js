@@ -1,9 +1,23 @@
 // js/servicios_medicos.js
 import { Medico } from "./claseMedico.js";
+import {
+  configurarFiltros,
+  actualizarEstadoBotonFiltros,
+  renderizarOffcanvasFiltros,
+} from "./filtrosMedicos.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   // ================== CARGA INICIAL ==================
   const medicos = await Medico.cargarDatosIniciales();
+
+  renderizarOffcanvasFiltros();
+  // Inicializar filtros reutilizables
+  configurarFiltros({
+    lista: medicos,
+    renderCallback: (filtrados) => renderTabla(filtrados),
+  });
+
+  actualizarEstadoBotonFiltros();
 
   const tbody = document.getElementById("medicosTableBody");
   const contenedorObrasSocialesNuevo = document.getElementById(
@@ -21,10 +35,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     while (nodo.firstChild) nodo.removeChild(nodo.firstChild);
   }
 
-  function renderTabla() {
+  function renderTabla(lista = medicos) {
     limpiarNodo(tbody);
 
-    medicos.forEach((medico) => {
+    lista.forEach((medico) => {
       const tr = document.createElement("tr");
 
       const tdMatricula = document.createElement("td");
