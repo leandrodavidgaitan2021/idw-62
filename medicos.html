@@ -41,11 +41,44 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
               <span class="navbar-text me-3" id="bienvenida"></span>
-              <a class="nav-link" href="dashboard.html">Panel de Control</a>
-              <a class="nav-link" href="#">Turnos</a>
-              <a class="nav-link active" href="medicos.html">Medicos</a>
-              <a class="nav-link" href="#">Obras Sociales</a>
-              <a class="nav-link" href="#" id="logaut">Salir</a>
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="dashboard.html"
+                title="Página de Panel de Control"
+                >Panel de Control</a
+              >
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="#"
+                title="Página de Turnos"
+                >Turnos</a
+              >
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="medicos.html"
+                title="Página de Medicos"
+                >Medicos</a
+              >
+              <a
+                class="nav-link"
+                aria-current="page"
+                href=""
+                title="Página de Especialidades"
+                >Especialidades</a
+              >
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="#"
+                title="Página de Obras Sociales"
+                >Obras Sociales</a
+              >
+              <a class="nav-link" aria-current="page" href="#" id="logaut"
+                >Salir</a
+              >
             </div>
           </div>
         </div>
@@ -140,7 +173,7 @@
           </div>
           <div class="modal-body">
             <form id="formNuevoMedico">
-              <div class="row mb-2">
+              <div class="row mb-1">
                 <div
                   class="col-12 col-md-4 d-flex align-items-center mb-2 mb-md-0"
                 >
@@ -168,7 +201,7 @@
                   />
                 </div>
               </div>
-              <div class="row mb-2">
+              <div class="row mb-1">
                 <div
                   class="col-12 col-md-7 d-flex align-items-center mb-2 mb-md-0"
                 >
@@ -195,7 +228,7 @@
                   ></select>
                 </div>
               </div>
-              <div class="row mb-2">
+              <div class="row mb-1">
                 <div class="col-12 col-md-6 mb-2 mb-md-0">
                   <label for="nuevoDescripcion" class="form-label"
                     >Descripción</label
@@ -218,21 +251,44 @@
                   <div class="text-center mt-2">
                     <img
                       id="previewNuevoFoto"
-                      src=""
+                      src="https://placehold.co/120x120"
                       alt="Vista previa"
                       class="rounded-circle img-custom"
                     />
                   </div>
                 </div>
               </div>
-              <hr class="my-2" />
-              <div class="row mb-2 justify-content-center">
+              <hr class="my-1" />
+              <div class="row mb-1 justify-content-center">
                 <div class="col-12">
                   <label class="form-label d-block text-center"
                     >Obras Sociales</label
                   >
                   <div class="row m-1" id="obrasSocialesContainer">
                     <!-- Checkboxes generados desde JS -->
+                  </div>
+                </div>
+              </div>
+              <hr class="my-1" />
+              <div class="row mb-2 justify-content-center">
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
+                  <div class="row align-items-center">
+                    <div
+                      class="col-4 col-sm-5 col-md-5 d-flex justify-content-end"
+                    >
+                      <label for="nuevoValorConsulta" class="form-label mb-0"
+                        >Valor Consulta</label
+                      >
+                    </div>
+                    <div class="col-8 col-sm-7 col-md-7">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nuevoValorConsulta"
+                        required
+                        placeholder="10000"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -286,7 +342,7 @@
           </div>
           <div class="modal-body">
             <form id="formEditarMedico">
-              <div class="row mb-2">
+              <div class="row mb-1">
                 <div
                   class="col-12 col-md-4 d-flex align-items-center mb-2 mb-md-0"
                 >
@@ -314,7 +370,7 @@
                   />
                 </div>
               </div>
-              <div class="row mb-2">
+              <div class="row mb-1">
                 <div
                   class="col-12 col-md-7 d-flex align-items-center mb-2 mb-md-0"
                 >
@@ -341,7 +397,7 @@
                   ></select>
                 </div>
               </div>
-              <div class="row mb-2">
+              <div class="row mb-1">
                 <div class="col-12 col-md-6 mb-2 mb-md-0">
                   <label for="editarDescripcion" class="form-label"
                     >Descripción</label
@@ -366,21 +422,43 @@
                   <div class="text-center mt-2">
                     <img
                       id="previewEditarFoto"
-                      src="https://via.placeholder.com/120"
+                      src="https://placehold.co/120x120"
                       alt="Vista previa"
                       class="rounded-circle img-custom"
                     />
                   </div>
                 </div>
               </div>
-              <hr class="my-2" />
-              <div class="row mb-2 justify-content-center">
+              <hr class="my-1" />
+              <div class="row mb-1 justify-content-center">
                 <div class="col-12">
                   <label class="form-label d-block text-center"
                     >Obras Sociales</label
                   >
                   <div class="row m-1" id="editarObrasSocialesContainer">
                     <!-- Checkboxes generados desde JS -->
+                  </div>
+                </div>
+              </div>
+              <hr class="my-1" />
+              <div class="row mb-2 justify-content-center">
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
+                  <div class="row align-items-center">
+                    <div
+                      class="col-4 col-sm-5 col-md-5 d-flex justify-content-end"
+                    >
+                      <label for="editarValorConsulta" class="form-label mb-0"
+                        >Valor Consulta</label
+                      >
+                    </div>
+                    <div class="col-8 col-sm-7 col-md-7">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editarValorConsulta"
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -446,6 +524,7 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="./js/servicios_medicos.js"></script>
     <script type="module" src="./js/filtrosMedicos.js"></script>
   </body>
