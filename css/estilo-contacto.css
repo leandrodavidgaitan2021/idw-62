@@ -8,6 +8,6 @@
 
 
 .mapa iframe {
-    height: 500px; /* Restablece la altura original del mapa */
+    /*height: 320px; /* Restablece la altura original del mapa */ /*COMENTE ESTA LÍNEA para que Bootstrap controle la altura */
     border-radius: 15px; /* Mantiene las esquinas redondeadas */ 
   } 
