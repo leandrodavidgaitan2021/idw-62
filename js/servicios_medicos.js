@@ -300,4 +300,30 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.getElementById("modalEliminarMedico")
     ).hide();
   });
+
+  // ================== LIMPIAR MODALES ==================
+  const modalNuevo = document.getElementById("modalNuevoMedico");
+  const modalEditar = document.getElementById("modalEditarMedico");
+
+  // Cuando se cierra el modal de Nuevo Médico
+  modalNuevo.addEventListener("hidden.bs.modal", () => {
+    const formNuevo = document.getElementById("formNuevoMedico");
+    formNuevo.reset(); // limpia inputs y selects
+    document.getElementById("previewNuevoFoto").src = ""; // limpia imagen
+    contenedorObrasSocialesNuevo
+      .querySelectorAll("input[type=checkbox]")
+      .forEach((chk) => (chk.checked = false)); // desmarca todas
+  });
+
+  // Cuando se cierra el modal de Editar Médico
+  modalEditar.addEventListener("hidden.bs.modal", () => {
+    const formEditar = document.getElementById("formEditarMedico");
+    formEditar.reset();
+    document.getElementById("previewEditarFoto").src =
+      "https://via.placeholder.com/120";
+    contenedorObrasSocialesEditar
+      .querySelectorAll("input[type=checkbox]")
+      .forEach((chk) => (chk.checked = false));
+    document.getElementById("selectEditarMedico").selectedIndex = 0;
+  });
 });
