@@ -1,0 +1,12 @@
+[
+  { "id": 1, "nombre": "Cardiología" },
+  { "id": 2, "nombre": "Dermatología" },
+  { "id": 3, "nombre": "Pediatría" },
+  { "id": 4, "nombre": "Traumatología" },
+  { "id": 5, "nombre": "Ginecología" },
+  { "id": 6, "nombre": "Oncología" },
+  { "id": 7, "nombre": "Endocrinología" },
+  { "id": 8, "nombre": "Gastroenterología" },
+  { "id": 9, "nombre": "Reumatología" },
+  { "id": 10, "nombre": "Psiquiatría" }
+]

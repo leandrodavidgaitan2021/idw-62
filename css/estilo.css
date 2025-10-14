@@ -3,7 +3,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  /* margin: 2px; afecta a todo el código y los containers de bootsrap pierden lugar necesario */ 
+  /* margin: 2px; afecta a todo el código y los containers de bootsrap pierden lugar necesario */
   padding: 0;
 }
 
@@ -48,14 +48,18 @@ footer i {
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .img-custom {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
 } /*  dimesiona la imagen del medico */
+
+.espacio-filtro {
+  width: 42px;
+}
 
 /* Tablets */
 @media (min-width: 768px) {
@@ -63,7 +67,7 @@ footer i {
     font-size: 1.25rem;
   }
   .navbar .nav-link {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 }
 
@@ -73,6 +77,6 @@ footer i {
     font-size: 1.5rem;
   }
   .navbar .nav-link {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 }
