@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Especialidades</title>
+</head>
+<body>
+  <h1>Especialidades</h1>
+
+  <form id="formEspecialidad">
+    <label>Nombre: 
+      <input type="text" id="nombre" required>
+    </label>
+    <br>
+    <label>Descripción: 
+      <input type="text" id="descripcion">
+    </label>
+    <br>
+    <button type="submit">Agregar</button>
+  </form>
+
+  <h2>Listado</h2>
+  <ul id="lista"></ul>
+
+  <script>
+    const lista = document.getElementById("lista");
+    const form = document.getElementById("formEspecialidad");
+    const STORAGE_KEY = "especialidades";
+
+    // Cargar las especialidades guardadas
+    let especialidades = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+    function mostrar() {
+      lista.innerHTML = "";
+      especialidades.forEach((e, i) => {
+        const li = document.createElement("li");
+        li.textContent = e.nombre + " - " + e.descripcion;
+        const btn = document.createElement("button");
+        btn.textContent = "Eliminar";
+        btn.onclick = () => {
+          especialidades.splice(i, 1);
+          guardar();
+        };
+        li.appendChild(btn);
+        lista.appendChild(li);
+      });
+    }
+
+    function guardar() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(especialidades));
+      mostrar();
+    }
+
+    form.onsubmit = (ev) => {
+      ev.preventDefault();
+      const nombre = document.getElementById("nombre").value.trim();
+      const descripcion = document.getElementById("descripcion").value.trim();
+      if (nombre === "") {
+        alert("Ingresá un nombre");
+        return;
+      }
+      especialidades.push({ nombre, descripcion });
+      guardar();
+      form.reset();
+    };
+
+    mostrar();
+  </script>
+</body>
+</html>
