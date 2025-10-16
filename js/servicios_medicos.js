@@ -6,6 +6,17 @@ import {
   renderizarOffcanvasFiltros,
 } from "./filtrosMedicos.js";
 
+import {
+  modalNuevoMedico,
+  modalEditarMedico,
+  modalEliminarMedico,
+} from "./modalesMedicos.js";
+
+// Insertar los modales al final del body
+document.body.insertAdjacentHTML("beforeend", modalNuevoMedico);
+document.body.insertAdjacentHTML("beforeend", modalEditarMedico);
+document.body.insertAdjacentHTML("beforeend", modalEliminarMedico);
+
 import { confirmarAccion } from "./alertas.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -58,7 +69,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       const tdObrasSociales = document.createElement("td");
       tdObrasSociales.classList.add("text-wrap"); // Permite salto de línea si es largo
-      tdObrasSociales.textContent = medico.getObrasSocialesNombres();
+      tdObrasSociales.textContent =
+        medico.getObrasSocialesNombres() || "Consultas Privadas";
 
       tr.append(tdMatricula, tdNombre, tdEspecialidad, tdObrasSociales);
       tbody.appendChild(tr);

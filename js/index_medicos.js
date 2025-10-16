@@ -62,7 +62,12 @@ function renderizarMedicos(lista) {
     obras.className = "card-text";
     const small = document.createElement("small");
     small.className = "text-muted";
-    small.textContent = `Obras Sociales: ${medico.getObrasSocialesNombres()}`;
+
+    const obrasText = medico.getObrasSocialesNombres();
+    small.textContent = obrasText
+      ? `Obras Sociales : ${obrasText}`
+      : "Consultas Privadas";
+
     obras.appendChild(small);
 
     body.append(h5, especialidad, obras);
