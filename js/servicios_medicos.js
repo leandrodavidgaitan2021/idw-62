@@ -44,6 +44,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // ================== FUNCIONES AUXILIARES ==================
 
+  function contarMedicos() {
+    return medicos.length;
+  }
+
   function limpiarNodo(nodo) {
     while (nodo.firstChild) nodo.removeChild(nodo.firstChild);
   }
@@ -147,7 +151,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     descripcion,
     obrasSociales,
     fotografia = "",
-    valorConsulta = 0,
+    valorConsulta = 0.0,
   }) {
     let medico;
 
@@ -155,17 +159,22 @@ document.addEventListener("DOMContentLoaded", async () => {
       medico = medicos.find((m) => m.id === id);
       if (!medico) return;
 
-      medico.matricula = matricula;
+      medico.matricula = parseInt(matricula);
       medico.apellido = apellido;
       medico.nombre = nombre;
       medico.especialidad = especialidad;
       medico.descripcion = descripcion;
       medico.obrasSociales = obrasSociales;
       medico.fotografia = fotografia;
-      medico.valorConsulta = valorConsulta;
+      medico.valorConsulta = parseFloat(valorConsulta) || 0.0;
     } else {
+      
+      // Generar ID incremental basado en la cantidad actual
+      const nuevoId =
+        contarMedicos() > 0 ? medicos[medicos.length - 1].id + 1 : 1;
+
       medico = new Medico({
-        id: Date.now(),
+        id: nuevoId,
         matricula,
         apellido,
         nombre,
@@ -279,7 +288,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
       guardarMedico({
-        matricula: document.getElementById("nuevoMatricula").value,
+        matricula: parseInt(document.getElementById("nuevoMatricula").value),
         apellido: document.getElementById("nuevoApellido").value,
         nombre: document.getElementById("nuevoNombre").value,
         especialidad: parseInt(
@@ -289,7 +298,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         obrasSociales: seleccionadas,
         fotografia: fotoBase64,
         valorConsulta:
-          parseInt(document.getElementById("nuevoValorConsulta").value) || 0,
+          parseFloat(document.getElementById("nuevoValorConsulta").value) || 0,
       });
 
       bootstrap.Modal.getInstance(
@@ -347,7 +356,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       let fotoBase64 = document.getElementById("previewEditarFoto").src;
       // si no cambiaron la foto, ya mantiene el valor anterior
 
-      let valeConsulta = parseInt(
+      let valeConsulta = parseFloat(
         document.getElementById("editarValorConsulta").value
       );
       if (isNaN(valeConsulta)) valeConsulta = 0;
@@ -422,5 +431,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       .querySelectorAll("input[type=checkbox]")
       .forEach((chk) => (chk.checked = false));
     document.getElementById("selectEditarMedico").selectedIndex = 0;
+    document.getElementById("editarEspecialidad").selectedIndex = 0;
   });
 });

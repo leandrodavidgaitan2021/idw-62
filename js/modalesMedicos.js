@@ -27,7 +27,7 @@ export const modalNuevoMedico = `
                     >Matrícula</label
                   >
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
                     id="nuevoMatricula"
                     required
@@ -198,7 +198,7 @@ export const modalEditarMedico = `
                     >Matrícula</label
                   >
                   <input
-                    type="text"
+                    type="number"
                     class="form-control"
                     id="editarMatricula"
                     disabled
