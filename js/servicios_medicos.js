@@ -44,10 +44,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // ================== FUNCIONES AUXILIARES ==================
 
-  function contarMedicos() {
-    return medicos.length;
-  }
-
   function limpiarNodo(nodo) {
     while (nodo.firstChild) nodo.removeChild(nodo.firstChild);
   }
@@ -159,22 +155,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       medico = medicos.find((m) => m.id === id);
       if (!medico) return;
 
-      medico.matricula = parseInt(matricula);
+      medico.matricula = matricula;
       medico.apellido = apellido;
       medico.nombre = nombre;
       medico.especialidad = especialidad;
       medico.descripcion = descripcion;
       medico.obrasSociales = obrasSociales;
       medico.fotografia = fotografia;
-      medico.valorConsulta = parseFloat(valorConsulta) || 0.0;
+      medico.valorConsulta = valorConsulta;
     } else {
-      
-      // Generar ID incremental basado en la cantidad actual
-      const nuevoId =
-        contarMedicos() > 0 ? medicos[medicos.length - 1].id + 1 : 1;
-
       medico = new Medico({
-        id: nuevoId,
         matricula,
         apellido,
         nombre,

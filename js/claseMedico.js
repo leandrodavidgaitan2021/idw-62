@@ -2,6 +2,10 @@
 export class Medico {
   static especialidades = [];
   static obrasSociales = [];
+  static medicos = JSON.parse(localStorage.getItem("medicos")) || [];
+  static siguienteId = Medico.medicos.length
+    ? Math.max(...Medico.medicos.map((m) => m.id)) + 1
+    : 1;
 
   constructor({
     id,
@@ -14,8 +18,8 @@ export class Medico {
     fotografia,
     valorConsulta,
   }) {
-    this.id = id;
-    this.matricula = matricula;
+    this.id = id ?? Medico.siguienteId++;
+    this.matricula = parseInt(matricula);
     this.apellido = apellido;
     this.nombre = nombre;
 
@@ -40,7 +44,7 @@ export class Medico {
 
     this.descripcion = descripcion;
     this.fotografia = fotografia;
-    this.valorConsulta = valorConsulta;
+    this.valorConsulta = parseFloat(valorConsulta) || 0.0;
   }
 
   nombreCompleto() {
