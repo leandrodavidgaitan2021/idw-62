@@ -1,37 +1,36 @@
-// Redirección inmediata si no hay sesión
-const usuarioLogueado = sessionStorage.getItem("usuario");
-if (!usuarioLogueado) {
-  window.location.replace("index.html"); // más rápido que location.href
+const authToken = sessionStorage.getItem("authToken");
+if (!authToken) {
+  window.location.replace("login.html");
 }
 
 import { confirmarAccion } from "./alertas.js";
 
-// Esperar solo si hay usuario
 document.addEventListener("DOMContentLoaded", () => {
   const logoutBtn = document.getElementById("logout");
   const bienvenida = document.getElementById("bienvenida");
+  const usuarioLogueado = sessionStorage.getItem("usuario");
 
-  // Mostrar "Bienvenido + usuario" en la navbar
-  if (bienvenida) {
+  if (bienvenida && usuarioLogueado) {
     bienvenida.textContent = `Bienvenido, ${usuarioLogueado}`;
   }
 
-  // Logout
   if (logoutBtn) {
     logoutBtn.addEventListener("click", async (e) => {
       e.preventDefault();
 
       const confirmado = await confirmarAccion({
-        titulo: "¿Deseas salir del sistema?",
-        texto: "Saliendo del sistema.",
+        titulo: "¿Deseas cerrar la sesión?",
+        texto: "Serás redirigido a la página principal.",
         icono: "question",
         textoConfirmar: "Sí, salir",
       });
 
-      if (!confirmado) return; // Si no confirma, no hace logout
+      if (!confirmado) return;
 
+      sessionStorage.removeItem("authToken");
       sessionStorage.removeItem("usuario");
-      window.location.replace("index.html"); // reemplaza sin dejar historial
+
+      window.location.replace("index.html");
     });
   }
 });
