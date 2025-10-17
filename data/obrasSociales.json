@@ -1,11 +1,47 @@
 [
-  { "id": 1, "nombre": "OSDE" },
-  { "id": 2, "nombre": "Swiss Medical" },
-  { "id": 3, "nombre": "Galeno" },
-  { "id": 4, "nombre": "PAMI" },
-  { "id": 5, "nombre": "Medifé" },
-  { "id": 6, "nombre": "Omint" },
-  { "id": 7, "nombre": "Accord Salud" },
-  { "id": 8, "nombre": "IOMA" },
-  { "id": 9, "nombre": "Medicus" }
+  {
+    "id": 1,
+    "nombre": "OSDE",
+    "descripcion": "Cobertura médica privada líder en Argentina con amplia red de prestadores y planes corporativos."
+  },
+  {
+    "id": 2,
+    "nombre": "Swiss Medical",
+    "descripcion": "Empresa de medicina prepaga con fuerte presencia en clínicas propias y servicios de alta complejidad."
+  },
+  {
+    "id": 3,
+    "nombre": "Galeno",
+    "descripcion": "Prepaga argentina reconocida por su cobertura integral y planes familiares accesibles."
+  },
+  {
+    "id": 4,
+    "nombre": "PAMI",
+    "descripcion": "Obra social destinada a jubilados y pensionados, brinda atención médica y social a adultos mayores."
+  },
+  {
+    "id": 5,
+    "nombre": "Medifé",
+    "descripcion": "Prepaga nacional con atención personalizada y cobertura médica en todo el país."
+  },
+  {
+    "id": 6,
+    "nombre": "Omint",
+    "descripcion": "Institución con trayectoria en medicina privada, enfocada en servicios premium y atención preventiva."
+  },
+  {
+    "id": 7,
+    "nombre": "Accord Salud",
+    "descripcion": "Obra social del grupo Unión Personal, orientada a trabajadores en relación de dependencia."
+  },
+  {
+    "id": 8,
+    "nombre": "IOMA",
+    "descripcion": "Instituto de Obra Médico Asistencial de la provincia de Buenos Aires, brinda cobertura a empleados públicos."
+  },
+  {
+    "id": 9,
+    "nombre": "Medicus",
+    "descripcion": "Prepaga enfocada en servicios médicos de alta calidad y acceso a centros de salud exclusivos."
+  }
 ]
