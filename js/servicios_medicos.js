@@ -189,6 +189,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     Medico.eliminarMedico(medicos[index].id);
     medicos.splice(index, 1);
+
     renderTabla();
     cargarSelectMedicos("selectEditarMedico");
     cargarSelectMedicos("selectEliminarMedico");

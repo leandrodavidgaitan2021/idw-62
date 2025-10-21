@@ -1,3 +1,5 @@
+import { mostrarAlerta } from "./alertas.js";
+
 export class ObraSocial {
   constructor({ id, nombre, descripcion }) {
     this.id = id;
@@ -7,13 +9,16 @@ export class ObraSocial {
 
   // ========================= MÉTODOS DE INSTANCIA =========================
   guardarObraSocial() {
-    const obrasSociales = JSON.parse(localStorage.getItem("obrasSociales")) || [];
+    const obrasSociales =
+      JSON.parse(localStorage.getItem("obrasSociales")) || [];
     const index = obrasSociales.findIndex((o) => o.id === this.id);
 
     if (index !== -1) {
       obrasSociales[index] = this; // Actualizar existente
+      mostrarAlerta("success", "Obra Social actualizada correctamente.");
     } else {
       obrasSociales.push(this); // Agregar nuevo
+      mostrarAlerta("success", "Obra Social agregada correctamente.");
     }
 
     localStorage.setItem("obrasSociales", JSON.stringify(obrasSociales));
@@ -22,19 +27,22 @@ export class ObraSocial {
   // ========================== MÉTODOS ESTÁTICOS ==========================
 
   static eliminarObraSocial(id) {
-    const obrasSociales = JSON.parse(localStorage.getItem("obrasSociales")) || [];
+    const obrasSociales =
+      JSON.parse(localStorage.getItem("obrasSociales")) || [];
     const index = obrasSociales.findIndex((o) => o.id === id);
 
     if (index !== -1) {
       obrasSociales.splice(index, 1);
       localStorage.setItem("obrasSociales", JSON.stringify(obrasSociales));
+      mostrarAlerta("success", "Obra social eliminada correctamente.");
       return true;
     }
     return false;
   }
 
   static obtenerObrasSociales() {
-    const obrasSociales = JSON.parse(localStorage.getItem("obrasSociales")) || [];
+    const obrasSociales =
+      JSON.parse(localStorage.getItem("obrasSociales")) || [];
     return obrasSociales.map((o) => new ObraSocial(o));
   }
 
@@ -47,6 +55,7 @@ export class ObraSocial {
         obrasSocialesLS = await response.json();
         localStorage.setItem("obrasSociales", JSON.stringify(obrasSocialesLS));
       }
+      //console.log("Obras sociales cargadas desde su clase:", obrasSocialesLS);
       return obrasSocialesLS.map((o) => new ObraSocial(o));
     } catch (error) {
       console.error("Error cargando obras sociales:", error);
@@ -57,7 +66,8 @@ export class ObraSocial {
 
   // ============================ UTILIDAD EXTRA ============================
   static siguienteId() {
-    const obrasSociales = JSON.parse(localStorage.getItem("obrasSociales")) || [];
+    const obrasSociales =
+      JSON.parse(localStorage.getItem("obrasSociales")) || [];
     if (obrasSociales.length === 0) return 1;
     return Math.max(...obrasSociales.map((o) => o.id)) + 1;
   }

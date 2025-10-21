@@ -19,3 +19,17 @@ export async function confirmarAccion({
 
   return result.isConfirmed;
 }
+
+// ================== ALERTA SIMPLE REUTILIZABLE ==================
+export function mostrarAlerta(
+  icono = "success",
+  mensaje = "Operación exitosa"
+) {
+  Swal.fire({
+    icon: icono,
+    title: mensaje,
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
+}

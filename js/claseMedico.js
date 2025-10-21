@@ -1,4 +1,9 @@
 // js/claseMedico.js
+
+import { mostrarAlerta } from "./alertas.js";
+
+import { ObraSocial } from "./claseObrasSociales.js";
+
 export class Medico {
   static especialidades = [];
   static obrasSociales = [];
@@ -74,8 +79,10 @@ export class Medico {
 
     if (index !== -1) {
       medicos[index] = this;
+      mostrarAlerta("success", "Médico actualizado correctamente.");
     } else {
       medicos.push(this);
+      mostrarAlerta("success", "Médico agregado correctamente.");
     }
 
     localStorage.setItem("medicos", JSON.stringify(medicos));
@@ -88,6 +95,7 @@ export class Medico {
     if (index !== -1) {
       medicos.splice(index, 1);
       localStorage.setItem("medicos", JSON.stringify(medicos));
+      mostrarAlerta("success", "Médico eliminado correctamente.");
       return true;
     }
     return false;
@@ -111,6 +119,7 @@ export class Medico {
       Medico.especialidades = espLS;
 
       // Obras sociales
+      /*
       let osLS = JSON.parse(localStorage.getItem("obrasSociales"));
       if (!osLS || !osLS.length) {
         const osResponse = await fetch("./data/obrasSociales.json");
@@ -118,6 +127,10 @@ export class Medico {
         localStorage.setItem("obrasSociales", JSON.stringify(osLS));
       }
       Medico.obrasSociales = osLS;
+*/
+
+      // === Cargar obras sociales desde clase ObraSocial ===
+      Medico.obrasSociales = await ObraSocial.cargarDatosInicialesOB();
 
       // Médicos
       let medicosLS = JSON.parse(localStorage.getItem("medicos")) || [];
