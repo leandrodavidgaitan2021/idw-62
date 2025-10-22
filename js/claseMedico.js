@@ -1,8 +1,8 @@
 // js/claseMedico.js
-
 import { mostrarAlerta } from "./alertas.js";
 
 import { ObraSocial } from "./claseObrasSociales.js";
+import { Especialidad } from "./claseEspecialidad.js";
 
 export class Medico {
   static especialidades = [];
@@ -106,30 +106,13 @@ export class Medico {
     return medicos.map((m) => new Medico(m));
   }
 
-  // ======================= NUEVA FUNCIÓN CENTRAL =======================
+  // ======================= Carga de datos iniciales todo =======================
   static async cargarDatosIniciales() {
     try {
       // Especialidades
-      let espLS = JSON.parse(localStorage.getItem("especialidades"));
-      if (!espLS || !espLS.length) {
-        const espResponse = await fetch("./data/especialidades.json");
-        espLS = await espResponse.json();
-        localStorage.setItem("especialidades", JSON.stringify(espLS));
-      }
-      Medico.especialidades = espLS;
+      Medico.especialidades = await Especialidad.cargarDatosInicialesEsp();
 
-      // Obras sociales
-      /*
-      let osLS = JSON.parse(localStorage.getItem("obrasSociales"));
-      if (!osLS || !osLS.length) {
-        const osResponse = await fetch("./data/obrasSociales.json");
-        osLS = await osResponse.json();
-        localStorage.setItem("obrasSociales", JSON.stringify(osLS));
-      }
-      Medico.obrasSociales = osLS;
-*/
-
-      // === Cargar obras sociales desde clase ObraSocial ===
+      // Obras Sociales
       Medico.obrasSociales = await ObraSocial.cargarDatosInicialesOB();
 
       // Médicos

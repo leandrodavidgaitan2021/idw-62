@@ -1,8 +1,13 @@
 import { mostrarAlerta } from "./alertas.js";
 
 export class ObraSocial {
+  static obrasSocialesLS = JSON.parse(localStorage.getItem("obrasSociales"));
+  static siguienteId = ObraSocial.obrasSocialesLS.length
+    ? Math.max(...ObraSocial.obrasSocialesLS.map((m) => m.id)) + 1
+    : 1;
+
   constructor({ id, nombre, descripcion }) {
-    this.id = id;
+    this.id = id ?? ObraSocial.siguienteId++;
     this.nombre = nombre;
     this.descripcion = descripcion;
   }
@@ -46,29 +51,30 @@ export class ObraSocial {
     return obrasSociales.map((o) => new ObraSocial(o));
   }
 
-  // ======================= CARGA DE DATOS INICIALES =======================
+  // ======================= Carga de datos iniciales Obras Sociales =======================
   static async cargarDatosInicialesOB() {
     try {
+      // Obras Sociales
       let obrasSocialesLS = JSON.parse(localStorage.getItem("obrasSociales"));
+
       if (!obrasSocialesLS || !obrasSocialesLS.length) {
         const response = await fetch("./data/obrasSociales.json");
-        obrasSocialesLS = await response.json();
-        localStorage.setItem("obrasSociales", JSON.stringify(obrasSocialesLS));
+
+        if (!response.ok) {
+          throw new Error(`Error HTTP: ${response.statusText}`);
+        }
+        const dataJSON = await response.json();
+        localStorage.setItem("obrasSociales", JSON.stringify(dataJSON));
+
+        obrasSocialesLS = dataJSON;
+        //console.log("Obras sociales cargadas desde su clase:", obrasSocialesLS);
       }
-      //console.log("Obras sociales cargadas desde su clase:", obrasSocialesLS);
+
       return obrasSocialesLS.map((o) => new ObraSocial(o));
     } catch (error) {
       console.error("Error cargando obras sociales:", error);
       localStorage.setItem("obrasSociales", JSON.stringify([]));
       return [];
     }
-  }
-
-  // ============================ UTILIDAD EXTRA ============================
-  static siguienteId() {
-    const obrasSociales =
-      JSON.parse(localStorage.getItem("obrasSociales")) || [];
-    if (obrasSociales.length === 0) return 1;
-    return Math.max(...obrasSociales.map((o) => o.id)) + 1;
   }
 }
