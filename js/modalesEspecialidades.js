@@ -24,7 +24,7 @@ export const modalNuevaEspecialidad = `
                   class="col-12 col-md-8 d-flex align-items-center mb-2 mb-md-0"
                 >
                   <label for="nuevaEsp" class="form-label me-2 mb-0 fw-bold"
-                    >Nombre de la especialidad</label
+                    >Especialidad</label
                   >
                   <input
                     type="text"
@@ -91,7 +91,7 @@ export const modalEditarEspecialidad = `
                   class="col-12 col-md-8 d-flex align-items-center mb-2 mb-md-0"
                 >
                   <label for="editarNombreEsp" class="form-label me-2 mb-0 fw-bold"
-                    >Nombre de la especialidad</label
+                    >Especialidad</label
                   >
                   <input
                     type="text"

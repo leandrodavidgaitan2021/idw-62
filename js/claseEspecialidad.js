@@ -47,7 +47,7 @@ export class Especialidad {
 
 
     // ======================= NUEVA FUNCIÓN CENTRAL =======================
-    static async cargarDatosIniciales() {
+    static async cargarDatosInicialesEsp() {
 
         try {
             // Especialidades
