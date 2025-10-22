@@ -16,7 +16,7 @@ let especialidades = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
   // ================== CARGA INICIAL ==================
-  especialidades = await Especialidad.cargarDatosIniciales();
+  especialidades = await Especialidad.cargarDatosInicialesEsp();
 
   const tbody = document.getElementById("especialidadesTableBody");
   const selectEditar = document.getElementById("selectEditarEsp");
