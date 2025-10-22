@@ -1,4 +1,7 @@
 // js/claseMedico.js
+
+import { Especialidad } from "./claseEspecialidad.js";
+
 export class Medico {
   static especialidades = [];
   static obrasSociales = [];
@@ -98,13 +101,7 @@ export class Medico {
   static async cargarDatosIniciales() {
     try {
       // Especialidades
-      let espLS = JSON.parse(localStorage.getItem("especialidades"));
-      if (!espLS || !espLS.length) {
-        const espResponse = await fetch("./data/especialidades.json");
-        espLS = await espResponse.json();
-        localStorage.setItem("especialidades", JSON.stringify(espLS));
-      }
-      Medico.especialidades = espLS;
+      Medico.especialidades = await Especialidad.cargarDatosInicialesEsp();
 
       // Obras sociales
       let osLS = JSON.parse(localStorage.getItem("obrasSociales"));
