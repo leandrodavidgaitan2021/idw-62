@@ -20,8 +20,6 @@
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-
-
 .custom-navbar {
   background-color: var(--color-primario-suave);
 }
@@ -42,15 +40,15 @@
 }
 
 footer {
-    background-color: var(--color-primario-suave);
-    color: var(--color-texto-blanco);
-    font-size: 20px;
+  background-color: var(--color-primario-suave);
+  color: var(--color-texto-blanco);
+  font-size: 15px;
 }
 
 /* Tablets */
 @media (min-width: 768px) {
-  footer i {
-    font-size: 1.25rem;
+  footer {
+    font-size: 18px;
   }
   .navbar .nav-link {
     font-size: 1rem;
@@ -59,8 +57,8 @@ footer {
 
 /* Pantallas grandes */
 @media (min-width: 1200px) {
-  footer i {
-    font-size: 1.5rem;
+  footer {
+    font-size: 20px;
   }
   .navbar .nav-link {
     font-size: 1.1rem;
