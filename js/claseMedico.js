@@ -101,7 +101,7 @@ export class Medico {
   static async cargarDatosIniciales() {
     try {
       // Especialidades
-      Medico.especialidades = Especialidad.cargarDatosInicialesEsp();
+      Medico.especialidades = await Especialidad.cargarDatosInicialesEsp();
 
       // Obras sociales
       let osLS = JSON.parse(localStorage.getItem("obrasSociales"));
