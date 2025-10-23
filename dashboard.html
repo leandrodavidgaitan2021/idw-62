@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +22,7 @@
     <!-- Titulo -->
     <title>Clinica La Salud S.A</title>
   </head>
-  <body>
+  <body class="bg-body text-body">
     <!--Header-->
     <header>
       <!--  Navbar con Bootstrap-->
@@ -47,13 +47,13 @@
                 class="nav-link active"
                 aria-current="page"
                 href="dashboard.html"
-                title="Página de Reservas"
-                >Panel de Control</a
+                title="Página de Reservados"
+                >Reservas</a
               >
               <a
                 class="nav-link"
                 aria-current="page"
-                href=""
+                href="turnos.html"
                 title="Página Turnos"
                 >Turnos</a
               >
@@ -95,15 +95,12 @@
 
     <!--Main-->
     <main>
-      <h2>Panel de Control</h2>
       <h3>Reservas</h3>
     </main>
 
-    <footer class="text-center py-4">
-      <p>
-        © 2025 IDW-G62. Reservados todos los derechos
-        <span id="fechaHora"></span>
-      </p>
+    <footer class="text-center py-3 bg-dark text-white sticky-footer">
+      © 2025 IDW-G62. Reservados todos los derechos
+      <span id="fechaHora"></span>
     </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->

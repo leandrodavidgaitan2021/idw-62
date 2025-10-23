@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="light">
+  <html lang="es" data-bs-theme="light"></html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +22,7 @@
 
     <title>Clínica La Salud S.A</title>
   </head>
-  <body>
+  <body class="bg-body text-body">
     <!-- Header -->
     <header>
       <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
@@ -45,13 +46,13 @@
                 class="nav-link"
                 aria-current="page"
                 href="dashboard.html"
-                title="Página de Panel de Control"
-                >Panel de Control</a
+                title="Página de Reservados"
+                >Reservas</a
               >
               <a
                 class="nav-link"
                 aria-current="page"
-                href="#"
+                href="turnos.html"
                 title="Página de Turnos"
                 >Turnos</a
               >
@@ -90,18 +91,21 @@
       <section class="bg-light text-dark py-1 my-1">
         <div class="container-fluid">
           <div class="d-flex justify-content-between align-items-center mb-3">
+            <div></div>
             <h5>Plantilla de Obras Sociales</h5>
             <button id="btnNuevaObra" class="btn btn-primary btn-sm">
               Nueva
             </button>
           </div>
 
-          <div class="table-responsive mb-3">
-            <table class="table table-striped table-hover align-middle">
+          <div class="table-responsive mb-3 tabla-scroll">
+            <table
+              class="table table-sm table-striped table-hover align-middle"
+            >
               <thead class="table-dark">
                 <tr>
                   <th>Obras Sociales</th>
-                  <th>Descripción</th>
+                  <th class="d-none d-sm-table-cell">Descripción</th>
                   <th>Opciones</th>
                 </tr>
               </thead>
@@ -114,11 +118,9 @@
       </section>
     </main>
 
-    <footer class="text-center py-4">
-      <p>
-        © 2025 IDW-G62. Reservados todos los derechos
-        <span id="fechaHora"></span>
-      </p>
+    <footer class="text-center py-3 bg-dark text-white sticky-footer">
+      © 2025 IDW-G62. Reservados todos los derechos
+      <span id="fechaHora"></span>
     </footer>
 
     <!-- Bootstrap JS Bundle -->
