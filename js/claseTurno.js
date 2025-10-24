@@ -18,18 +18,40 @@ export class Turno {
 
   // ========================= MÉTODOS DE INSTANCIA =========================
   guardarTurno() {
-    const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
-    const index = turnos.findIndex((o) => o.id === this.id);
+    // Cargar turnos actuales
+    let turnos = JSON.parse(localStorage.getItem("turnos")) || [];
 
+    // Validar duplicado (solo si es nuevo turno)
+    const esNuevo = !turnos.some((t) => t.id === this.id);
+    if (esNuevo) {
+      console.log("Validando duplicados para nuevo turno...");
+      const existe = turnos.some(
+        (t) => t.idMedico === this.idMedico && t.fechaHora === this.fechaHora
+      );
+      console.log("¿Existe duplicado?", existe);
+
+      if (existe) {
+        mostrarAlerta(
+          "error",
+          "Ya existe un turno para este médico en esa fecha y hora."
+        );
+        return false; // No guardar
+      }
+    }
+
+    // Actualizar existente
+    const index = turnos.findIndex((t) => t.id === this.id);
     if (index !== -1) {
-      turnos[index] = this; // Actualizar existente
+      turnos[index] = this;
       mostrarAlerta("success", "Turno actualizado correctamente.");
     } else {
-      turnos.push(this); // Agregar nuevo
+      turnos.push(this);
       mostrarAlerta("success", "Turno agregado correctamente.");
     }
 
+    // Guardar en localStorage
     localStorage.setItem("turnos", JSON.stringify(turnos));
+    return true;
   }
 
   // ========================== MÉTODOS ESTÁTICOS ==========================

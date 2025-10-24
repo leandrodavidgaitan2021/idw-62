@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const fechaFiltro = document.getElementById("fechaFiltro");
   const btnFiltrar = document.getElementById("btnFiltrar");
-  const btnDeleteFiltrar = document.getElementById("btnDeleteFiltrar");
+  const btnTodosFiltrar = document.getElementById("btnTodosFiltrar");
+  const btnHoyFiltrar = document.getElementById("btnHoyFiltrar");
 
   // ================= FILTRO POR FECHA ACTUAL =================
   const hoy = new Date();
@@ -22,9 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   fechaFiltro.value = fechaActual;
 
   // Filtrar automáticamente por fecha actual
-  const turnosFiltradosHoy = turnos.filter((t) =>
-    t.fechaHora.startsWith(fechaActual)
-  );
+  const turnosFiltradosHoy = filtrarTurnosPorFecha(turnos, fechaActual);
   renderizarTabla(turnosFiltradosHoy);
 
   // ================= BOTONES =================
@@ -36,13 +35,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   btnFiltrar.addEventListener("click", () => {
     const fechaSeleccionada = fechaFiltro.value;
+    const turnosFiltrados = filtrarTurnosPorFecha(turnos, fechaSeleccionada);
+    renderizarTabla(turnosFiltrados);
+  });
 
-    if (fechaSeleccionada) {
-      const turnosFiltrados = turnos.filter((t) =>
-        t.fechaHora.startsWith(fechaSeleccionada)
-      );
-      renderizarTabla(turnosFiltrados);
-    }
+  btnHoyFiltrar.addEventListener("click", () => {
+    fechaFiltro.value = fechaActual;
+
+    // Filtrar automáticamente por fecha actual
+    const turnosFiltradosHoy = filtrarTurnosPorFecha(turnos, fechaActual);
+    renderizarTabla(turnosFiltradosHoy);
   });
 
   // NUEVO TURNO
@@ -69,9 +71,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
         if (!confirmado) return;
 
+        // Guardamos la fecha del turno antes de eliminar
+        const fechaTurno = turno.fechaHora.split("T")[0];
+
         Turno.eliminarTurno(id);
         turnos = Turno.obtenerturnos();
-        renderizarTabla(turnos);
+
+        // Renderizar según la fecha del turno eliminado
+        const turnosFiltrados = filtrarTurnosPorFecha(turnos, fechaTurno);
+        renderizarTabla(turnosFiltrados);
+
+        // Opcional: actualizar el filtro
+        fechaFiltro.value = fechaTurno;
       }
 
       // EDITAR
@@ -81,6 +92,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   // ================= FUNCIONES =================
+
+  function filtrarTurnosPorFecha(turnos, fecha) {
+    if (!fecha) return turnos; // si no hay fecha, devuelve todos
+    return turnos.filter((t) => t.fechaHora.startsWith(fecha));
+  }
 
   // Ordenar turnos por fecha y hora
   function ordenarTurnosPorFechaHora(lista) {
@@ -95,7 +111,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       tbody.innerHTML = `
         <tr>
             <td colspan="6" class="text-center text-danger fw-bold bg-warning">
-                No hay turnos hoy.
+                No hay turnos para esta fecha.
             </td>
         </tr>
     `;
@@ -173,13 +189,16 @@ document.addEventListener("DOMContentLoaded", async () => {
           </div>
           <div class="mb-3">
             <label for="swalFechaHora" class="form-label fw-semibold">Fecha y Hora</label>
-            <input type="datetime-local" id="swalFechaHora" class="form-control w-100"
+            <input 
+              type="datetime-local" 
+              id="swalFechaHora" 
+              class="form-control w-100"
+              step="900"
               value="${turno ? turno.fechaHora : ""}">
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="swalDisponible" ${
-              turno?.disponible ? "checked" : ""
-            }>
+            <input class="form-check-input" type="checkbox" id="swalDisponible"
+                ${turno ? (turno.disponible ? "checked" : "") : "checked"}>
             <label class="form-check-label" for="swalDisponible">Disponible</label>
           </div>
         </div>
@@ -224,8 +243,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       nuevoTurno.guardarTurno();
     }
 
+    // **Actualizar la lista en memoria**
     turnos = Turno.obtenerturnos();
-    renderizarTabla(turnos);
+
+    // Renderizar según la fecha del turno modificado o agregado
+    const fechaTurno = turno
+      ? turno.fechaHora.split("T")[0]
+      : formValues.fechaHora.split("T")[0];
+    const turnosFiltrados = filtrarTurnosPorFecha(turnos, fechaTurno);
+    renderizarTabla(turnosFiltrados);
+
+    // Opcional: actualizar el valor del filtro para reflejar la fecha
+    fechaFiltro.value = fechaTurno;
   }
 
   function formatearFecha(fechaStr) {
