@@ -45,7 +45,14 @@
                 class="nav-link"
                 aria-current="page"
                 href="dashboard.html"
-                title="Página de Reservados"
+                title="Página de Control"
+                >Panel de Control</a
+              >
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="reservas.html"
+                title="Página de Reservas"
                 >Reservas</a
               >
               <a
@@ -89,60 +96,79 @@
     <main class="pt-1">
       <section class="bg-light text-dark py-1 my-1">
         <div class="container-fluid">
-          <div
-            class="d-flex flex-column flex-md-row align-items-start align-items-md-center mb-3 w-100"
-          >
-            <!-- Título a la izquierda -->
-            <div class="mb-2 mb-md-0 flex-shrink-0">
-              <h5>Plantilla de Turnos</h5>
-            </div>
+          <div class="container-fluid mb-3">
+            <div class="row align-items-center g-3">
+              <!-- 🟦 Columna 1: Botón Filtros + Total Turnos centrado -->
+              <div
+                class="col-12 col-md-4 d-flex flex-column flex-md-row align-items-center justify-content-between"
+              >
+                <button
+                  class="btn btn-outline-primary mb-2 mb-md-0"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasFiltrosTurnos"
+                >
+                  <i class="fa-solid fa-filter"></i> Filtros
+                </button>
 
-            <!-- Filtro en el centro -->
-            <div class="d-flex justify-content-center flex-grow-1 mb-2 mb-md-0">
-              <div class="d-flex gap-2 w-100" style="max-width: 300px">
-                <label
-                  for="fechaFiltro"
-                  class="d-flex align-items-center mb-0 d-none d-md-inline"
-                  >Fecha</label
+                <h5 class="mb-0 text-center ms-md-3 flex-grow-1">
+                  Total Turnos: <span id="totalTurnos">0</span>
+                </h5>
+              </div>
+
+              <!-- 🟩 Columna 2: Filtros de fecha -->
+              <div class="col-12 col-md-4 d-flex justify-content-center">
+                <div
+                  class="d-flex gap-2 w-100 justify-content-center"
+                  style="max-width: 350px"
                 >
-                <input
-                  type="date"
-                  id="fechaFiltro"
-                  class="form-control form-control-sm"
-                />
+                  <button
+                    id="btnHoyFiltrar"
+                    class="btn btn-success btn-sm"
+                    type="button"
+                  >
+                    Hoy
+                  </button>
+                  <label
+                    for="fechaFiltro"
+                    class="d-flex align-items-center mb-0 d-none d-md-inline"
+                  >
+                    Fecha
+                  </label>
+                  <input
+                    type="date"
+                    id="fechaFiltro"
+                    class="form-control form-control-sm"
+                  />
+                  <button
+                    id="btnFiltrar"
+                    class="btn btn-secondary btn-sm"
+                    type="button"
+                  >
+                    Filtrar
+                  </button>
+                  <button
+                    id="btnTodosFiltrar"
+                    class="btn btn-warning btn-sm"
+                    type="button"
+                  >
+                    Todos
+                  </button>
+                </div>
+              </div>
+
+              <!-- 🟥 Columna 3: Botón Nuevo Turno -->
+              <div
+                class="col-12 col-md-4 d-flex justify-content-md-end justify-content-center"
+              >
                 <button
-                  id="btnFiltrar"
-                  class="btn btn-secondary btn-sm"
                   type="button"
+                  id="btnNuevoTurno"
+                  class="btn btn-primary px-3 py-1 py-md-2 px-md-3 fs-6 fs-md-5"
                 >
-                  Filtrar
-                </button>
-                <button
-                  id="btnTodosFiltrar"
-                  class="btn btn-warning btn-sm"
-                  type="button"
-                >
-                  Todos
-                </button>
-                <button
-                  id="btnHoyFiltrar"
-                  class="btn btn-success btn-sm"
-                  type="button"
-                >
-                  Hoy
+                  Nuevo Turno
                 </button>
               </div>
-            </div>
-
-            <!-- Botón Nuevo Turno a la derecha -->
-            <div class="flex-shrink-0">
-              <button
-                type="button"
-                id="btnNuevoTurno"
-                class="btn btn-primary btn-sm"
-              >
-                Nuevo Turno
-              </button>
             </div>
           </div>
 
@@ -183,5 +209,6 @@
     <script type="module" src="js/dashboard.js"></script>
     <script type="module" src="./js/alertas.js"></script>
     <script type="module" src="./js/servicios_turnos.js"></script>
+    <script type="module" src="./js/filtrosMedicos.js"></script>
   </body>
 </html>

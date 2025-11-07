@@ -1,8 +1,11 @@
+//servivios_obraSociales.js
+
 import { ObraSocial } from "./claseObrasSociales.js";
 import { confirmarAccion } from "./alertas.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   let obrasSociales = await ObraSocial.cargarDatosInicialesOB();
+  
   renderizarTabla(obrasSociales);
 
   // NUEVA OBRA
@@ -21,9 +24,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (e.target.closest(".btn-eliminar")) {
         const confirmado = await confirmarAccion({
-          titulo: "¿Eliminar obra social?",
+          titulo: `¿Eliminar Obra Social: ${obra.nombre}?`,
           texto: "Esta acción no se puede deshacer.",
-          icono: "warning",
           textoConfirmar: "Sí, eliminar",
         });
         if (!confirmado) return;
@@ -72,6 +74,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       html: `
       <div class="container-fluid p-0">
         <div class="row justify-content-center">
+
           <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto"
             <div class="mb-3">
               <label for="swalNombre" class="form-label fw-semibold">Nombre</label>
@@ -79,12 +82,32 @@ document.addEventListener("DOMContentLoaded", async () => {
                 obra?.nombre || ""
               }">
             </div>
+
             <div class="mb-3">
               <label for="swalDescripcion" class="form-label fw-semibold">Descripción</label>
               <textarea id="swalDescripcion" class="form-control w-100" placeholder="Descripción" rows="4">${
                 obra?.descripcion || ""
               }</textarea>
             </div>
+
+           <!-- Porcentaje -->
+            <div class="mb-3 d-flex align-items-center">
+              <label for="swalPorcentaje" class="form-label fw-semibold me-2 mb-0">Porcentaje:</label>
+              <div class="input-group" style="width: 120px;">
+                <input
+                  id="swalPorcentaje"
+                  type="number"
+                  class="form-control text-end"
+                  placeholder="0"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="${obra?.porcentaje || ""}"
+                >
+                <span class="input-group-text">%</span>
+              </div>
+            </div>
+          
           </div>
         </div>
       </div>
@@ -93,7 +116,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       showCancelButton: true,
       confirmButtonText: obra ? "Actualizar" : "Agregar",
       cancelButtonText: "Cancelar",
-      width: "auto", // deja que SweetAlert2 ajuste el ancho
+      width: window.innerWidth < 576 ? "90%" : "600px", // más angosto en móvil
       customClass: {
         title: obra ? "text-warning" : "text-primary", // Amarillo para editar, verde para nuevo
       },
@@ -102,11 +125,20 @@ document.addEventListener("DOMContentLoaded", async () => {
         const descripcion = document
           .getElementById("swalDescripcion")
           .value.trim();
-        if (!nombre || !descripcion) {
+        const porcentaje = parseFloat(
+          document.getElementById("swalPorcentaje").value.trim()
+        );
+
+        if (!nombre || !descripcion || isNaN(porcentaje)) {
           Swal.showValidationMessage("Completa todos los campos");
           return false;
         }
-        return { nombre, descripcion };
+        if (porcentaje < 0 || porcentaje > 100) {
+          Swal.showValidationMessage("El porcentaje debe estar entre 0 y 100");
+          return false;
+        }
+
+        return { nombre, descripcion, porcentaje };
       },
     });
 
@@ -116,6 +148,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Editar
       obra.nombre = formValues.nombre;
       obra.descripcion = formValues.descripcion;
+      obra.porcentaje = parseInt(formValues.porcentaje, 10);
       obra.guardarObraSocial();
     } else {
       // Nueva
@@ -123,6 +156,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         id: ObraSocial.siguienteId(),
         nombre: formValues.nombre,
         descripcion: formValues.descripcion,
+        porcentaje: parseInt(formValues.porcentaje, 10),
       });
       nuevaObra.guardarObraSocial();
     }

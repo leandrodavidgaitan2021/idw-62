@@ -1,15 +1,18 @@
 import { mostrarAlerta } from "./alertas.js";
 
 export class ObraSocial {
-  static obrasSocialesLS = JSON.parse(localStorage.getItem("obrasSociales"));
-  static siguienteId = ObraSocial.obrasSocialesLS.length
-    ? Math.max(...ObraSocial.obrasSocialesLS.map((m) => m.id)) + 1
-    : 1;
+  static obrasSocialesLS =
+    JSON.parse(localStorage.getItem("obrasSociales")) || [];
 
-  constructor({ id, nombre, descripcion }) {
+  static siguienteId() {
+    return this.obras.length ? Math.max(...this.obras.map((o) => o.id)) + 1 : 1;
+  }
+
+  constructor({ id, nombre, descripcion, porcentaje }) {
     this.id = id ?? ObraSocial.siguienteId++;
     this.nombre = nombre;
     this.descripcion = descripcion;
+    this.porcentaje = porcentaje;
   }
 
   // ========================= MÉTODOS DE INSTANCIA =========================

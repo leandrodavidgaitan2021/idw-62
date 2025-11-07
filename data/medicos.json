@@ -8,7 +8,7 @@
     "descripcion": "Especialista en salud integral de la mujer.",
     "obrasSociales": [1, 6],
     "fotografia": "https://headshots-inc.com/wp-content/uploads/2023/03/physician-Headshot-Example-2-1.jpg",
-    "valorConsulta": 5000.0
+    "valorConsulta": 30000.0
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "descripcion": "Atención en lesiones musculoesqueléticas y rehabilitación.",
     "obrasSociales": [3, 2],
     "fotografia": "https://headshots-inc.com/wp-content/uploads/2021/01/Professional-Headshot-Examples-38.jpg",
-    "valorConsulta": 6000.0
+    "valorConsulta": 26000.0
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "descripcion": "Tratamientos dermatológicos y estética de la piel.",
     "obrasSociales": [4],
     "fotografia": "https://headshots-inc.com/wp-content/uploads/2021/01/Professional-Headshot-Examples-31-1.jpg",
-    "valorConsulta": 5500.0
+    "valorConsulta": 25000.0
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "descripcion": "Diagnóstico y tratamiento de enfermedades oncológicas.",
     "obrasSociales": [2, 3, 4],
     "fotografia": "https://images.squarespace-cdn.com/content/v1/631ba8eed2196a6795698665/5cedd6d0-f770-42ed-8c86-93c2bc21ff35/2022-09-06-KP-Yee-Stanford-0889.jpg",
-    "valorConsulta": 7000.2
+    "valorConsulta": 27000.0
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@
     "descripcion": "Especialista en trastornos hormonales y metabólicos.",
     "obrasSociales": [1],
     "fotografia": "https://headshots-inc.com/wp-content/uploads/2023/03/doctor-Headshot-Example-1.jpg",
-    "valorConsulta": 5800.1
+    "valorConsulta": 25800.0
   },
   {
     "id": 6,
@@ -63,7 +63,7 @@
     "descripcion": "Tratamiento de enfermedades digestivas.",
     "obrasSociales": [3, 1],
     "fotografia": "https://i0.wp.com/oohstloustudios.com/wp-content/uploads/2023/07/Soundhealth2019-0087-Edit-jpg.webp?fit=1000%2C667&ssl=1",
-    "valorConsulta": 6200.0
+    "valorConsulta": 26200.0
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
     "descripcion": "Diagnóstico y tratamiento de enfermedades autoinmunes y reumáticas.",
     "obrasSociales": [6, 2],
     "fotografia": "https://images.pexels.com/photos/19596247/pexels-photo-19596247/free-photo-of-portrait-of-smiling-black-woman-doctor-in-medical-robe.jpeg?auto=compress&cs=tinysrgb&dpr=1&h=750&w=1260",
-    "valorConsulta": 6400.5
+    "valorConsulta": 30400.0
   },
   {
     "id": 8,
@@ -85,6 +85,6 @@
     "descripcion": "Atención integral en salud mental.",
     "obrasSociales": [4],
     "fotografia": "https://www.shutterstock.com/image-photo/healthcare-medical-staff-concept-portrait-600nw-2281024823.jpg",
-    "valorConsulta": 5600.0
+    "valorConsulta": 26000.0
   }
 ]

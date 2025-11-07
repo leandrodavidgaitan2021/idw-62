@@ -1,13 +1,32 @@
-import { Turno } from "./claseTurno.js";
+import { Turnos } from "./claseTurnos.js";
+import {
+  renderizarOffcanvasFiltrosTurnos,
+  configurarFiltrosTurnos,
+  actualizarEstadoBotonFiltrosTurnos,
+} from "./filtrosTurnos.js";
+
 import { confirmarAccion } from "./alertas.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   // Cargar datos iniciales
-  let turnos = await Turno.cargarDatosInicialesT();
+  let turnos = await Turnos.cargarDatosInicialesT();
+  let totalDeTurnos = turnos.length;
+
   const medicos = JSON.parse(localStorage.getItem("medicos")) || [];
   const especialidades =
     JSON.parse(localStorage.getItem("especialidades")) || [];
 
+  // ====== Inicializar Filtros ======
+  renderizarOffcanvasFiltrosTurnos();
+  configurarFiltrosTurnos({
+    lista: turnos,
+    medicos,
+    renderCallback: renderizarTabla,
+  });
+
+  actualizarEstadoBotonFiltrosTurnos();
+
+  // ================== ELEMENTOS DOM ==================
   const fechaFiltro = document.getElementById("fechaFiltro");
   const btnFiltrar = document.getElementById("btnFiltrar");
   const btnTodosFiltrar = document.getElementById("btnTodosFiltrar");
@@ -22,20 +41,30 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   fechaFiltro.value = fechaActual;
 
-  // Filtrar automáticamente por fecha actual
-  const turnosFiltradosHoy = filtrarTurnosPorFecha(turnos, fechaActual);
-  renderizarTabla(turnosFiltradosHoy);
+  // 🧠 Verificar si hay filtros guardados en localStorage
+  const filtrosGuardados = JSON.parse(localStorage.getItem("filtrosTurnos"));
+
+  // Si hay filtros previos, dejar que configurarFiltrosTurnos los aplique
+  // Si no hay filtros, mostrar los turnos de hoy por defecto
+  if (
+    !filtrosGuardados ||
+    (!filtrosGuardados.nombre && !filtrosGuardados.especialidad)
+  ) {
+    const turnosFiltradosHoy = filtrarTurnosPorFecha(turnos, fechaActual);
+    renderizarTabla(turnosFiltradosHoy);
+  }
 
   // ================= BOTONES =================
   btnTodosFiltrar.addEventListener("click", () => {
-    // Borrar filtro
     fechaFiltro.value = "";
+    limpiarFiltrosOffcanvas();
     renderizarTabla(turnos);
   });
 
   btnFiltrar.addEventListener("click", () => {
     const fechaSeleccionada = fechaFiltro.value;
     const turnosFiltrados = filtrarTurnosPorFecha(turnos, fechaSeleccionada);
+    limpiarFiltrosOffcanvas();
     renderizarTabla(turnosFiltrados);
   });
 
@@ -44,6 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Filtrar automáticamente por fecha actual
     const turnosFiltradosHoy = filtrarTurnosPorFecha(turnos, fechaActual);
+    limpiarFiltrosOffcanvas();
     renderizarTabla(turnosFiltradosHoy);
   });
 
@@ -74,12 +104,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Guardamos la fecha del turno antes de eliminar
         const fechaTurno = turno.fechaHora.split("T")[0];
 
-        Turno.eliminarTurno(id);
-        turnos = Turno.obtenerturnos();
+        Turnos.eliminarTurno(id);
+        turnos = Turnos.obtenerturnos();
 
-        // Renderizar según la fecha del turno eliminado
-        const turnosFiltrados = filtrarTurnosPorFecha(turnos, fechaTurno);
-        renderizarTabla(turnosFiltrados);
+        renderizarTabla(turnos);
 
         // Opcional: actualizar el filtro
         fechaFiltro.value = fechaTurno;
@@ -93,6 +121,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // ================= FUNCIONES =================
 
+  function limpiarFiltrosOffcanvas() {
+    const storageKey = "filtrosTurnos";
+
+    // 🧹 Eliminar del localStorage
+    localStorage.removeItem(storageKey);
+
+    // 🧹 Limpiar inputs visibles en el offcanvas
+    const inputNombre = document.getElementById("filtroNombreMedico");
+    const selectEspecialidad = document.getElementById("filtroEspecialidad");
+
+    if (inputNombre) inputNombre.value = "";
+    if (selectEspecialidad) selectEspecialidad.value = "";
+
+    // 🔄 Actualizar estado del botón de filtros (volviendo al color base)
+    actualizarEstadoBotonFiltrosTurnos(storageKey);
+  }
+
   function filtrarTurnosPorFecha(turnos, fecha) {
     if (!fecha) return turnos; // si no hay fecha, devuelve todos
     return turnos.filter((t) => t.fechaHora.startsWith(fecha));
@@ -105,9 +150,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function renderizarTabla(lista) {
     const tbody = document.getElementById("turnosTableBody");
+    const totalTurnosElement = document.getElementById("totalTurnos");
     tbody.innerHTML = "";
 
-    if (!lista.length) {
+    // 📅 Filtrar desde la fecha actual hacia adelante
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+
+    const listaFiltrada = lista.filter((t) => new Date(t.fechaHora) >= hoy);
+
+    if (!listaFiltrada.length) {
       tbody.innerHTML = `
         <tr>
             <td colspan="6" class="text-center text-danger fw-bold bg-warning">
@@ -115,16 +167,27 @@ document.addEventListener("DOMContentLoaded", async () => {
             </td>
         </tr>
     `;
+      // Actualizamos el contador a 0
+      totalTurnosElement.textContent = 0;
       return;
     }
     // Ordenar antes de renderizar
-    const listaOrdenada = ordenarTurnosPorFechaHora(lista);
+    const listaOrdenada = ordenarTurnosPorFechaHora(listaFiltrada);
 
+    totalDeTurnos = listaOrdenada.length;
+
+    let turnosRenderizados = 0;
+
+    console.log(totalDeTurnos);
     listaOrdenada.forEach((turno) => {
       const tr = document.createElement("tr");
       const medico = medicos.find((m) => m.id === turno.idMedico);
-      const especialidad = especialidades.find((e) => e.id === medico.id);
-      tr.innerHTML = `
+      const especialidad = medico
+        ? especialidades.find((e) => e.id === medico.especialidad)
+        : null;
+
+      if (medico) {
+        tr.innerHTML = `
         <td>${
           medico ? `${medico.apellido}, ${medico.nombre}` : "Sin asignar"
         }</td>
@@ -157,8 +220,21 @@ document.addEventListener("DOMContentLoaded", async () => {
           </div>
         </td>
       `;
-      tbody.appendChild(tr);
+        tbody.appendChild(tr);
+        turnosRenderizados++;
+      }
     });
+    // Si ningún turno fue renderizado
+    if (turnosRenderizados === 0) {
+      tbody.innerHTML = `
+      <tr>
+        <td colspan="6" class="text-center text-danger fw-bold bg-warning">
+          No hay turnos con médico válido.
+        </td>
+      </tr>`;
+    }
+    // ✅ Actualizar el total mostrado
+    totalTurnosElement.textContent = turnosRenderizados;
   }
 
   // Abrir modal para crear o editar turno
@@ -234,7 +310,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       turno.guardarTurno();
     } else {
       // Nuevo
-      const nuevoTurno = new Turno({
+      const nuevoTurno = new Turnos({
         id: undefined, // se autogenera
         idMedico: formValues.idMedico,
         fechaHora: formValues.fechaHora,
@@ -244,7 +320,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // **Actualizar la lista en memoria**
-    turnos = Turno.obtenerturnos();
+    turnos = Turnos.obtenerturnos();
 
     // Renderizar según la fecha del turno modificado o agregado
     const fechaTurno = turno

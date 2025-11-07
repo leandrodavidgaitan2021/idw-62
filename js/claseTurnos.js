@@ -1,16 +1,16 @@
 import { mostrarAlerta } from "./alertas.js";
 
-export class Turno {
+export class Turnos {
   // Inicializa turnosLS siempre como un array válido
   static turnosLS = JSON.parse(localStorage.getItem("turnos")) || [];
 
   // Calcula el siguiente ID de forma segura
-  static siguienteId = Turno.turnosLS.length
-    ? Math.max(...Turno.turnosLS.map((m) => m.id)) + 1
+  static siguienteId = Turnos.turnosLS.length
+    ? Math.max(...Turnos.turnosLS.map((m) => m.id)) + 1
     : 1;
 
   constructor({ id, idMedico, fechaHora, disponible }) {
-    this.id = id ?? Turno.siguienteId++;
+    this.id = id ?? Turnos.siguienteId++;
     this.idMedico = idMedico; // ID del médico asociado
     this.fechaHora = fechaHora; // Fecha y hora del turno
     this.disponible = disponible; // Booleano: true/false
@@ -23,6 +23,7 @@ export class Turno {
 
     // Validar duplicado (solo si es nuevo turno)
     const esNuevo = !turnos.some((t) => t.id === this.id);
+
     if (esNuevo) {
       console.log("Validando duplicados para nuevo turno...");
       const existe = turnos.some(
@@ -41,6 +42,7 @@ export class Turno {
 
     // Actualizar existente
     const index = turnos.findIndex((t) => t.id === this.id);
+
     if (index !== -1) {
       turnos[index] = this;
       mostrarAlerta("success", "Turno actualizado correctamente.");
@@ -73,7 +75,7 @@ export class Turno {
 
   static obtenerturnos() {
     const turnos = JSON.parse(localStorage.getItem("turnos")) || [];
-    return turnos.map((o) => new Turno(o));
+    return turnos.map((o) => new Turnos(o));
   }
 
   // ======================= Carga de datos iniciales =======================
@@ -90,7 +92,7 @@ export class Turno {
         turnosLS = dataJSON;
       }
 
-      return turnosLS.map((o) => new Turno(o));
+      return turnosLS.map((o) => new Turnos(o));
     } catch (error) {
       console.error("Error cargando turnos:", error);
       localStorage.setItem("turnos", JSON.stringify([]));

@@ -2,46 +2,55 @@
   {
     "id": 1,
     "nombre": "OSDE",
-    "descripcion": "Cobertura médica privada líder en Argentina con amplia red de prestadores y planes corporativos."
+    "descripcion": "Cobertura médica privada líder en Argentina con amplia red de prestadores y planes corporativos.",
+    "porcentaje": 90
   },
   {
     "id": 2,
     "nombre": "Swiss Medical",
-    "descripcion": "Empresa de medicina prepaga con fuerte presencia en clínicas propias y servicios de alta complejidad."
+    "descripcion": "Empresa de medicina prepaga con fuerte presencia en clínicas propias y servicios de alta complejidad.",
+    "porcentaje": 85
   },
   {
     "id": 3,
     "nombre": "Galeno",
-    "descripcion": "Prepaga argentina reconocida por su cobertura integral y planes familiares accesibles."
+    "descripcion": "Prepaga argentina reconocida por su cobertura integral y planes familiares accesibles.",
+    "porcentaje": 80
   },
   {
     "id": 4,
     "nombre": "PAMI",
-    "descripcion": "Obra social destinada a jubilados y pensionados, brinda atención médica y social a adultos mayores."
+    "descripcion": "Obra social destinada a jubilados y pensionados, brinda atención médica y social a adultos mayores.",
+    "porcentaje": 70
   },
   {
     "id": 5,
     "nombre": "Medifé",
-    "descripcion": "Prepaga nacional con atención personalizada y cobertura médica en todo el país."
+    "descripcion": "Prepaga nacional con atención personalizada y cobertura médica en todo el país.",
+    "porcentaje": 75
   },
   {
     "id": 6,
     "nombre": "Omint",
-    "descripcion": "Institución con trayectoria en medicina privada, enfocada en servicios premium y atención preventiva."
+    "descripcion": "Institución con trayectoria en medicina privada, enfocada en servicios premium y atención preventiva.",
+    "porcentaje": 88
   },
   {
     "id": 7,
     "nombre": "Accord Salud",
-    "descripcion": "Obra social del grupo Unión Personal, orientada a trabajadores en relación de dependencia."
+    "descripcion": "Obra social del grupo Unión Personal, orientada a trabajadores en relación de dependencia.",
+    "porcentaje": 65
   },
   {
     "id": 8,
     "nombre": "IOMA",
-    "descripcion": "Instituto de Obra Médico Asistencial de la provincia de Buenos Aires, brinda cobertura a empleados públicos."
+    "descripcion": "Instituto de Obra Médico Asistencial de la provincia de Buenos Aires, brinda cobertura a empleados públicos.",
+    "porcentaje": 60
   },
   {
     "id": 9,
     "nombre": "Medicus",
-    "descripcion": "Prepaga enfocada en servicios médicos de alta calidad y acceso a centros de salud exclusivos."
+    "descripcion": "Prepaga enfocada en servicios médicos de alta calidad y acceso a centros de salud exclusivos.",
+    "porcentaje": 95
   }
 ]

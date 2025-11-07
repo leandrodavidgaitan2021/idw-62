@@ -167,20 +167,8 @@ export const modalEditarMedico = `
     >
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header">
-            <div class="mb-0 row align-items-center">
-              <label
-                for="selectEditarMedico"
-                class="d-none d-sm-block col-auto col-form-label fw-bold"
-              >Seleccionar Medico a Editar</label>
-              <div class="col">
-                <select
-                  class="form-select"
-                  id="selectEditarMedico"
-                  required
-                ></select>
-              </div>
-            </div>
+           <div class="modal-header">
+            <h5 class="modal-title">Editar Médico</h5>
             <button
               type="button"
               class="btn-close"

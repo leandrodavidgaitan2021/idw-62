@@ -2,7 +2,7 @@
 export async function confirmarAccion({
   titulo = "¿Estás seguro?",
   texto = "Esta acción no se puede deshacer.",
-  icono = "warning",
+  icono = null,
   textoConfirmar = "Sí, confirmar",
   textoCancelar = "Cancelar",
 }) {

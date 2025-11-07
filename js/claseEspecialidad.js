@@ -2,7 +2,9 @@
 import { mostrarAlerta } from "./alertas.js";
 
 export class Especialidad {
-  static especialidadesLS = JSON.parse(localStorage.getItem("especialidades")) || [];
+  static especialidadesLS =
+    JSON.parse(localStorage.getItem("especialidades")) || [];
+
   static siguienteId = Especialidad.especialidadesLS.length
     ? Math.max(...Especialidad.especialidadesLS.map((m) => m.id)) + 1
     : 1;
@@ -13,8 +15,10 @@ export class Especialidad {
   }
 
   guardarEspecialidad() {
+    // Cargar especialidades actuales
     const especialidades =
       JSON.parse(localStorage.getItem("especialidades")) || [];
+      
     const index = especialidades.findIndex((e) => e.id === this.id);
 
     if (index !== -1) {

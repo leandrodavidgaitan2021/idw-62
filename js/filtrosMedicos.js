@@ -1,5 +1,6 @@
 // js/filtrosMedicos.js
 
+// 🔹 Renderiza el Offcanvas de filtros
 export function renderizarOffcanvasFiltros() {
   const offcanvasHTML = `
     <!-- Offcanvas Filtros -->
@@ -28,16 +29,15 @@ export function renderizarOffcanvasFiltros() {
           <button class="btn btn-primary flex-fill" id="btnAplicarFiltros">
             Aplicar
           </button>
-        </div
+        </div>
       </div>
     </div>
   `;
 
-  // 🔽 Insertar al final del body
   document.body.insertAdjacentHTML("beforeend", offcanvasHTML);
 }
 
-// 🔹 Actualiza el color del botón según si hay filtros activos
+// 🔹 Actualiza el color del botón de filtros según si hay alguno activo
 export function actualizarEstadoBotonFiltros(storageKey = "filtrosMedicos") {
   const botonFiltro = document.querySelector(
     'button[data-bs-target="#offcanvasFiltros"]'
@@ -53,13 +53,10 @@ export function actualizarEstadoBotonFiltros(storageKey = "filtrosMedicos") {
         filtros.obraSocial !== 0 &&
         filtros.obraSocial !== ""));
 
-  if (hayFiltro) {
-    botonFiltro.classList.remove("btn-outline-primary");
-    botonFiltro.classList.add("btn-primary");
-  } else {
-    botonFiltro.classList.remove("btn-primary");
-    botonFiltro.classList.add("btn-outline-primary");
-  }
+  if (!botonFiltro) return; // 👈 evita error si el botón no existe aún
+
+  botonFiltro.classList.toggle("btn-primary", hayFiltro);
+  botonFiltro.classList.toggle("btn-outline-primary", !hayFiltro);
 }
 
 // 🔹 Carga un <select> con datos desde localStorage
@@ -75,7 +72,7 @@ export function cargarSelectDesdeLocalStorage(key, selectElement) {
   });
 }
 
-// 🔹 Configura el comportamiento de los filtros
+// 🔹 Configura comportamiento de filtros y aplica si hay guardados
 export function configurarFiltros({
   lista,
   storageKey = "filtrosMedicos",
@@ -87,27 +84,26 @@ export function configurarFiltros({
   const btnLimpiar = document.getElementById("btnLimpiarFiltros");
   const offcanvas = document.getElementById("offcanvasFiltros");
 
-  // Cuando se abre el panel, carga los selects
+  if (!selectEspecialidad || !selectObraSocial || !btnAplicar || !offcanvas)
+    return;
+
+  // 🔹 Cargar selects cuando se abre el panel
   offcanvas.addEventListener("show.bs.offcanvas", () => {
     cargarSelectDesdeLocalStorage("especialidades", selectEspecialidad);
     cargarSelectDesdeLocalStorage("obrasSociales", selectObraSocial);
 
-    // Cargar selección previa
     const filtrosPrevios = JSON.parse(localStorage.getItem(storageKey));
     if (filtrosPrevios) {
-      if (filtrosPrevios.especialidad)
-        selectEspecialidad.value = filtrosPrevios.especialidad;
-      if (filtrosPrevios.obraSocial)
-        selectObraSocial.value = filtrosPrevios.obraSocial;
+      selectEspecialidad.value = filtrosPrevios.especialidad || "";
+      selectObraSocial.value = filtrosPrevios.obraSocial || "";
     }
   });
 
-  // Aplicar filtros
+  // 🔹 Aplicar filtros manualmente
   btnAplicar.addEventListener("click", () => {
     const espSeleccionada = parseInt(selectEspecialidad.value) || null;
     const obraSeleccionada = parseInt(selectObraSocial.value) || null;
 
-    // Guardar filtros
     localStorage.setItem(
       storageKey,
       JSON.stringify({
@@ -116,33 +112,12 @@ export function configurarFiltros({
       })
     );
 
-    // Filtrar lista
-    const filtrados = lista.filter((item) => {
-      if (!espSeleccionada && !obraSeleccionada) return true;
-
-      let coincideEsp = true;
-      let coincideObra = true;
-
-      if (espSeleccionada)
-        coincideEsp = parseInt(item.especialidad) === parseInt(espSeleccionada);
-
-      if (obraSeleccionada) {
-        const obras = item.obrasSociales || [];
-        coincideObra = obras.map(Number).includes(obraSeleccionada);
-      }
-
-      return coincideEsp && coincideObra;
-    });
-
-    renderCallback(filtrados);
-    actualizarEstadoBotonFiltros(storageKey);
-
-    // Cerrar panel
-    const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvas);
-    offcanvasInstance.hide();
+    aplicarFiltros();
+    const instancia = bootstrap.Offcanvas.getInstance(offcanvas);
+    if (instancia) instancia.hide();
   });
 
-  // Limpiar filtros
+  // 🔹 Limpiar filtros
   btnLimpiar.addEventListener("click", () => {
     selectEspecialidad.value = "";
     selectObraSocial.value = "";
@@ -150,4 +125,35 @@ export function configurarFiltros({
     actualizarEstadoBotonFiltros(storageKey);
     renderCallback(lista);
   });
+
+  // 🔹 Función reutilizable para aplicar filtros guardados
+  function aplicarFiltros() {
+    if (!lista || lista.length === 0) return;
+
+    const filtros = JSON.parse(localStorage.getItem(storageKey));
+    if (!filtros) {
+      renderCallback(lista);
+      actualizarEstadoBotonFiltros(storageKey);
+      return;
+    }
+
+    const { especialidad, obraSocial } = filtros;
+
+    const filtrados = lista.filter((item) => {
+      const coincideEsp =
+        !especialidad || parseInt(item.especialidad) === especialidad;
+      const coincideObra =
+        !obraSocial ||
+        (Array.isArray(item.obrasSociales) &&
+          item.obrasSociales.map(Number).includes(obraSocial));
+
+      return coincideEsp && coincideObra;
+    });
+
+    renderCallback(filtrados);
+    actualizarEstadoBotonFiltros(storageKey);
+  }
+
+  // ✅ Aplicar automáticamente si hay filtros previos
+  setTimeout(() => aplicarFiltros(), 200);
 }
