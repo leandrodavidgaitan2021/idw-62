@@ -1,224 +1,126 @@
-// js/servicios_especialidades.js
+
 import { Especialidad } from "./claseEspecialidad.js";
 import { confirmarAccion } from "./alertas.js";
-import {
-  modalNuevaEspecialidad,
-  modalEditarEspecialidad,
-  modalEliminarEspecialidad,
-} from "./modalesEspecialidades.js";
 
-// Insertar los modales al final del body
-document.body.insertAdjacentHTML("beforeend", modalNuevaEspecialidad);
-document.body.insertAdjacentHTML("beforeend", modalEditarEspecialidad);
-document.body.insertAdjacentHTML("beforeend", modalEliminarEspecialidad);
-
-let especialidades = [];
-
+// ================== CARGA INICIAL ==================
 document.addEventListener("DOMContentLoaded", async () => {
-  // ================== CARGA INICIAL ==================
-  especialidades = await Especialidad.cargarDatosInicialesEsp();
+  let especialidades = await Especialidad.cargarDatosInicialesEsp();
+  
+  renderizarTabla(especialidades);
 
-  const tbody = document.getElementById("especialidadesTableBody");
-  const selectEditar = document.getElementById("selectEditarEsp");
+  // NUEVA ESPECIALIDAD
+  document.getElementById("btnNuevaEsp").addEventListener("click", () => {
+    abrirModalEspecialidad(null); // null = nueva
+  });
 
-  // ================== FUNCIONES AUXILIARES ==================
+  // EVENTOS DE TABLA (editar/eliminar)
+  document
+    .getElementById("especialidadesTableBody")
+    .addEventListener("click", async (a) => {
+      const id = parseInt(a.target.closest("button")?.dataset.id);
+      if (!id) return;
 
-  function limpiarNodo(nodo) {
-    while (nodo.firstChild) nodo.removeChild(nodo.firstChild);
-  }
+      const especialidad = especialidades.find((e) => e.id === id);
 
-  function renderTablaEsp(lista = especialidades) {
-    limpiarNodo(tbody);
+      if (a.target.closest(".btn-eliminar")) {
+        const confirmado = await confirmarAccion({
+          titulo: `¿Eliminar especialidad: ${especialidad.nombre}?`,
+          texto: "Esta acción no se puede deshacer.",
+          textoConfirmar: "Sí, eliminar",
+        });
+        if (!confirmado) return;
 
-    lista.forEach((esp) => {
+        Especialidad.eliminarEspecialidad(id);
+        especialidades = Especialidad.obtenerEspecialidades();
+        renderizarTabla(especialidades);
+      }
+
+      if (a.target.closest(".btn-editar")) {
+        abrirModalEspecialidad(especialidad);
+      }
+    });
+
+  // ================= FUNCIONES =================
+  function renderizarTabla(lista) {
+    const tbody = document.getElementById("especialidadesTableBody");
+    tbody.innerHTML = "";
+    if (!lista.length) {
+      tbody.innerHTML = `<tr><td colspan="3" class="text-center text-muted">No hay especialidades registradas.</td></tr>`;
+      return;
+    }
+    lista.forEach((especialidad) => {
       const tr = document.createElement("tr");
-
-      const tdId = document.createElement("td");
-      tdId.classList.add("fw-semibold");
-      tdId.textContent = esp.id;
-
-      const tdNombre = document.createElement("td");
-      tdNombre.classList.add("text-capitalize"); // Primera letra en mayúscula
-      tdNombre.textContent = esp.nombre;
-
-      tr.append(tdId, tdNombre);
+      tr.innerHTML = `
+        <td>${especialidad.id}</td>
+        <td>${especialidad.nombre}</td>
+        <td class="text-center">
+          <div class="d-flex gap-2">
+            <button class="btn btn-warning btn-sm btn-editar" data-id="${especialidad.id}">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button class="btn btn-danger btn-sm btn-eliminar" data-id="${especialidad.id}">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </td>
+      `;
       tbody.appendChild(tr);
     });
   }
 
-  function renderSelect(select, items) {
-    limpiarNodo(select);
+  async function abrirModalEspecialidad(especialidad) {
+    const { value: formValues } = await Swal.fire({
+      title: especialidad ? "Editar Especialidad" : "Nueva Especialidad",
+      html: `
+      <div class="container-fluid p-0">
+        <div class="row justify-content-center">
 
-    const defaultOption = document.createElement("option");
-    defaultOption.value = "";
-    defaultOption.disabled = true;
-    defaultOption.selected = true;
-    defaultOption.textContent = "Seleccione una especialidad";
-    select.appendChild(defaultOption);
-
-    items.forEach((item) => {
-      const option = document.createElement("option");
-      option.value = item.id;
-      option.textContent = `${item.id} - ${item.nombre}`;
-      select.appendChild(option);
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto"
+            <div class="mb-3">
+              <label for="swalNombre" class="form-label fw-semibold">Nombre</label>
+              <input id="swalNombre" type="text" class="form-control w-100" placeholder="Nombre" value="${
+                especialidad?.nombre || ""
+              }">
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+      focusConfirm: false,
+      showCancelButton: true,
+      confirmButtonText: especialidad ? "Actualizar" : "Agregar",
+      cancelButtonText: "Cancelar",
+      width: window.innerWidth < 576 ? "90%" : "600px", // más angosto en móvil
+      customClass: {
+        title: especialidad ? "text-warning" : "text-primary", // Amarillo para editar, verde para nuevo
+      },
+      preConfirm: () => {
+        const nombre = document.getElementById("swalNombre").value.trim();
+        if (!nombre) {
+          Swal.showValidationMessage("Completa el campo");
+          return false;
+          }
+          
+        return { nombre };
+      },
     });
-  }
 
-  function cargarSelectEspecialidades(selectId) {
-    const select = document.getElementById(selectId);
-    if (select) {
-      renderSelect(select, especialidades);
-    }
-  }
+    if (!formValues) return;
 
-  function guardarEspecialidad({ id = null, nombre }) {
-    let especialidad;
-    let esNuevo = id === null;
-
-    if (!esNuevo) {
-      especialidad = especialidades.find((e) => e.id === id);
-      if (!especialidad) {
-        console.error(`Especialidad con Id${id} no encontrada para editar`);
-        return;
-      }
-      especialidad.nombre = nombre;
+    if (especialidad) {
+      // Editar
+      especialidad.nombre = formValues.nombre;
+      especialidad.guardarEspecialidad();
     } else {
-      especialidad = new Especialidad({
-        id: null,
-        nombre,
+      // Nueva
+      const nuevaEspecialidad = new Especialidad({
+        id: Especialidad.siguienteId(),
+        nombre: formValues.nombre,
       });
-      especialidades.push(especialidad);
+      nuevaEspecialidad.guardarEspecialidad();
     }
 
-    especialidad.guardarEspecialidad();
-
-    renderTablaEsp();
-    cargarSelectEspecialidades("selectEditarEsp");
-    cargarSelectEspecialidades("selectEliminarEsp");
+    especialidades = Especialidad.obtenerEspecialidades();
+    renderizarTabla(especialidades);
   }
-
-  function eliminarEspecialidad(id) {
-    const index = especialidades.findIndex((e) => e.id === id);
-    if (index === -1) return;
-
-    Especialidad.eliminarEspecialidad(id);
-    especialidades.splice(index, 1);
-    renderTablaEsp();
-    cargarSelectEspecialidades("selectEditarEsp");
-    cargarSelectEspecialidades("selectEliminarEsp");
-  }
-
-  // ================== RENDER INICIAL ==================
-  renderTablaEsp();
-  cargarSelectEspecialidades("selectEditarEsp");
-  cargarSelectEspecialidades("selectEliminarEsp");
-
-  // ================== EVENTOS ==================
-
-  // NUEVA ESPECIALIDAD
-  document
-    .getElementById("btnGuardarNuevaEsp")
-    .addEventListener("click", async () => {
-      const form = document.getElementById("formNuevaEsp");
-      const inputNombre = document.getElementById("nuevaEsp");
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      const confirmado = await confirmarAccion({
-        titulo: "¿Deseas guardar esta especialidad",
-        texto: "Verifica que los datos sean correctos antes de continuar.",
-        icono: "question",
-        textoConfirmar: "Sí, guardar",
-      });
-
-      if (!confirmado) return; // si el usuario cancela, no hace nada
-
-      guardarEspecialidad({
-        nombre: inputNombre.value,
-      });
-
-      bootstrap.Modal.getInstance(
-        document.getElementById("modalNuevaEsp")
-      ).hide();
-      form.reset();
-    });
-
-  // EDITAR ESPECIALIDAD - CARGAR DATOS
-  document.getElementById("selectEditarEsp").addEventListener("change", (e) => {
-    const id = parseInt(e.target.value);
-    const especialidad = especialidades.find((e) => e.id === id);
-    if (!especialidad) return;
-
-    document.getElementById("editarNombreEsp").value = especialidad.nombre;
-  });
-  // EDITAR ESPECIALIDAD - GUARDAR
-  document
-    .getElementById("btnGuardarEditarEsp")
-    .addEventListener("click", async () => {
-      const id = parseInt(selectEditar.value);
-
-      if (isNaN(id)) return;
-
-      const confirmado = await confirmarAccion({
-        titulo: "¿Deseas actualizar esta especialidad?",
-        texto: "Los cambios se guardarán permanentemente.",
-        icono: "info",
-        textoConfirmar: "Sí, actualizar",
-      });
-
-      if (!confirmado) return; // si el usuario cancela, no hace nada
-
-      guardarEspecialidad({
-        id: id,
-        nombre: document.getElementById("editarNombreEsp").value,
-      });
-
-      bootstrap.Modal.getInstance(
-        document.getElementById("modalEditarEsp")
-      ).hide();
-    });
-
-  // ELIMINAR ESPECIALIDAD
-  document
-    .getElementById("btnEliminarEsp")
-    .addEventListener("click", async () => {
-      const id = parseInt(document.getElementById("selectEliminarEsp").value);
-      if (isNaN(id)) return;
-
-      const especialidad = especialidades.find((e) => e.id === id);
-      if (!especialidad) return;
-
-      const confirmado = await confirmarAccion({
-        titulo: "¿Eliminar especialidad?",
-        texto: `¿Deseas eliminar a ${especialidad.nombre}? Esta acción no se puede deshacer.`,
-        icono: "warning",
-        textoConfirmar: "Sí, eliminar",
-      });
-
-      if (!confirmado) return; // si cancela, no hace nada
-
-      eliminarEspecialidad(id);
-
-      bootstrap.Modal.getInstance(
-        document.getElementById("modalEliminarEsp")
-      ).hide();
-    });
-
-  // ================== LIMPIAR MODALES ==================
-  const modalNuevo = document.getElementById("modalNuevaEsp");
-  const modalEditar = document.getElementById("modalEditarEsp");
-
-  // Cuando se cierra el modal de Nueva Especialidad
-  modalNuevo.addEventListener("hidden.bs.modal", () => {
-    document.getElementById("formNuevaEsp").reset(); // limpia inputs y selects
-  });
-
-  // Cuando se cierra el modal de Editar Especialidad
-  modalEditar.addEventListener("hidden.bs.modal", () => {
-    document.getElementById("formEditarEsp").reset();
-    document.getElementById("selectEditarEsp").selectedIndex = 0;
-  });
 });

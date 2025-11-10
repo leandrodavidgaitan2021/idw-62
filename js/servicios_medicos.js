@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           m.getObrasSocialesNombres() || "Consultas Privadas"
         }</td>
         <td class="text-center">
-          <div class="d-flex justify-content-center gap-2">
+          <div class="d-flex gap-2">
             <button class="btn btn-warning btn-sm btn-editar" data-id="${m.id}">
               <i class="fa-solid fa-pen"></i>
             </button>

@@ -5,11 +5,11 @@ export class ObraSocial {
     JSON.parse(localStorage.getItem("obrasSociales")) || [];
 
   static siguienteId() {
-    return this.obras.length ? Math.max(...this.obras.map((o) => o.id)) + 1 : 1;
+    return this.obrasSocialesLS.length ? Math.max(...this.obrasSocialesLS.map((o) => o.id)) + 1 : 1;
   }
 
   constructor({ id, nombre, descripcion, porcentaje }) {
-    this.id = id ?? ObraSocial.siguienteId++;
+    this.id = id ?? ObraSocial.siguienteId();
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.porcentaje = porcentaje;
