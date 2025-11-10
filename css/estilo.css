@@ -61,6 +61,19 @@ footer i {
   width: 42px;
 }
 
+/* Estilo títulos tabla especialidades */
+.col-id{
+  width: 15%; 
+}
+
+.col-esp {
+  width: 75%;
+}
+
+.col-opt {
+  width: 10%;
+}
+
 /* Tablets */
 @media (min-width: 768px) {
   footer i {

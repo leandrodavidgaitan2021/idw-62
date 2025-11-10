@@ -5,31 +5,35 @@ export class Especialidad {
   static especialidadesLS =
     JSON.parse(localStorage.getItem("especialidades")) || [];
 
-  static siguienteId = Especialidad.especialidadesLS.length
-    ? Math.max(...Especialidad.especialidadesLS.map((m) => m.id)) + 1
-    : 1;
+  static siguienteId() {
+    return this.especialidadesLS.length ? Math.max(...this.especialidadesLS.map((e) => e.id)) + 1 : 1;
+  }
 
   constructor({ id, nombre }) {
-    this.id = id ?? Especialidad.siguienteId++;
+    this.id = id ?? Especialidad.siguienteId();
     this.nombre = nombre;
   }
+
+  // ========================= MÉTODOS DE INSTANCIA =========================
 
   guardarEspecialidad() {
     // Cargar especialidades actuales
     const especialidades =
       JSON.parse(localStorage.getItem("especialidades")) || [];
-      
     const index = especialidades.findIndex((e) => e.id === this.id);
 
     if (index !== -1) {
-      especialidades[index] = this;
+      especialidades[index] = this; // Actualizar existente
       mostrarAlerta("success", "Especialidad actualizada correctamente.");
     } else {
-      especialidades.push(this);
+      especialidades.push(this); // Agregar nuevo
       mostrarAlerta("success", "Especialidad agregada correctamente.");
     }
+
     localStorage.setItem("especialidades", JSON.stringify(especialidades));
   }
+
+  // ========================== MÉTODOS ESTÁTICOS ==========================
 
   static eliminarEspecialidad(id) {
     const especialidades =
@@ -57,16 +61,15 @@ export class Especialidad {
       // Especialidades
       let espLS = JSON.parse(localStorage.getItem("especialidades")) || [];
       if (!espLS.length) {
-        const espResponse = await fetch("./data/especialidades.json");
+        const response = await fetch("./data/especialidades.json");
 
-        if (!espResponse.ok) {
-          throw new Error(`Error HTTP: ${espResponse.statusText}`);
+        if (!response.ok) {
+          throw new Error(`Error HTTP: ${response.statusText}`);
         }
-        const dataJSON = await espResponse.json();
+        const dataJSON = await response.json();
         localStorage.setItem("especialidades", JSON.stringify(dataJSON));
 
         espLS = dataJSON;
-        //console.log("Especialidades cargadas desde JSON inicial.");
       }
 
       return espLS.map((e) => new Especialidad(e));
