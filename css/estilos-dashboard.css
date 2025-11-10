@@ -39,10 +39,17 @@
   width: 42px;
 }
 
-footer {
-  background-color: var(--color-primario-suave);
-  color: var(--color-texto-blanco);
-  font-size: 15px;
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* para que esté siempre arriba */
+}
+
+.tabla-scroll {
+  max-height: 430px;
+  overflow-y: auto;
 }
 
 /* Tablets */
@@ -53,6 +60,9 @@ footer {
   .navbar .nav-link {
     font-size: 1rem;
   }
+  .tabla-scroll {
+    max-height: 475px;
+  }
 }
 
 /* Pantallas grandes */
@@ -62,5 +72,8 @@ footer {
   }
   .navbar .nav-link {
     font-size: 1.1rem;
+  }
+  .tabla-scroll {
+    max-height: 490px;
   }
 }

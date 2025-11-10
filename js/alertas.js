@@ -2,7 +2,7 @@
 export async function confirmarAccion({
   titulo = "¿Estás seguro?",
   texto = "Esta acción no se puede deshacer.",
-  icono = "warning",
+  icono = null,
   textoConfirmar = "Sí, confirmar",
   textoCancelar = "Cancelar",
 }) {
@@ -18,4 +18,18 @@ export async function confirmarAccion({
   });
 
   return result.isConfirmed;
+}
+
+// ================== ALERTA SIMPLE REUTILIZABLE ==================
+export function mostrarAlerta(
+  icono = "success",
+  mensaje = "Operación exitosa"
+) {
+  Swal.fire({
+    icon: icono,
+    title: mensaje,
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
 }

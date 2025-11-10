@@ -1,10 +1,16 @@
 // js/claseMedico.js
+import { mostrarAlerta } from "./alertas.js";
 
+import { ObraSocial } from "./claseObrasSociales.js";
 import { Especialidad } from "./claseEspecialidad.js";
 
 export class Medico {
   static especialidades = [];
   static obrasSociales = [];
+  static medicos = JSON.parse(localStorage.getItem("medicos")) || [];
+  static siguienteId = Medico.medicos.length
+    ? Math.max(...Medico.medicos.map((m) => m.id)) + 1
+    : 1;
 
   constructor({
     id,
@@ -17,8 +23,8 @@ export class Medico {
     fotografia,
     valorConsulta,
   }) {
-    this.id = id;
-    this.matricula = matricula;
+    this.id = id ?? Medico.siguienteId++;
+    this.matricula = parseInt(matricula);
     this.apellido = apellido;
     this.nombre = nombre;
 
@@ -43,7 +49,7 @@ export class Medico {
 
     this.descripcion = descripcion;
     this.fotografia = fotografia;
-    this.valorConsulta = valorConsulta;
+    this.valorConsulta = parseFloat(valorConsulta) || 0.0;
   }
 
   nombreCompleto() {
@@ -73,8 +79,10 @@ export class Medico {
 
     if (index !== -1) {
       medicos[index] = this;
+      mostrarAlerta("success", "Médico actualizado correctamente.");
     } else {
       medicos.push(this);
+      mostrarAlerta("success", "Médico agregado correctamente.");
     }
 
     localStorage.setItem("medicos", JSON.stringify(medicos));
@@ -87,6 +95,7 @@ export class Medico {
     if (index !== -1) {
       medicos.splice(index, 1);
       localStorage.setItem("medicos", JSON.stringify(medicos));
+      mostrarAlerta("success", "Médico eliminado correctamente.");
       return true;
     }
     return false;
@@ -97,20 +106,14 @@ export class Medico {
     return medicos.map((m) => new Medico(m));
   }
 
-  // ======================= NUEVA FUNCIÓN CENTRAL =======================
+  // ======================= Carga de datos iniciales todo =======================
   static async cargarDatosIniciales() {
     try {
       // Especialidades
       Medico.especialidades = await Especialidad.cargarDatosInicialesEsp();
 
-      // Obras sociales
-      let osLS = JSON.parse(localStorage.getItem("obrasSociales"));
-      if (!osLS || !osLS.length) {
-        const osResponse = await fetch("./data/obrasSociales.json");
-        osLS = await osResponse.json();
-        localStorage.setItem("obrasSociales", JSON.stringify(osLS));
-      }
-      Medico.obrasSociales = osLS;
+      // Obras Sociales
+      Medico.obrasSociales = await ObraSocial.cargarDatosInicialesOB();
 
       // Médicos
       let medicosLS = JSON.parse(localStorage.getItem("medicos")) || [];

@@ -1,0 +1,5552 @@
+[
+  {
+    "id": 1,
+    "idMedico": 1,
+    "fechaHora": "2025-10-25T08:00",
+    "disponible": true
+  },
+  {
+    "id": 2,
+    "idMedico": 2,
+    "fechaHora": "2025-10-25T08:00",
+    "disponible": true
+  },
+  {
+    "id": 3,
+    "idMedico": 3,
+    "fechaHora": "2025-10-25T08:00",
+    "disponible": true
+  },
+  {
+    "id": 4,
+    "idMedico": 1,
+    "fechaHora": "2025-10-25T08:30",
+    "disponible": true
+  },
+  {
+    "id": 5,
+    "idMedico": 2,
+    "fechaHora": "2025-10-25T08:30",
+    "disponible": true
+  },
+  {
+    "id": 6,
+    "idMedico": 3,
+    "fechaHora": "2025-10-25T08:30",
+    "disponible": true
+  },
+  {
+    "id": 7,
+    "idMedico": 1,
+    "fechaHora": "2025-10-25T09:00",
+    "disponible": false
+  },
+  {
+    "id": 8,
+    "idMedico": 2,
+    "fechaHora": "2025-10-25T09:00",
+    "disponible": false
+  },
+  {
+    "id": 9,
+    "idMedico": 3,
+    "fechaHora": "2025-10-25T09:00",
+    "disponible": false
+  },
+  {
+    "id": 10,
+    "idMedico": 1,
+    "fechaHora": "2025-10-25T09:30",
+    "disponible": true
+  },
+  {
+    "id": 11,
+    "idMedico": 2,
+    "fechaHora": "2025-10-25T09:30",
+    "disponible": false
+  },
+  {
+    "id": 12,
+    "idMedico": 3,
+    "fechaHora": "2025-10-25T09:30",
+    "disponible": false
+  },
+  {
+    "id": 13,
+    "idMedico": 1,
+    "fechaHora": "2025-10-25T10:00",
+    "disponible": false
+  },
+  {
+    "id": 14,
+    "idMedico": 2,
+    "fechaHora": "2025-10-25T10:00",
+    "disponible": true
+  },
+  {
+    "id": 15,
+    "idMedico": 3,
+    "fechaHora": "2025-10-25T10:00",
+    "disponible": false
+  },
+  {
+    "id": 16,
+    "idMedico": 4,
+    "fechaHora": "2025-10-25T13:00",
+    "disponible": false
+  },
+  {
+    "id": 17,
+    "idMedico": 5,
+    "fechaHora": "2025-10-25T13:00",
+    "disponible": false
+  },
+  {
+    "id": 18,
+    "idMedico": 4,
+    "fechaHora": "2025-10-25T13:30",
+    "disponible": false
+  },
+  {
+    "id": 19,
+    "idMedico": 5,
+    "fechaHora": "2025-10-25T13:30",
+    "disponible": true
+  },
+  {
+    "id": 20,
+    "idMedico": 4,
+    "fechaHora": "2025-10-25T14:00",
+    "disponible": false
+  },
+  {
+    "id": 21,
+    "idMedico": 5,
+    "fechaHora": "2025-10-25T14:00",
+    "disponible": true
+  },
+  {
+    "id": 22,
+    "idMedico": 4,
+    "fechaHora": "2025-10-25T14:30",
+    "disponible": true
+  },
+  {
+    "id": 23,
+    "idMedico": 5,
+    "fechaHora": "2025-10-25T14:30",
+    "disponible": true
+  },
+  {
+    "id": 24,
+    "idMedico": 4,
+    "fechaHora": "2025-10-25T15:00",
+    "disponible": true
+  },
+  {
+    "id": 25,
+    "idMedico": 5,
+    "fechaHora": "2025-10-25T15:00",
+    "disponible": true
+  },
+  {
+    "id": 26,
+    "idMedico": 1,
+    "fechaHora": "2025-10-26T08:00",
+    "disponible": true
+  },
+  {
+    "id": 27,
+    "idMedico": 2,
+    "fechaHora": "2025-10-26T08:00",
+    "disponible": true
+  },
+  {
+    "id": 28,
+    "idMedico": 3,
+    "fechaHora": "2025-10-26T08:00",
+    "disponible": true
+  },
+  {
+    "id": 29,
+    "idMedico": 1,
+    "fechaHora": "2025-10-26T08:30",
+    "disponible": false
+  },
+  {
+    "id": 30,
+    "idMedico": 2,
+    "fechaHora": "2025-10-26T08:30",
+    "disponible": true
+  },
+  {
+    "id": 31,
+    "idMedico": 3,
+    "fechaHora": "2025-10-26T08:30",
+    "disponible": false
+  },
+  {
+    "id": 32,
+    "idMedico": 1,
+    "fechaHora": "2025-10-26T09:00",
+    "disponible": true
+  },
+  {
+    "id": 33,
+    "idMedico": 2,
+    "fechaHora": "2025-10-26T09:00",
+    "disponible": false
+  },
+  {
+    "id": 34,
+    "idMedico": 3,
+    "fechaHora": "2025-10-26T09:00",
+    "disponible": true
+  },
+  {
+    "id": 35,
+    "idMedico": 1,
+    "fechaHora": "2025-10-26T09:30",
+    "disponible": true
+  },
+  {
+    "id": 36,
+    "idMedico": 2,
+    "fechaHora": "2025-10-26T09:30",
+    "disponible": false
+  },
+  {
+    "id": 37,
+    "idMedico": 3,
+    "fechaHora": "2025-10-26T09:30",
+    "disponible": false
+  },
+  {
+    "id": 38,
+    "idMedico": 1,
+    "fechaHora": "2025-10-26T10:00",
+    "disponible": true
+  },
+  {
+    "id": 39,
+    "idMedico": 2,
+    "fechaHora": "2025-10-26T10:00",
+    "disponible": true
+  },
+  {
+    "id": 40,
+    "idMedico": 3,
+    "fechaHora": "2025-10-26T10:00",
+    "disponible": true
+  },
+  {
+    "id": 41,
+    "idMedico": 4,
+    "fechaHora": "2025-10-26T13:00",
+    "disponible": true
+  },
+  {
+    "id": 42,
+    "idMedico": 5,
+    "fechaHora": "2025-10-26T13:00",
+    "disponible": false
+  },
+  {
+    "id": 43,
+    "idMedico": 4,
+    "fechaHora": "2025-10-26T13:30",
+    "disponible": true
+  },
+  {
+    "id": 44,
+    "idMedico": 5,
+    "fechaHora": "2025-10-26T13:30",
+    "disponible": true
+  },
+  {
+    "id": 45,
+    "idMedico": 4,
+    "fechaHora": "2025-10-26T14:00",
+    "disponible": false
+  },
+  {
+    "id": 46,
+    "idMedico": 5,
+    "fechaHora": "2025-10-26T14:00",
+    "disponible": true
+  },
+  {
+    "id": 47,
+    "idMedico": 4,
+    "fechaHora": "2025-10-26T14:30",
+    "disponible": false
+  },
+  {
+    "id": 48,
+    "idMedico": 5,
+    "fechaHora": "2025-10-26T14:30",
+    "disponible": false
+  },
+  {
+    "id": 49,
+    "idMedico": 4,
+    "fechaHora": "2025-10-26T15:00",
+    "disponible": false
+  },
+  {
+    "id": 50,
+    "idMedico": 5,
+    "fechaHora": "2025-10-26T15:00",
+    "disponible": false
+  },
+  {
+    "id": 51,
+    "idMedico": 1,
+    "fechaHora": "2025-10-27T08:00",
+    "disponible": false
+  },
+  {
+    "id": 52,
+    "idMedico": 2,
+    "fechaHora": "2025-10-27T08:00",
+    "disponible": false
+  },
+  {
+    "id": 53,
+    "idMedico": 3,
+    "fechaHora": "2025-10-27T08:00",
+    "disponible": true
+  },
+  {
+    "id": 54,
+    "idMedico": 1,
+    "fechaHora": "2025-10-27T08:30",
+    "disponible": true
+  },
+  {
+    "id": 55,
+    "idMedico": 2,
+    "fechaHora": "2025-10-27T08:30",
+    "disponible": true
+  },
+  {
+    "id": 56,
+    "idMedico": 3,
+    "fechaHora": "2025-10-27T08:30",
+    "disponible": false
+  },
+  {
+    "id": 57,
+    "idMedico": 1,
+    "fechaHora": "2025-10-27T09:00",
+    "disponible": true
+  },
+  {
+    "id": 58,
+    "idMedico": 2,
+    "fechaHora": "2025-10-27T09:00",
+    "disponible": false
+  },
+  {
+    "id": 59,
+    "idMedico": 3,
+    "fechaHora": "2025-10-27T09:00",
+    "disponible": true
+  },
+  {
+    "id": 60,
+    "idMedico": 1,
+    "fechaHora": "2025-10-27T09:30",
+    "disponible": true
+  },
+  {
+    "id": 61,
+    "idMedico": 2,
+    "fechaHora": "2025-10-27T09:30",
+    "disponible": true
+  },
+  {
+    "id": 62,
+    "idMedico": 3,
+    "fechaHora": "2025-10-27T09:30",
+    "disponible": true
+  },
+  {
+    "id": 63,
+    "idMedico": 1,
+    "fechaHora": "2025-10-27T10:00",
+    "disponible": true
+  },
+  {
+    "id": 64,
+    "idMedico": 2,
+    "fechaHora": "2025-10-27T10:00",
+    "disponible": true
+  },
+  {
+    "id": 65,
+    "idMedico": 3,
+    "fechaHora": "2025-10-27T10:00",
+    "disponible": true
+  },
+  {
+    "id": 66,
+    "idMedico": 4,
+    "fechaHora": "2025-10-27T13:00",
+    "disponible": true
+  },
+  {
+    "id": 67,
+    "idMedico": 5,
+    "fechaHora": "2025-10-27T13:00",
+    "disponible": true
+  },
+  {
+    "id": 68,
+    "idMedico": 4,
+    "fechaHora": "2025-10-27T13:30",
+    "disponible": false
+  },
+  {
+    "id": 69,
+    "idMedico": 5,
+    "fechaHora": "2025-10-27T13:30",
+    "disponible": true
+  },
+  {
+    "id": 70,
+    "idMedico": 4,
+    "fechaHora": "2025-10-27T14:00",
+    "disponible": true
+  },
+  {
+    "id": 71,
+    "idMedico": 5,
+    "fechaHora": "2025-10-27T14:00",
+    "disponible": true
+  },
+  {
+    "id": 72,
+    "idMedico": 4,
+    "fechaHora": "2025-10-27T14:30",
+    "disponible": false
+  },
+  {
+    "id": 73,
+    "idMedico": 5,
+    "fechaHora": "2025-10-27T14:30",
+    "disponible": true
+  },
+  {
+    "id": 74,
+    "idMedico": 4,
+    "fechaHora": "2025-10-27T15:00",
+    "disponible": true
+  },
+  {
+    "id": 75,
+    "idMedico": 5,
+    "fechaHora": "2025-10-27T15:00",
+    "disponible": false
+  },
+  {
+    "id": 76,
+    "idMedico": 1,
+    "fechaHora": "2025-10-28T08:00",
+    "disponible": false
+  },
+  {
+    "id": 77,
+    "idMedico": 2,
+    "fechaHora": "2025-10-28T08:00",
+    "disponible": false
+  },
+  {
+    "id": 78,
+    "idMedico": 3,
+    "fechaHora": "2025-10-28T08:00",
+    "disponible": true
+  },
+  {
+    "id": 79,
+    "idMedico": 1,
+    "fechaHora": "2025-10-28T08:30",
+    "disponible": true
+  },
+  {
+    "id": 80,
+    "idMedico": 2,
+    "fechaHora": "2025-10-28T08:30",
+    "disponible": true
+  },
+  {
+    "id": 81,
+    "idMedico": 3,
+    "fechaHora": "2025-10-28T08:30",
+    "disponible": true
+  },
+  {
+    "id": 82,
+    "idMedico": 1,
+    "fechaHora": "2025-10-28T09:00",
+    "disponible": true
+  },
+  {
+    "id": 83,
+    "idMedico": 2,
+    "fechaHora": "2025-10-28T09:00",
+    "disponible": false
+  },
+  {
+    "id": 84,
+    "idMedico": 3,
+    "fechaHora": "2025-10-28T09:00",
+    "disponible": true
+  },
+  {
+    "id": 85,
+    "idMedico": 1,
+    "fechaHora": "2025-10-28T09:30",
+    "disponible": true
+  },
+  {
+    "id": 86,
+    "idMedico": 2,
+    "fechaHora": "2025-10-28T09:30",
+    "disponible": true
+  },
+  {
+    "id": 87,
+    "idMedico": 3,
+    "fechaHora": "2025-10-28T09:30",
+    "disponible": false
+  },
+  {
+    "id": 88,
+    "idMedico": 1,
+    "fechaHora": "2025-10-28T10:00",
+    "disponible": true
+  },
+  {
+    "id": 89,
+    "idMedico": 2,
+    "fechaHora": "2025-10-28T10:00",
+    "disponible": true
+  },
+  {
+    "id": 90,
+    "idMedico": 3,
+    "fechaHora": "2025-10-28T10:00",
+    "disponible": true
+  },
+  {
+    "id": 91,
+    "idMedico": 4,
+    "fechaHora": "2025-10-28T13:00",
+    "disponible": true
+  },
+  {
+    "id": 92,
+    "idMedico": 5,
+    "fechaHora": "2025-10-28T13:00",
+    "disponible": true
+  },
+  {
+    "id": 93,
+    "idMedico": 4,
+    "fechaHora": "2025-10-28T13:30",
+    "disponible": true
+  },
+  {
+    "id": 94,
+    "idMedico": 5,
+    "fechaHora": "2025-10-28T13:30",
+    "disponible": false
+  },
+  {
+    "id": 95,
+    "idMedico": 4,
+    "fechaHora": "2025-10-28T14:00",
+    "disponible": false
+  },
+  {
+    "id": 96,
+    "idMedico": 5,
+    "fechaHora": "2025-10-28T14:00",
+    "disponible": false
+  },
+  {
+    "id": 97,
+    "idMedico": 4,
+    "fechaHora": "2025-10-28T14:30",
+    "disponible": true
+  },
+  {
+    "id": 98,
+    "idMedico": 5,
+    "fechaHora": "2025-10-28T14:30",
+    "disponible": true
+  },
+  {
+    "id": 99,
+    "idMedico": 4,
+    "fechaHora": "2025-10-28T15:00",
+    "disponible": false
+  },
+  {
+    "id": 100,
+    "idMedico": 5,
+    "fechaHora": "2025-10-28T15:00",
+    "disponible": true
+  },
+  {
+    "id": 101,
+    "idMedico": 1,
+    "fechaHora": "2025-10-29T08:00",
+    "disponible": false
+  },
+  {
+    "id": 102,
+    "idMedico": 2,
+    "fechaHora": "2025-10-29T08:00",
+    "disponible": true
+  },
+  {
+    "id": 103,
+    "idMedico": 3,
+    "fechaHora": "2025-10-29T08:00",
+    "disponible": true
+  },
+  {
+    "id": 104,
+    "idMedico": 1,
+    "fechaHora": "2025-10-29T08:30",
+    "disponible": true
+  },
+  {
+    "id": 105,
+    "idMedico": 2,
+    "fechaHora": "2025-10-29T08:30",
+    "disponible": false
+  },
+  {
+    "id": 106,
+    "idMedico": 3,
+    "fechaHora": "2025-10-29T08:30",
+    "disponible": true
+  },
+  {
+    "id": 107,
+    "idMedico": 1,
+    "fechaHora": "2025-10-29T09:00",
+    "disponible": false
+  },
+  {
+    "id": 108,
+    "idMedico": 2,
+    "fechaHora": "2025-10-29T09:00",
+    "disponible": true
+  },
+  {
+    "id": 109,
+    "idMedico": 3,
+    "fechaHora": "2025-10-29T09:00",
+    "disponible": false
+  },
+  {
+    "id": 110,
+    "idMedico": 1,
+    "fechaHora": "2025-10-29T09:30",
+    "disponible": true
+  },
+  {
+    "id": 111,
+    "idMedico": 2,
+    "fechaHora": "2025-10-29T09:30",
+    "disponible": true
+  },
+  {
+    "id": 112,
+    "idMedico": 3,
+    "fechaHora": "2025-10-29T09:30",
+    "disponible": false
+  },
+  {
+    "id": 113,
+    "idMedico": 1,
+    "fechaHora": "2025-10-29T10:00",
+    "disponible": true
+  },
+  {
+    "id": 114,
+    "idMedico": 2,
+    "fechaHora": "2025-10-29T10:00",
+    "disponible": true
+  },
+  {
+    "id": 115,
+    "idMedico": 3,
+    "fechaHora": "2025-10-29T10:00",
+    "disponible": true
+  },
+  {
+    "id": 116,
+    "idMedico": 4,
+    "fechaHora": "2025-10-29T13:00",
+    "disponible": true
+  },
+  {
+    "id": 117,
+    "idMedico": 5,
+    "fechaHora": "2025-10-29T13:00",
+    "disponible": true
+  },
+  {
+    "id": 118,
+    "idMedico": 4,
+    "fechaHora": "2025-10-29T13:30",
+    "disponible": true
+  },
+  {
+    "id": 119,
+    "idMedico": 5,
+    "fechaHora": "2025-10-29T13:30",
+    "disponible": true
+  },
+  {
+    "id": 120,
+    "idMedico": 4,
+    "fechaHora": "2025-10-29T14:00",
+    "disponible": false
+  },
+  {
+    "id": 121,
+    "idMedico": 5,
+    "fechaHora": "2025-10-29T14:00",
+    "disponible": true
+  },
+  {
+    "id": 122,
+    "idMedico": 4,
+    "fechaHora": "2025-10-29T14:30",
+    "disponible": true
+  },
+  {
+    "id": 123,
+    "idMedico": 5,
+    "fechaHora": "2025-10-29T14:30",
+    "disponible": true
+  },
+  {
+    "id": 124,
+    "idMedico": 4,
+    "fechaHora": "2025-10-29T15:00",
+    "disponible": true
+  },
+  {
+    "id": 125,
+    "idMedico": 5,
+    "fechaHora": "2025-10-29T15:00",
+    "disponible": false
+  },
+  {
+    "id": 126,
+    "idMedico": 1,
+    "fechaHora": "2025-10-30T08:00",
+    "disponible": false
+  },
+  {
+    "id": 127,
+    "idMedico": 2,
+    "fechaHora": "2025-10-30T08:00",
+    "disponible": false
+  },
+  {
+    "id": 128,
+    "idMedico": 3,
+    "fechaHora": "2025-10-30T08:00",
+    "disponible": false
+  },
+  {
+    "id": 129,
+    "idMedico": 1,
+    "fechaHora": "2025-10-30T08:30",
+    "disponible": false
+  },
+  {
+    "id": 130,
+    "idMedico": 2,
+    "fechaHora": "2025-10-30T08:30",
+    "disponible": false
+  },
+  {
+    "id": 131,
+    "idMedico": 3,
+    "fechaHora": "2025-10-30T08:30",
+    "disponible": false
+  },
+  {
+    "id": 132,
+    "idMedico": 1,
+    "fechaHora": "2025-10-30T09:00",
+    "disponible": true
+  },
+  {
+    "id": 133,
+    "idMedico": 2,
+    "fechaHora": "2025-10-30T09:00",
+    "disponible": false
+  },
+  {
+    "id": 134,
+    "idMedico": 3,
+    "fechaHora": "2025-10-30T09:00",
+    "disponible": true
+  },
+  {
+    "id": 135,
+    "idMedico": 1,
+    "fechaHora": "2025-10-30T09:30",
+    "disponible": true
+  },
+  {
+    "id": 136,
+    "idMedico": 2,
+    "fechaHora": "2025-10-30T09:30",
+    "disponible": true
+  },
+  {
+    "id": 137,
+    "idMedico": 3,
+    "fechaHora": "2025-10-30T09:30",
+    "disponible": false
+  },
+  {
+    "id": 138,
+    "idMedico": 1,
+    "fechaHora": "2025-10-30T10:00",
+    "disponible": true
+  },
+  {
+    "id": 139,
+    "idMedico": 2,
+    "fechaHora": "2025-10-30T10:00",
+    "disponible": true
+  },
+  {
+    "id": 140,
+    "idMedico": 3,
+    "fechaHora": "2025-10-30T10:00",
+    "disponible": true
+  },
+  {
+    "id": 141,
+    "idMedico": 4,
+    "fechaHora": "2025-10-30T13:00",
+    "disponible": true
+  },
+  {
+    "id": 142,
+    "idMedico": 5,
+    "fechaHora": "2025-10-30T13:00",
+    "disponible": true
+  },
+  {
+    "id": 143,
+    "idMedico": 4,
+    "fechaHora": "2025-10-30T13:30",
+    "disponible": true
+  },
+  {
+    "id": 144,
+    "idMedico": 5,
+    "fechaHora": "2025-10-30T13:30",
+    "disponible": true
+  },
+  {
+    "id": 145,
+    "idMedico": 4,
+    "fechaHora": "2025-10-30T14:00",
+    "disponible": true
+  },
+  {
+    "id": 146,
+    "idMedico": 5,
+    "fechaHora": "2025-10-30T14:00",
+    "disponible": true
+  },
+  {
+    "id": 147,
+    "idMedico": 4,
+    "fechaHora": "2025-10-30T14:30",
+    "disponible": true
+  },
+  {
+    "id": 148,
+    "idMedico": 5,
+    "fechaHora": "2025-10-30T14:30",
+    "disponible": false
+  },
+  {
+    "id": 149,
+    "idMedico": 4,
+    "fechaHora": "2025-10-30T15:00",
+    "disponible": true
+  },
+  {
+    "id": 150,
+    "idMedico": 5,
+    "fechaHora": "2025-10-30T15:00",
+    "disponible": true
+  },
+  {
+    "id": 151,
+    "idMedico": 1,
+    "fechaHora": "2025-10-31T08:00",
+    "disponible": true
+  },
+  {
+    "id": 152,
+    "idMedico": 2,
+    "fechaHora": "2025-10-31T08:00",
+    "disponible": false
+  },
+  {
+    "id": 153,
+    "idMedico": 3,
+    "fechaHora": "2025-10-31T08:00",
+    "disponible": false
+  },
+  {
+    "id": 154,
+    "idMedico": 1,
+    "fechaHora": "2025-10-31T08:30",
+    "disponible": true
+  },
+  {
+    "id": 155,
+    "idMedico": 2,
+    "fechaHora": "2025-10-31T08:30",
+    "disponible": true
+  },
+  {
+    "id": 156,
+    "idMedico": 3,
+    "fechaHora": "2025-10-31T08:30",
+    "disponible": false
+  },
+  {
+    "id": 157,
+    "idMedico": 1,
+    "fechaHora": "2025-10-31T09:00",
+    "disponible": false
+  },
+  {
+    "id": 158,
+    "idMedico": 2,
+    "fechaHora": "2025-10-31T09:00",
+    "disponible": false
+  },
+  {
+    "id": 159,
+    "idMedico": 3,
+    "fechaHora": "2025-10-31T09:00",
+    "disponible": false
+  },
+  {
+    "id": 160,
+    "idMedico": 1,
+    "fechaHora": "2025-10-31T09:30",
+    "disponible": false
+  },
+  {
+    "id": 161,
+    "idMedico": 2,
+    "fechaHora": "2025-10-31T09:30",
+    "disponible": true
+  },
+  {
+    "id": 162,
+    "idMedico": 3,
+    "fechaHora": "2025-10-31T09:30",
+    "disponible": false
+  },
+  {
+    "id": 163,
+    "idMedico": 1,
+    "fechaHora": "2025-10-31T10:00",
+    "disponible": true
+  },
+  {
+    "id": 164,
+    "idMedico": 2,
+    "fechaHora": "2025-10-31T10:00",
+    "disponible": true
+  },
+  {
+    "id": 165,
+    "idMedico": 3,
+    "fechaHora": "2025-10-31T10:00",
+    "disponible": true
+  },
+  {
+    "id": 166,
+    "idMedico": 4,
+    "fechaHora": "2025-10-31T13:00",
+    "disponible": true
+  },
+  {
+    "id": 167,
+    "idMedico": 5,
+    "fechaHora": "2025-10-31T13:00",
+    "disponible": true
+  },
+  {
+    "id": 168,
+    "idMedico": 4,
+    "fechaHora": "2025-10-31T13:30",
+    "disponible": true
+  },
+  {
+    "id": 169,
+    "idMedico": 5,
+    "fechaHora": "2025-10-31T13:30",
+    "disponible": true
+  },
+  {
+    "id": 170,
+    "idMedico": 4,
+    "fechaHora": "2025-10-31T14:00",
+    "disponible": true
+  },
+  {
+    "id": 171,
+    "idMedico": 5,
+    "fechaHora": "2025-10-31T14:00",
+    "disponible": false
+  },
+  {
+    "id": 172,
+    "idMedico": 4,
+    "fechaHora": "2025-10-31T14:30",
+    "disponible": true
+  },
+  {
+    "id": 173,
+    "idMedico": 5,
+    "fechaHora": "2025-10-31T14:30",
+    "disponible": true
+  },
+  {
+    "id": 174,
+    "idMedico": 4,
+    "fechaHora": "2025-10-31T15:00",
+    "disponible": false
+  },
+  {
+    "id": 175,
+    "idMedico": 5,
+    "fechaHora": "2025-10-31T15:00",
+    "disponible": false
+  },
+  {
+    "id": 176,
+    "idMedico": 1,
+    "fechaHora": "2025-11-01T08:00",
+    "disponible": true
+  },
+  {
+    "id": 177,
+    "idMedico": 2,
+    "fechaHora": "2025-11-01T08:00",
+    "disponible": true
+  },
+  {
+    "id": 178,
+    "idMedico": 3,
+    "fechaHora": "2025-11-01T08:00",
+    "disponible": true
+  },
+  {
+    "id": 179,
+    "idMedico": 1,
+    "fechaHora": "2025-11-01T08:30",
+    "disponible": false
+  },
+  {
+    "id": 180,
+    "idMedico": 2,
+    "fechaHora": "2025-11-01T08:30",
+    "disponible": false
+  },
+  {
+    "id": 181,
+    "idMedico": 3,
+    "fechaHora": "2025-11-01T08:30",
+    "disponible": true
+  },
+  {
+    "id": 182,
+    "idMedico": 1,
+    "fechaHora": "2025-11-01T09:00",
+    "disponible": true
+  },
+  {
+    "id": 183,
+    "idMedico": 2,
+    "fechaHora": "2025-11-01T09:00",
+    "disponible": false
+  },
+  {
+    "id": 184,
+    "idMedico": 3,
+    "fechaHora": "2025-11-01T09:00",
+    "disponible": true
+  },
+  {
+    "id": 185,
+    "idMedico": 1,
+    "fechaHora": "2025-11-01T09:30",
+    "disponible": false
+  },
+  {
+    "id": 186,
+    "idMedico": 2,
+    "fechaHora": "2025-11-01T09:30",
+    "disponible": true
+  },
+  {
+    "id": 187,
+    "idMedico": 3,
+    "fechaHora": "2025-11-01T09:30",
+    "disponible": true
+  },
+  {
+    "id": 188,
+    "idMedico": 1,
+    "fechaHora": "2025-11-01T10:00",
+    "disponible": true
+  },
+  {
+    "id": 189,
+    "idMedico": 2,
+    "fechaHora": "2025-11-01T10:00",
+    "disponible": false
+  },
+  {
+    "id": 190,
+    "idMedico": 3,
+    "fechaHora": "2025-11-01T10:00",
+    "disponible": false
+  },
+  {
+    "id": 191,
+    "idMedico": 4,
+    "fechaHora": "2025-11-01T13:00",
+    "disponible": true
+  },
+  {
+    "id": 192,
+    "idMedico": 5,
+    "fechaHora": "2025-11-01T13:00",
+    "disponible": false
+  },
+  {
+    "id": 193,
+    "idMedico": 4,
+    "fechaHora": "2025-11-01T13:30",
+    "disponible": false
+  },
+  {
+    "id": 194,
+    "idMedico": 5,
+    "fechaHora": "2025-11-01T13:30",
+    "disponible": true
+  },
+  {
+    "id": 195,
+    "idMedico": 4,
+    "fechaHora": "2025-11-01T14:00",
+    "disponible": true
+  },
+  {
+    "id": 196,
+    "idMedico": 5,
+    "fechaHora": "2025-11-01T14:00",
+    "disponible": true
+  },
+  {
+    "id": 197,
+    "idMedico": 4,
+    "fechaHora": "2025-11-01T14:30",
+    "disponible": true
+  },
+  {
+    "id": 198,
+    "idMedico": 5,
+    "fechaHora": "2025-11-01T14:30",
+    "disponible": true
+  },
+  {
+    "id": 199,
+    "idMedico": 4,
+    "fechaHora": "2025-11-01T15:00",
+    "disponible": true
+  },
+  {
+    "id": 200,
+    "idMedico": 5,
+    "fechaHora": "2025-11-01T15:00",
+    "disponible": false
+  },
+  {
+    "id": 201,
+    "idMedico": 1,
+    "fechaHora": "2025-11-02T08:00",
+    "disponible": false
+  },
+  {
+    "id": 202,
+    "idMedico": 2,
+    "fechaHora": "2025-11-02T08:00",
+    "disponible": true
+  },
+  {
+    "id": 203,
+    "idMedico": 3,
+    "fechaHora": "2025-11-02T08:00",
+    "disponible": true
+  },
+  {
+    "id": 204,
+    "idMedico": 1,
+    "fechaHora": "2025-11-02T08:30",
+    "disponible": true
+  },
+  {
+    "id": 205,
+    "idMedico": 2,
+    "fechaHora": "2025-11-02T08:30",
+    "disponible": false
+  },
+  {
+    "id": 206,
+    "idMedico": 3,
+    "fechaHora": "2025-11-02T08:30",
+    "disponible": true
+  },
+  {
+    "id": 207,
+    "idMedico": 1,
+    "fechaHora": "2025-11-02T09:00",
+    "disponible": true
+  },
+  {
+    "id": 208,
+    "idMedico": 2,
+    "fechaHora": "2025-11-02T09:00",
+    "disponible": true
+  },
+  {
+    "id": 209,
+    "idMedico": 3,
+    "fechaHora": "2025-11-02T09:00",
+    "disponible": true
+  },
+  {
+    "id": 210,
+    "idMedico": 1,
+    "fechaHora": "2025-11-02T09:30",
+    "disponible": true
+  },
+  {
+    "id": 211,
+    "idMedico": 2,
+    "fechaHora": "2025-11-02T09:30",
+    "disponible": true
+  },
+  {
+    "id": 212,
+    "idMedico": 3,
+    "fechaHora": "2025-11-02T09:30",
+    "disponible": true
+  },
+  {
+    "id": 213,
+    "idMedico": 1,
+    "fechaHora": "2025-11-02T10:00",
+    "disponible": true
+  },
+  {
+    "id": 214,
+    "idMedico": 2,
+    "fechaHora": "2025-11-02T10:00",
+    "disponible": false
+  },
+  {
+    "id": 215,
+    "idMedico": 3,
+    "fechaHora": "2025-11-02T10:00",
+    "disponible": true
+  },
+  {
+    "id": 216,
+    "idMedico": 4,
+    "fechaHora": "2025-11-02T13:00",
+    "disponible": true
+  },
+  {
+    "id": 217,
+    "idMedico": 5,
+    "fechaHora": "2025-11-02T13:00",
+    "disponible": false
+  },
+  {
+    "id": 218,
+    "idMedico": 4,
+    "fechaHora": "2025-11-02T13:30",
+    "disponible": false
+  },
+  {
+    "id": 219,
+    "idMedico": 5,
+    "fechaHora": "2025-11-02T13:30",
+    "disponible": false
+  },
+  {
+    "id": 220,
+    "idMedico": 4,
+    "fechaHora": "2025-11-02T14:00",
+    "disponible": true
+  },
+  {
+    "id": 221,
+    "idMedico": 5,
+    "fechaHora": "2025-11-02T14:00",
+    "disponible": false
+  },
+  {
+    "id": 222,
+    "idMedico": 4,
+    "fechaHora": "2025-11-02T14:30",
+    "disponible": false
+  },
+  {
+    "id": 223,
+    "idMedico": 5,
+    "fechaHora": "2025-11-02T14:30",
+    "disponible": false
+  },
+  {
+    "id": 224,
+    "idMedico": 4,
+    "fechaHora": "2025-11-02T15:00",
+    "disponible": true
+  },
+  {
+    "id": 225,
+    "idMedico": 5,
+    "fechaHora": "2025-11-02T15:00",
+    "disponible": true
+  },
+  {
+    "id": 226,
+    "idMedico": 1,
+    "fechaHora": "2025-11-03T08:00",
+    "disponible": true
+  },
+  {
+    "id": 227,
+    "idMedico": 2,
+    "fechaHora": "2025-11-03T08:00",
+    "disponible": true
+  },
+  {
+    "id": 228,
+    "idMedico": 3,
+    "fechaHora": "2025-11-03T08:00",
+    "disponible": true
+  },
+  {
+    "id": 229,
+    "idMedico": 1,
+    "fechaHora": "2025-11-03T08:30",
+    "disponible": true
+  },
+  {
+    "id": 230,
+    "idMedico": 2,
+    "fechaHora": "2025-11-03T08:30",
+    "disponible": true
+  },
+  {
+    "id": 231,
+    "idMedico": 3,
+    "fechaHora": "2025-11-03T08:30",
+    "disponible": true
+  },
+  {
+    "id": 232,
+    "idMedico": 1,
+    "fechaHora": "2025-11-03T09:00",
+    "disponible": true
+  },
+  {
+    "id": 233,
+    "idMedico": 2,
+    "fechaHora": "2025-11-03T09:00",
+    "disponible": true
+  },
+  {
+    "id": 234,
+    "idMedico": 3,
+    "fechaHora": "2025-11-03T09:00",
+    "disponible": false
+  },
+  {
+    "id": 235,
+    "idMedico": 1,
+    "fechaHora": "2025-11-03T09:30",
+    "disponible": false
+  },
+  {
+    "id": 236,
+    "idMedico": 2,
+    "fechaHora": "2025-11-03T09:30",
+    "disponible": false
+  },
+  {
+    "id": 237,
+    "idMedico": 3,
+    "fechaHora": "2025-11-03T09:30",
+    "disponible": true
+  },
+  {
+    "id": 238,
+    "idMedico": 1,
+    "fechaHora": "2025-11-03T10:00",
+    "disponible": true
+  },
+  {
+    "id": 239,
+    "idMedico": 2,
+    "fechaHora": "2025-11-03T10:00",
+    "disponible": false
+  },
+  {
+    "id": 240,
+    "idMedico": 3,
+    "fechaHora": "2025-11-03T10:00",
+    "disponible": true
+  },
+  {
+    "id": 241,
+    "idMedico": 4,
+    "fechaHora": "2025-11-03T13:00",
+    "disponible": true
+  },
+  {
+    "id": 242,
+    "idMedico": 5,
+    "fechaHora": "2025-11-03T13:00",
+    "disponible": true
+  },
+  {
+    "id": 243,
+    "idMedico": 4,
+    "fechaHora": "2025-11-03T13:30",
+    "disponible": false
+  },
+  {
+    "id": 244,
+    "idMedico": 5,
+    "fechaHora": "2025-11-03T13:30",
+    "disponible": true
+  },
+  {
+    "id": 245,
+    "idMedico": 4,
+    "fechaHora": "2025-11-03T14:00",
+    "disponible": true
+  },
+  {
+    "id": 246,
+    "idMedico": 5,
+    "fechaHora": "2025-11-03T14:00",
+    "disponible": false
+  },
+  {
+    "id": 247,
+    "idMedico": 4,
+    "fechaHora": "2025-11-03T14:30",
+    "disponible": true
+  },
+  {
+    "id": 248,
+    "idMedico": 5,
+    "fechaHora": "2025-11-03T14:30",
+    "disponible": true
+  },
+  {
+    "id": 249,
+    "idMedico": 4,
+    "fechaHora": "2025-11-03T15:00",
+    "disponible": true
+  },
+  {
+    "id": 250,
+    "idMedico": 5,
+    "fechaHora": "2025-11-03T15:00",
+    "disponible": true
+  },
+  {
+    "id": 251,
+    "idMedico": 1,
+    "fechaHora": "2025-11-04T08:00",
+    "disponible": true
+  },
+  {
+    "id": 252,
+    "idMedico": 2,
+    "fechaHora": "2025-11-04T08:00",
+    "disponible": false
+  },
+  {
+    "id": 253,
+    "idMedico": 3,
+    "fechaHora": "2025-11-04T08:00",
+    "disponible": true
+  },
+  {
+    "id": 254,
+    "idMedico": 1,
+    "fechaHora": "2025-11-04T08:30",
+    "disponible": true
+  },
+  {
+    "id": 255,
+    "idMedico": 2,
+    "fechaHora": "2025-11-04T08:30",
+    "disponible": true
+  },
+  {
+    "id": 256,
+    "idMedico": 3,
+    "fechaHora": "2025-11-04T08:30",
+    "disponible": true
+  },
+  {
+    "id": 257,
+    "idMedico": 1,
+    "fechaHora": "2025-11-04T09:00",
+    "disponible": true
+  },
+  {
+    "id": 258,
+    "idMedico": 2,
+    "fechaHora": "2025-11-04T09:00",
+    "disponible": false
+  },
+  {
+    "id": 259,
+    "idMedico": 3,
+    "fechaHora": "2025-11-04T09:00",
+    "disponible": false
+  },
+  {
+    "id": 260,
+    "idMedico": 1,
+    "fechaHora": "2025-11-04T09:30",
+    "disponible": true
+  },
+  {
+    "id": 261,
+    "idMedico": 2,
+    "fechaHora": "2025-11-04T09:30",
+    "disponible": true
+  },
+  {
+    "id": 262,
+    "idMedico": 3,
+    "fechaHora": "2025-11-04T09:30",
+    "disponible": true
+  },
+  {
+    "id": 263,
+    "idMedico": 1,
+    "fechaHora": "2025-11-04T10:00",
+    "disponible": false
+  },
+  {
+    "id": 264,
+    "idMedico": 2,
+    "fechaHora": "2025-11-04T10:00",
+    "disponible": true
+  },
+  {
+    "id": 265,
+    "idMedico": 3,
+    "fechaHora": "2025-11-04T10:00",
+    "disponible": false
+  },
+  {
+    "id": 266,
+    "idMedico": 4,
+    "fechaHora": "2025-11-04T13:00",
+    "disponible": true
+  },
+  {
+    "id": 267,
+    "idMedico": 5,
+    "fechaHora": "2025-11-04T13:00",
+    "disponible": true
+  },
+  {
+    "id": 268,
+    "idMedico": 4,
+    "fechaHora": "2025-11-04T13:30",
+    "disponible": true
+  },
+  {
+    "id": 269,
+    "idMedico": 5,
+    "fechaHora": "2025-11-04T13:30",
+    "disponible": false
+  },
+  {
+    "id": 270,
+    "idMedico": 4,
+    "fechaHora": "2025-11-04T14:00",
+    "disponible": true
+  },
+  {
+    "id": 271,
+    "idMedico": 5,
+    "fechaHora": "2025-11-04T14:00",
+    "disponible": false
+  },
+  {
+    "id": 272,
+    "idMedico": 4,
+    "fechaHora": "2025-11-04T14:30",
+    "disponible": true
+  },
+  {
+    "id": 273,
+    "idMedico": 5,
+    "fechaHora": "2025-11-04T14:30",
+    "disponible": false
+  },
+  {
+    "id": 274,
+    "idMedico": 4,
+    "fechaHora": "2025-11-04T15:00",
+    "disponible": false
+  },
+  {
+    "id": 275,
+    "idMedico": 5,
+    "fechaHora": "2025-11-04T15:00",
+    "disponible": true
+  },
+  {
+    "id": 276,
+    "idMedico": 1,
+    "fechaHora": "2025-11-05T08:00",
+    "disponible": false
+  },
+  {
+    "id": 277,
+    "idMedico": 2,
+    "fechaHora": "2025-11-05T08:00",
+    "disponible": true
+  },
+  {
+    "id": 278,
+    "idMedico": 3,
+    "fechaHora": "2025-11-05T08:00",
+    "disponible": true
+  },
+  {
+    "id": 279,
+    "idMedico": 1,
+    "fechaHora": "2025-11-05T08:30",
+    "disponible": false
+  },
+  {
+    "id": 280,
+    "idMedico": 2,
+    "fechaHora": "2025-11-05T08:30",
+    "disponible": true
+  },
+  {
+    "id": 281,
+    "idMedico": 3,
+    "fechaHora": "2025-11-05T08:30",
+    "disponible": true
+  },
+  {
+    "id": 282,
+    "idMedico": 1,
+    "fechaHora": "2025-11-05T09:00",
+    "disponible": true
+  },
+  {
+    "id": 283,
+    "idMedico": 2,
+    "fechaHora": "2025-11-05T09:00",
+    "disponible": true
+  },
+  {
+    "id": 284,
+    "idMedico": 3,
+    "fechaHora": "2025-11-05T09:00",
+    "disponible": false
+  },
+  {
+    "id": 285,
+    "idMedico": 1,
+    "fechaHora": "2025-11-05T09:30",
+    "disponible": true
+  },
+  {
+    "id": 286,
+    "idMedico": 2,
+    "fechaHora": "2025-11-05T09:30",
+    "disponible": true
+  },
+  {
+    "id": 287,
+    "idMedico": 3,
+    "fechaHora": "2025-11-05T09:30",
+    "disponible": false
+  },
+  {
+    "id": 288,
+    "idMedico": 1,
+    "fechaHora": "2025-11-05T10:00",
+    "disponible": false
+  },
+  {
+    "id": 289,
+    "idMedico": 2,
+    "fechaHora": "2025-11-05T10:00",
+    "disponible": true
+  },
+  {
+    "id": 290,
+    "idMedico": 3,
+    "fechaHora": "2025-11-05T10:00",
+    "disponible": true
+  },
+  {
+    "id": 291,
+    "idMedico": 4,
+    "fechaHora": "2025-11-05T13:00",
+    "disponible": false
+  },
+  {
+    "id": 292,
+    "idMedico": 5,
+    "fechaHora": "2025-11-05T13:00",
+    "disponible": false
+  },
+  {
+    "id": 293,
+    "idMedico": 4,
+    "fechaHora": "2025-11-05T13:30",
+    "disponible": false
+  },
+  {
+    "id": 294,
+    "idMedico": 5,
+    "fechaHora": "2025-11-05T13:30",
+    "disponible": true
+  },
+  {
+    "id": 295,
+    "idMedico": 4,
+    "fechaHora": "2025-11-05T14:00",
+    "disponible": false
+  },
+  {
+    "id": 296,
+    "idMedico": 5,
+    "fechaHora": "2025-11-05T14:00",
+    "disponible": false
+  },
+  {
+    "id": 297,
+    "idMedico": 4,
+    "fechaHora": "2025-11-05T14:30",
+    "disponible": true
+  },
+  {
+    "id": 298,
+    "idMedico": 5,
+    "fechaHora": "2025-11-05T14:30",
+    "disponible": false
+  },
+  {
+    "id": 299,
+    "idMedico": 4,
+    "fechaHora": "2025-11-05T15:00",
+    "disponible": true
+  },
+  {
+    "id": 300,
+    "idMedico": 5,
+    "fechaHora": "2025-11-05T15:00",
+    "disponible": true
+  },
+  {
+    "id": 301,
+    "idMedico": 1,
+    "fechaHora": "2025-11-06T08:00",
+    "disponible": true
+  },
+  {
+    "id": 302,
+    "idMedico": 2,
+    "fechaHora": "2025-11-06T08:00",
+    "disponible": true
+  },
+  {
+    "id": 303,
+    "idMedico": 3,
+    "fechaHora": "2025-11-06T08:00",
+    "disponible": true
+  },
+  {
+    "id": 304,
+    "idMedico": 1,
+    "fechaHora": "2025-11-06T08:30",
+    "disponible": true
+  },
+  {
+    "id": 305,
+    "idMedico": 2,
+    "fechaHora": "2025-11-06T08:30",
+    "disponible": true
+  },
+  {
+    "id": 306,
+    "idMedico": 3,
+    "fechaHora": "2025-11-06T08:30",
+    "disponible": true
+  },
+  {
+    "id": 307,
+    "idMedico": 1,
+    "fechaHora": "2025-11-06T09:00",
+    "disponible": true
+  },
+  {
+    "id": 308,
+    "idMedico": 2,
+    "fechaHora": "2025-11-06T09:00",
+    "disponible": true
+  },
+  {
+    "id": 309,
+    "idMedico": 3,
+    "fechaHora": "2025-11-06T09:00",
+    "disponible": true
+  },
+  {
+    "id": 310,
+    "idMedico": 1,
+    "fechaHora": "2025-11-06T09:30",
+    "disponible": true
+  },
+  {
+    "id": 311,
+    "idMedico": 2,
+    "fechaHora": "2025-11-06T09:30",
+    "disponible": false
+  },
+  {
+    "id": 312,
+    "idMedico": 3,
+    "fechaHora": "2025-11-06T09:30",
+    "disponible": true
+  },
+  {
+    "id": 313,
+    "idMedico": 1,
+    "fechaHora": "2025-11-06T10:00",
+    "disponible": false
+  },
+  {
+    "id": 314,
+    "idMedico": 2,
+    "fechaHora": "2025-11-06T10:00",
+    "disponible": true
+  },
+  {
+    "id": 315,
+    "idMedico": 3,
+    "fechaHora": "2025-11-06T10:00",
+    "disponible": true
+  },
+  {
+    "id": 316,
+    "idMedico": 4,
+    "fechaHora": "2025-11-06T13:00",
+    "disponible": true
+  },
+  {
+    "id": 317,
+    "idMedico": 5,
+    "fechaHora": "2025-11-06T13:00",
+    "disponible": false
+  },
+  {
+    "id": 318,
+    "idMedico": 4,
+    "fechaHora": "2025-11-06T13:30",
+    "disponible": true
+  },
+  {
+    "id": 319,
+    "idMedico": 5,
+    "fechaHora": "2025-11-06T13:30",
+    "disponible": false
+  },
+  {
+    "id": 320,
+    "idMedico": 4,
+    "fechaHora": "2025-11-06T14:00",
+    "disponible": true
+  },
+  {
+    "id": 321,
+    "idMedico": 5,
+    "fechaHora": "2025-11-06T14:00",
+    "disponible": false
+  },
+  {
+    "id": 322,
+    "idMedico": 4,
+    "fechaHora": "2025-11-06T14:30",
+    "disponible": true
+  },
+  {
+    "id": 323,
+    "idMedico": 5,
+    "fechaHora": "2025-11-06T14:30",
+    "disponible": true
+  },
+  {
+    "id": 324,
+    "idMedico": 4,
+    "fechaHora": "2025-11-06T15:00",
+    "disponible": true
+  },
+  {
+    "id": 325,
+    "idMedico": 5,
+    "fechaHora": "2025-11-06T15:00",
+    "disponible": true
+  },
+  {
+    "id": 326,
+    "idMedico": 1,
+    "fechaHora": "2025-11-07T08:00",
+    "disponible": true
+  },
+  {
+    "id": 327,
+    "idMedico": 2,
+    "fechaHora": "2025-11-07T08:00",
+    "disponible": true
+  },
+  {
+    "id": 328,
+    "idMedico": 3,
+    "fechaHora": "2025-11-07T08:00",
+    "disponible": true
+  },
+  {
+    "id": 329,
+    "idMedico": 1,
+    "fechaHora": "2025-11-07T08:30",
+    "disponible": true
+  },
+  {
+    "id": 330,
+    "idMedico": 2,
+    "fechaHora": "2025-11-07T08:30",
+    "disponible": true
+  },
+  {
+    "id": 331,
+    "idMedico": 3,
+    "fechaHora": "2025-11-07T08:30",
+    "disponible": true
+  },
+  {
+    "id": 332,
+    "idMedico": 1,
+    "fechaHora": "2025-11-07T09:00",
+    "disponible": true
+  },
+  {
+    "id": 333,
+    "idMedico": 2,
+    "fechaHora": "2025-11-07T09:00",
+    "disponible": true
+  },
+  {
+    "id": 334,
+    "idMedico": 3,
+    "fechaHora": "2025-11-07T09:00",
+    "disponible": false
+  },
+  {
+    "id": 335,
+    "idMedico": 1,
+    "fechaHora": "2025-11-07T09:30",
+    "disponible": true
+  },
+  {
+    "id": 336,
+    "idMedico": 2,
+    "fechaHora": "2025-11-07T09:30",
+    "disponible": false
+  },
+  {
+    "id": 337,
+    "idMedico": 3,
+    "fechaHora": "2025-11-07T09:30",
+    "disponible": false
+  },
+  {
+    "id": 338,
+    "idMedico": 1,
+    "fechaHora": "2025-11-07T10:00",
+    "disponible": true
+  },
+  {
+    "id": 339,
+    "idMedico": 2,
+    "fechaHora": "2025-11-07T10:00",
+    "disponible": true
+  },
+  {
+    "id": 340,
+    "idMedico": 3,
+    "fechaHora": "2025-11-07T10:00",
+    "disponible": false
+  },
+  {
+    "id": 341,
+    "idMedico": 4,
+    "fechaHora": "2025-11-07T13:00",
+    "disponible": true
+  },
+  {
+    "id": 342,
+    "idMedico": 5,
+    "fechaHora": "2025-11-07T13:00",
+    "disponible": true
+  },
+  {
+    "id": 343,
+    "idMedico": 4,
+    "fechaHora": "2025-11-07T13:30",
+    "disponible": true
+  },
+  {
+    "id": 344,
+    "idMedico": 5,
+    "fechaHora": "2025-11-07T13:30",
+    "disponible": true
+  },
+  {
+    "id": 345,
+    "idMedico": 4,
+    "fechaHora": "2025-11-07T14:00",
+    "disponible": false
+  },
+  {
+    "id": 346,
+    "idMedico": 5,
+    "fechaHora": "2025-11-07T14:00",
+    "disponible": true
+  },
+  {
+    "id": 347,
+    "idMedico": 4,
+    "fechaHora": "2025-11-07T14:30",
+    "disponible": true
+  },
+  {
+    "id": 348,
+    "idMedico": 5,
+    "fechaHora": "2025-11-07T14:30",
+    "disponible": true
+  },
+  {
+    "id": 349,
+    "idMedico": 4,
+    "fechaHora": "2025-11-07T15:00",
+    "disponible": true
+  },
+  {
+    "id": 350,
+    "idMedico": 5,
+    "fechaHora": "2025-11-07T15:00",
+    "disponible": true
+  },
+  {
+    "id": 351,
+    "idMedico": 1,
+    "fechaHora": "2025-11-08T08:00",
+    "disponible": false
+  },
+  {
+    "id": 352,
+    "idMedico": 2,
+    "fechaHora": "2025-11-08T08:00",
+    "disponible": true
+  },
+  {
+    "id": 353,
+    "idMedico": 3,
+    "fechaHora": "2025-11-08T08:00",
+    "disponible": false
+  },
+  {
+    "id": 354,
+    "idMedico": 1,
+    "fechaHora": "2025-11-08T08:30",
+    "disponible": true
+  },
+  {
+    "id": 355,
+    "idMedico": 2,
+    "fechaHora": "2025-11-08T08:30",
+    "disponible": true
+  },
+  {
+    "id": 356,
+    "idMedico": 3,
+    "fechaHora": "2025-11-08T08:30",
+    "disponible": true
+  },
+  {
+    "id": 357,
+    "idMedico": 1,
+    "fechaHora": "2025-11-08T09:00",
+    "disponible": false
+  },
+  {
+    "id": 358,
+    "idMedico": 2,
+    "fechaHora": "2025-11-08T09:00",
+    "disponible": false
+  },
+  {
+    "id": 359,
+    "idMedico": 3,
+    "fechaHora": "2025-11-08T09:00",
+    "disponible": true
+  },
+  {
+    "id": 360,
+    "idMedico": 1,
+    "fechaHora": "2025-11-08T09:30",
+    "disponible": false
+  },
+  {
+    "id": 361,
+    "idMedico": 2,
+    "fechaHora": "2025-11-08T09:30",
+    "disponible": true
+  },
+  {
+    "id": 362,
+    "idMedico": 3,
+    "fechaHora": "2025-11-08T09:30",
+    "disponible": true
+  },
+  {
+    "id": 363,
+    "idMedico": 1,
+    "fechaHora": "2025-11-08T10:00",
+    "disponible": true
+  },
+  {
+    "id": 364,
+    "idMedico": 2,
+    "fechaHora": "2025-11-08T10:00",
+    "disponible": false
+  },
+  {
+    "id": 365,
+    "idMedico": 3,
+    "fechaHora": "2025-11-08T10:00",
+    "disponible": true
+  },
+  {
+    "id": 366,
+    "idMedico": 4,
+    "fechaHora": "2025-11-08T13:00",
+    "disponible": false
+  },
+  {
+    "id": 367,
+    "idMedico": 5,
+    "fechaHora": "2025-11-08T13:00",
+    "disponible": false
+  },
+  {
+    "id": 368,
+    "idMedico": 4,
+    "fechaHora": "2025-11-08T13:30",
+    "disponible": false
+  },
+  {
+    "id": 369,
+    "idMedico": 5,
+    "fechaHora": "2025-11-08T13:30",
+    "disponible": false
+  },
+  {
+    "id": 370,
+    "idMedico": 4,
+    "fechaHora": "2025-11-08T14:00",
+    "disponible": true
+  },
+  {
+    "id": 371,
+    "idMedico": 5,
+    "fechaHora": "2025-11-08T14:00",
+    "disponible": true
+  },
+  {
+    "id": 372,
+    "idMedico": 4,
+    "fechaHora": "2025-11-08T14:30",
+    "disponible": true
+  },
+  {
+    "id": 373,
+    "idMedico": 5,
+    "fechaHora": "2025-11-08T14:30",
+    "disponible": true
+  },
+  {
+    "id": 374,
+    "idMedico": 4,
+    "fechaHora": "2025-11-08T15:00",
+    "disponible": false
+  },
+  {
+    "id": 375,
+    "idMedico": 5,
+    "fechaHora": "2025-11-08T15:00",
+    "disponible": true
+  },
+  {
+    "id": 376,
+    "idMedico": 1,
+    "fechaHora": "2025-11-09T08:00",
+    "disponible": false
+  },
+  {
+    "id": 377,
+    "idMedico": 2,
+    "fechaHora": "2025-11-09T08:00",
+    "disponible": false
+  },
+  {
+    "id": 378,
+    "idMedico": 3,
+    "fechaHora": "2025-11-09T08:00",
+    "disponible": true
+  },
+  {
+    "id": 379,
+    "idMedico": 1,
+    "fechaHora": "2025-11-09T08:30",
+    "disponible": true
+  },
+  {
+    "id": 380,
+    "idMedico": 2,
+    "fechaHora": "2025-11-09T08:30",
+    "disponible": false
+  },
+  {
+    "id": 381,
+    "idMedico": 3,
+    "fechaHora": "2025-11-09T08:30",
+    "disponible": true
+  },
+  {
+    "id": 382,
+    "idMedico": 1,
+    "fechaHora": "2025-11-09T09:00",
+    "disponible": false
+  },
+  {
+    "id": 383,
+    "idMedico": 2,
+    "fechaHora": "2025-11-09T09:00",
+    "disponible": false
+  },
+  {
+    "id": 384,
+    "idMedico": 3,
+    "fechaHora": "2025-11-09T09:00",
+    "disponible": true
+  },
+  {
+    "id": 385,
+    "idMedico": 1,
+    "fechaHora": "2025-11-09T09:30",
+    "disponible": true
+  },
+  {
+    "id": 386,
+    "idMedico": 2,
+    "fechaHora": "2025-11-09T09:30",
+    "disponible": true
+  },
+  {
+    "id": 387,
+    "idMedico": 3,
+    "fechaHora": "2025-11-09T09:30",
+    "disponible": true
+  },
+  {
+    "id": 388,
+    "idMedico": 1,
+    "fechaHora": "2025-11-09T10:00",
+    "disponible": true
+  },
+  {
+    "id": 389,
+    "idMedico": 2,
+    "fechaHora": "2025-11-09T10:00",
+    "disponible": true
+  },
+  {
+    "id": 390,
+    "idMedico": 3,
+    "fechaHora": "2025-11-09T10:00",
+    "disponible": true
+  },
+  {
+    "id": 391,
+    "idMedico": 4,
+    "fechaHora": "2025-11-09T13:00",
+    "disponible": true
+  },
+  {
+    "id": 392,
+    "idMedico": 5,
+    "fechaHora": "2025-11-09T13:00",
+    "disponible": true
+  },
+  {
+    "id": 393,
+    "idMedico": 4,
+    "fechaHora": "2025-11-09T13:30",
+    "disponible": false
+  },
+  {
+    "id": 394,
+    "idMedico": 5,
+    "fechaHora": "2025-11-09T13:30",
+    "disponible": false
+  },
+  {
+    "id": 395,
+    "idMedico": 4,
+    "fechaHora": "2025-11-09T14:00",
+    "disponible": false
+  },
+  {
+    "id": 396,
+    "idMedico": 5,
+    "fechaHora": "2025-11-09T14:00",
+    "disponible": false
+  },
+  {
+    "id": 397,
+    "idMedico": 4,
+    "fechaHora": "2025-11-09T14:30",
+    "disponible": true
+  },
+  {
+    "id": 398,
+    "idMedico": 5,
+    "fechaHora": "2025-11-09T14:30",
+    "disponible": false
+  },
+  {
+    "id": 399,
+    "idMedico": 4,
+    "fechaHora": "2025-11-09T15:00",
+    "disponible": false
+  },
+  {
+    "id": 400,
+    "idMedico": 5,
+    "fechaHora": "2025-11-09T15:00",
+    "disponible": true
+  },
+  {
+    "id": 401,
+    "idMedico": 1,
+    "fechaHora": "2025-11-10T08:00",
+    "disponible": true
+  },
+  {
+    "id": 402,
+    "idMedico": 2,
+    "fechaHora": "2025-11-10T08:00",
+    "disponible": true
+  },
+  {
+    "id": 403,
+    "idMedico": 3,
+    "fechaHora": "2025-11-10T08:00",
+    "disponible": false
+  },
+  {
+    "id": 404,
+    "idMedico": 1,
+    "fechaHora": "2025-11-10T08:30",
+    "disponible": true
+  },
+  {
+    "id": 405,
+    "idMedico": 2,
+    "fechaHora": "2025-11-10T08:30",
+    "disponible": false
+  },
+  {
+    "id": 406,
+    "idMedico": 3,
+    "fechaHora": "2025-11-10T08:30",
+    "disponible": false
+  },
+  {
+    "id": 407,
+    "idMedico": 1,
+    "fechaHora": "2025-11-10T09:00",
+    "disponible": false
+  },
+  {
+    "id": 408,
+    "idMedico": 2,
+    "fechaHora": "2025-11-10T09:00",
+    "disponible": true
+  },
+  {
+    "id": 409,
+    "idMedico": 3,
+    "fechaHora": "2025-11-10T09:00",
+    "disponible": true
+  },
+  {
+    "id": 410,
+    "idMedico": 1,
+    "fechaHora": "2025-11-10T09:30",
+    "disponible": false
+  },
+  {
+    "id": 411,
+    "idMedico": 2,
+    "fechaHora": "2025-11-10T09:30",
+    "disponible": false
+  },
+  {
+    "id": 412,
+    "idMedico": 3,
+    "fechaHora": "2025-11-10T09:30",
+    "disponible": true
+  },
+  {
+    "id": 413,
+    "idMedico": 1,
+    "fechaHora": "2025-11-10T10:00",
+    "disponible": true
+  },
+  {
+    "id": 414,
+    "idMedico": 2,
+    "fechaHora": "2025-11-10T10:00",
+    "disponible": true
+  },
+  {
+    "id": 415,
+    "idMedico": 3,
+    "fechaHora": "2025-11-10T10:00",
+    "disponible": true
+  },
+  {
+    "id": 416,
+    "idMedico": 4,
+    "fechaHora": "2025-11-10T13:00",
+    "disponible": true
+  },
+  {
+    "id": 417,
+    "idMedico": 5,
+    "fechaHora": "2025-11-10T13:00",
+    "disponible": true
+  },
+  {
+    "id": 418,
+    "idMedico": 4,
+    "fechaHora": "2025-11-10T13:30",
+    "disponible": true
+  },
+  {
+    "id": 419,
+    "idMedico": 5,
+    "fechaHora": "2025-11-10T13:30",
+    "disponible": true
+  },
+  {
+    "id": 420,
+    "idMedico": 4,
+    "fechaHora": "2025-11-10T14:00",
+    "disponible": true
+  },
+  {
+    "id": 421,
+    "idMedico": 5,
+    "fechaHora": "2025-11-10T14:00",
+    "disponible": true
+  },
+  {
+    "id": 422,
+    "idMedico": 4,
+    "fechaHora": "2025-11-10T14:30",
+    "disponible": false
+  },
+  {
+    "id": 423,
+    "idMedico": 5,
+    "fechaHora": "2025-11-10T14:30",
+    "disponible": false
+  },
+  {
+    "id": 424,
+    "idMedico": 4,
+    "fechaHora": "2025-11-10T15:00",
+    "disponible": true
+  },
+  {
+    "id": 425,
+    "idMedico": 5,
+    "fechaHora": "2025-11-10T15:00",
+    "disponible": true
+  },
+  {
+    "id": 426,
+    "idMedico": 1,
+    "fechaHora": "2025-11-11T08:00",
+    "disponible": true
+  },
+  {
+    "id": 427,
+    "idMedico": 2,
+    "fechaHora": "2025-11-11T08:00",
+    "disponible": false
+  },
+  {
+    "id": 428,
+    "idMedico": 3,
+    "fechaHora": "2025-11-11T08:00",
+    "disponible": true
+  },
+  {
+    "id": 429,
+    "idMedico": 1,
+    "fechaHora": "2025-11-11T08:30",
+    "disponible": true
+  },
+  {
+    "id": 430,
+    "idMedico": 2,
+    "fechaHora": "2025-11-11T08:30",
+    "disponible": true
+  },
+  {
+    "id": 431,
+    "idMedico": 3,
+    "fechaHora": "2025-11-11T08:30",
+    "disponible": true
+  },
+  {
+    "id": 432,
+    "idMedico": 1,
+    "fechaHora": "2025-11-11T09:00",
+    "disponible": true
+  },
+  {
+    "id": 433,
+    "idMedico": 2,
+    "fechaHora": "2025-11-11T09:00",
+    "disponible": true
+  },
+  {
+    "id": 434,
+    "idMedico": 3,
+    "fechaHora": "2025-11-11T09:00",
+    "disponible": false
+  },
+  {
+    "id": 435,
+    "idMedico": 1,
+    "fechaHora": "2025-11-11T09:30",
+    "disponible": true
+  },
+  {
+    "id": 436,
+    "idMedico": 2,
+    "fechaHora": "2025-11-11T09:30",
+    "disponible": true
+  },
+  {
+    "id": 437,
+    "idMedico": 3,
+    "fechaHora": "2025-11-11T09:30",
+    "disponible": true
+  },
+  {
+    "id": 438,
+    "idMedico": 1,
+    "fechaHora": "2025-11-11T10:00",
+    "disponible": true
+  },
+  {
+    "id": 439,
+    "idMedico": 2,
+    "fechaHora": "2025-11-11T10:00",
+    "disponible": true
+  },
+  {
+    "id": 440,
+    "idMedico": 3,
+    "fechaHora": "2025-11-11T10:00",
+    "disponible": true
+  },
+  {
+    "id": 441,
+    "idMedico": 4,
+    "fechaHora": "2025-11-11T13:00",
+    "disponible": false
+  },
+  {
+    "id": 442,
+    "idMedico": 5,
+    "fechaHora": "2025-11-11T13:00",
+    "disponible": false
+  },
+  {
+    "id": 443,
+    "idMedico": 4,
+    "fechaHora": "2025-11-11T13:30",
+    "disponible": false
+  },
+  {
+    "id": 444,
+    "idMedico": 5,
+    "fechaHora": "2025-11-11T13:30",
+    "disponible": true
+  },
+  {
+    "id": 445,
+    "idMedico": 4,
+    "fechaHora": "2025-11-11T14:00",
+    "disponible": true
+  },
+  {
+    "id": 446,
+    "idMedico": 5,
+    "fechaHora": "2025-11-11T14:00",
+    "disponible": true
+  },
+  {
+    "id": 447,
+    "idMedico": 4,
+    "fechaHora": "2025-11-11T14:30",
+    "disponible": true
+  },
+  {
+    "id": 448,
+    "idMedico": 5,
+    "fechaHora": "2025-11-11T14:30",
+    "disponible": false
+  },
+  {
+    "id": 449,
+    "idMedico": 4,
+    "fechaHora": "2025-11-11T15:00",
+    "disponible": true
+  },
+  {
+    "id": 450,
+    "idMedico": 5,
+    "fechaHora": "2025-11-11T15:00",
+    "disponible": true
+  },
+  {
+    "id": 451,
+    "idMedico": 1,
+    "fechaHora": "2025-11-12T08:00",
+    "disponible": true
+  },
+  {
+    "id": 452,
+    "idMedico": 2,
+    "fechaHora": "2025-11-12T08:00",
+    "disponible": true
+  },
+  {
+    "id": 453,
+    "idMedico": 3,
+    "fechaHora": "2025-11-12T08:00",
+    "disponible": true
+  },
+  {
+    "id": 454,
+    "idMedico": 1,
+    "fechaHora": "2025-11-12T08:30",
+    "disponible": true
+  },
+  {
+    "id": 455,
+    "idMedico": 2,
+    "fechaHora": "2025-11-12T08:30",
+    "disponible": true
+  },
+  {
+    "id": 456,
+    "idMedico": 3,
+    "fechaHora": "2025-11-12T08:30",
+    "disponible": true
+  },
+  {
+    "id": 457,
+    "idMedico": 1,
+    "fechaHora": "2025-11-12T09:00",
+    "disponible": true
+  },
+  {
+    "id": 458,
+    "idMedico": 2,
+    "fechaHora": "2025-11-12T09:00",
+    "disponible": false
+  },
+  {
+    "id": 459,
+    "idMedico": 3,
+    "fechaHora": "2025-11-12T09:00",
+    "disponible": true
+  },
+  {
+    "id": 460,
+    "idMedico": 1,
+    "fechaHora": "2025-11-12T09:30",
+    "disponible": true
+  },
+  {
+    "id": 461,
+    "idMedico": 2,
+    "fechaHora": "2025-11-12T09:30",
+    "disponible": true
+  },
+  {
+    "id": 462,
+    "idMedico": 3,
+    "fechaHora": "2025-11-12T09:30",
+    "disponible": true
+  },
+  {
+    "id": 463,
+    "idMedico": 1,
+    "fechaHora": "2025-11-12T10:00",
+    "disponible": true
+  },
+  {
+    "id": 464,
+    "idMedico": 2,
+    "fechaHora": "2025-11-12T10:00",
+    "disponible": true
+  },
+  {
+    "id": 465,
+    "idMedico": 3,
+    "fechaHora": "2025-11-12T10:00",
+    "disponible": true
+  },
+  {
+    "id": 466,
+    "idMedico": 4,
+    "fechaHora": "2025-11-12T13:00",
+    "disponible": true
+  },
+  {
+    "id": 467,
+    "idMedico": 5,
+    "fechaHora": "2025-11-12T13:00",
+    "disponible": true
+  },
+  {
+    "id": 468,
+    "idMedico": 4,
+    "fechaHora": "2025-11-12T13:30",
+    "disponible": true
+  },
+  {
+    "id": 469,
+    "idMedico": 5,
+    "fechaHora": "2025-11-12T13:30",
+    "disponible": true
+  },
+  {
+    "id": 470,
+    "idMedico": 4,
+    "fechaHora": "2025-11-12T14:00",
+    "disponible": true
+  },
+  {
+    "id": 471,
+    "idMedico": 5,
+    "fechaHora": "2025-11-12T14:00",
+    "disponible": true
+  },
+  {
+    "id": 472,
+    "idMedico": 4,
+    "fechaHora": "2025-11-12T14:30",
+    "disponible": true
+  },
+  {
+    "id": 473,
+    "idMedico": 5,
+    "fechaHora": "2025-11-12T14:30",
+    "disponible": true
+  },
+  {
+    "id": 474,
+    "idMedico": 4,
+    "fechaHora": "2025-11-12T15:00",
+    "disponible": true
+  },
+  {
+    "id": 475,
+    "idMedico": 5,
+    "fechaHora": "2025-11-12T15:00",
+    "disponible": true
+  },
+  {
+    "id": 476,
+    "idMedico": 1,
+    "fechaHora": "2025-11-13T08:00",
+    "disponible": true
+  },
+  {
+    "id": 477,
+    "idMedico": 2,
+    "fechaHora": "2025-11-13T08:00",
+    "disponible": false
+  },
+  {
+    "id": 478,
+    "idMedico": 3,
+    "fechaHora": "2025-11-13T08:00",
+    "disponible": true
+  },
+  {
+    "id": 479,
+    "idMedico": 1,
+    "fechaHora": "2025-11-13T08:30",
+    "disponible": true
+  },
+  {
+    "id": 480,
+    "idMedico": 2,
+    "fechaHora": "2025-11-13T08:30",
+    "disponible": true
+  },
+  {
+    "id": 481,
+    "idMedico": 3,
+    "fechaHora": "2025-11-13T08:30",
+    "disponible": true
+  },
+  {
+    "id": 482,
+    "idMedico": 1,
+    "fechaHora": "2025-11-13T09:00",
+    "disponible": true
+  },
+  {
+    "id": 483,
+    "idMedico": 2,
+    "fechaHora": "2025-11-13T09:00",
+    "disponible": true
+  },
+  {
+    "id": 484,
+    "idMedico": 3,
+    "fechaHora": "2025-11-13T09:00",
+    "disponible": true
+  },
+  {
+    "id": 485,
+    "idMedico": 1,
+    "fechaHora": "2025-11-13T09:30",
+    "disponible": true
+  },
+  {
+    "id": 486,
+    "idMedico": 2,
+    "fechaHora": "2025-11-13T09:30",
+    "disponible": true
+  },
+  {
+    "id": 487,
+    "idMedico": 3,
+    "fechaHora": "2025-11-13T09:30",
+    "disponible": true
+  },
+  {
+    "id": 488,
+    "idMedico": 1,
+    "fechaHora": "2025-11-13T10:00",
+    "disponible": true
+  },
+  {
+    "id": 489,
+    "idMedico": 2,
+    "fechaHora": "2025-11-13T10:00",
+    "disponible": true
+  },
+  {
+    "id": 490,
+    "idMedico": 3,
+    "fechaHora": "2025-11-13T10:00",
+    "disponible": true
+  },
+  {
+    "id": 491,
+    "idMedico": 4,
+    "fechaHora": "2025-11-13T13:00",
+    "disponible": false
+  },
+  {
+    "id": 492,
+    "idMedico": 5,
+    "fechaHora": "2025-11-13T13:00",
+    "disponible": false
+  },
+  {
+    "id": 493,
+    "idMedico": 4,
+    "fechaHora": "2025-11-13T13:30",
+    "disponible": true
+  },
+  {
+    "id": 494,
+    "idMedico": 5,
+    "fechaHora": "2025-11-13T13:30",
+    "disponible": true
+  },
+  {
+    "id": 495,
+    "idMedico": 4,
+    "fechaHora": "2025-11-13T14:00",
+    "disponible": true
+  },
+  {
+    "id": 496,
+    "idMedico": 5,
+    "fechaHora": "2025-11-13T14:00",
+    "disponible": false
+  },
+  {
+    "id": 497,
+    "idMedico": 4,
+    "fechaHora": "2025-11-13T14:30",
+    "disponible": false
+  },
+  {
+    "id": 498,
+    "idMedico": 5,
+    "fechaHora": "2025-11-13T14:30",
+    "disponible": false
+  },
+  {
+    "id": 499,
+    "idMedico": 4,
+    "fechaHora": "2025-11-13T15:00",
+    "disponible": false
+  },
+  {
+    "id": 500,
+    "idMedico": 5,
+    "fechaHora": "2025-11-13T15:00",
+    "disponible": true
+  },
+  {
+    "id": 501,
+    "idMedico": 1,
+    "fechaHora": "2025-11-14T08:00",
+    "disponible": true
+  },
+  {
+    "id": 502,
+    "idMedico": 2,
+    "fechaHora": "2025-11-14T08:00",
+    "disponible": true
+  },
+  {
+    "id": 503,
+    "idMedico": 3,
+    "fechaHora": "2025-11-14T08:00",
+    "disponible": true
+  },
+  {
+    "id": 504,
+    "idMedico": 1,
+    "fechaHora": "2025-11-14T08:30",
+    "disponible": true
+  },
+  {
+    "id": 505,
+    "idMedico": 2,
+    "fechaHora": "2025-11-14T08:30",
+    "disponible": true
+  },
+  {
+    "id": 506,
+    "idMedico": 3,
+    "fechaHora": "2025-11-14T08:30",
+    "disponible": true
+  },
+  {
+    "id": 507,
+    "idMedico": 1,
+    "fechaHora": "2025-11-14T09:00",
+    "disponible": true
+  },
+  {
+    "id": 508,
+    "idMedico": 2,
+    "fechaHora": "2025-11-14T09:00",
+    "disponible": true
+  },
+  {
+    "id": 509,
+    "idMedico": 3,
+    "fechaHora": "2025-11-14T09:00",
+    "disponible": true
+  },
+  {
+    "id": 510,
+    "idMedico": 1,
+    "fechaHora": "2025-11-14T09:30",
+    "disponible": true
+  },
+  {
+    "id": 511,
+    "idMedico": 2,
+    "fechaHora": "2025-11-14T09:30",
+    "disponible": true
+  },
+  {
+    "id": 512,
+    "idMedico": 3,
+    "fechaHora": "2025-11-14T09:30",
+    "disponible": true
+  },
+  {
+    "id": 513,
+    "idMedico": 1,
+    "fechaHora": "2025-11-14T10:00",
+    "disponible": false
+  },
+  {
+    "id": 514,
+    "idMedico": 2,
+    "fechaHora": "2025-11-14T10:00",
+    "disponible": true
+  },
+  {
+    "id": 515,
+    "idMedico": 3,
+    "fechaHora": "2025-11-14T10:00",
+    "disponible": false
+  },
+  {
+    "id": 516,
+    "idMedico": 4,
+    "fechaHora": "2025-11-14T13:00",
+    "disponible": true
+  },
+  {
+    "id": 517,
+    "idMedico": 5,
+    "fechaHora": "2025-11-14T13:00",
+    "disponible": false
+  },
+  {
+    "id": 518,
+    "idMedico": 4,
+    "fechaHora": "2025-11-14T13:30",
+    "disponible": true
+  },
+  {
+    "id": 519,
+    "idMedico": 5,
+    "fechaHora": "2025-11-14T13:30",
+    "disponible": false
+  },
+  {
+    "id": 520,
+    "idMedico": 4,
+    "fechaHora": "2025-11-14T14:00",
+    "disponible": true
+  },
+  {
+    "id": 521,
+    "idMedico": 5,
+    "fechaHora": "2025-11-14T14:00",
+    "disponible": true
+  },
+  {
+    "id": 522,
+    "idMedico": 4,
+    "fechaHora": "2025-11-14T14:30",
+    "disponible": true
+  },
+  {
+    "id": 523,
+    "idMedico": 5,
+    "fechaHora": "2025-11-14T14:30",
+    "disponible": false
+  },
+  {
+    "id": 524,
+    "idMedico": 4,
+    "fechaHora": "2025-11-14T15:00",
+    "disponible": true
+  },
+  {
+    "id": 525,
+    "idMedico": 5,
+    "fechaHora": "2025-11-14T15:00",
+    "disponible": true
+  },
+  {
+    "id": 526,
+    "idMedico": 1,
+    "fechaHora": "2025-11-15T08:00",
+    "disponible": true
+  },
+  {
+    "id": 527,
+    "idMedico": 2,
+    "fechaHora": "2025-11-15T08:00",
+    "disponible": true
+  },
+  {
+    "id": 528,
+    "idMedico": 3,
+    "fechaHora": "2025-11-15T08:00",
+    "disponible": true
+  },
+  {
+    "id": 529,
+    "idMedico": 1,
+    "fechaHora": "2025-11-15T08:30",
+    "disponible": true
+  },
+  {
+    "id": 530,
+    "idMedico": 2,
+    "fechaHora": "2025-11-15T08:30",
+    "disponible": true
+  },
+  {
+    "id": 531,
+    "idMedico": 3,
+    "fechaHora": "2025-11-15T08:30",
+    "disponible": true
+  },
+  {
+    "id": 532,
+    "idMedico": 1,
+    "fechaHora": "2025-11-15T09:00",
+    "disponible": true
+  },
+  {
+    "id": 533,
+    "idMedico": 2,
+    "fechaHora": "2025-11-15T09:00",
+    "disponible": true
+  },
+  {
+    "id": 534,
+    "idMedico": 3,
+    "fechaHora": "2025-11-15T09:00",
+    "disponible": true
+  },
+  {
+    "id": 535,
+    "idMedico": 1,
+    "fechaHora": "2025-11-15T09:30",
+    "disponible": true
+  },
+  {
+    "id": 536,
+    "idMedico": 2,
+    "fechaHora": "2025-11-15T09:30",
+    "disponible": true
+  },
+  {
+    "id": 537,
+    "idMedico": 3,
+    "fechaHora": "2025-11-15T09:30",
+    "disponible": false
+  },
+  {
+    "id": 538,
+    "idMedico": 1,
+    "fechaHora": "2025-11-15T10:00",
+    "disponible": true
+  },
+  {
+    "id": 539,
+    "idMedico": 2,
+    "fechaHora": "2025-11-15T10:00",
+    "disponible": true
+  },
+  {
+    "id": 540,
+    "idMedico": 3,
+    "fechaHora": "2025-11-15T10:00",
+    "disponible": true
+  },
+  {
+    "id": 541,
+    "idMedico": 4,
+    "fechaHora": "2025-11-15T13:00",
+    "disponible": true
+  },
+  {
+    "id": 542,
+    "idMedico": 5,
+    "fechaHora": "2025-11-15T13:00",
+    "disponible": true
+  },
+  {
+    "id": 543,
+    "idMedico": 4,
+    "fechaHora": "2025-11-15T13:30",
+    "disponible": true
+  },
+  {
+    "id": 544,
+    "idMedico": 5,
+    "fechaHora": "2025-11-15T13:30",
+    "disponible": false
+  },
+  {
+    "id": 545,
+    "idMedico": 4,
+    "fechaHora": "2025-11-15T14:00",
+    "disponible": false
+  },
+  {
+    "id": 546,
+    "idMedico": 5,
+    "fechaHora": "2025-11-15T14:00",
+    "disponible": true
+  },
+  {
+    "id": 547,
+    "idMedico": 4,
+    "fechaHora": "2025-11-15T14:30",
+    "disponible": true
+  },
+  {
+    "id": 548,
+    "idMedico": 5,
+    "fechaHora": "2025-11-15T14:30",
+    "disponible": false
+  },
+  {
+    "id": 549,
+    "idMedico": 4,
+    "fechaHora": "2025-11-15T15:00",
+    "disponible": false
+  },
+  {
+    "id": 550,
+    "idMedico": 5,
+    "fechaHora": "2025-11-15T15:00",
+    "disponible": true
+  },
+  {
+    "id": 551,
+    "idMedico": 1,
+    "fechaHora": "2025-11-16T08:00",
+    "disponible": true
+  },
+  {
+    "id": 552,
+    "idMedico": 2,
+    "fechaHora": "2025-11-16T08:00",
+    "disponible": true
+  },
+  {
+    "id": 553,
+    "idMedico": 3,
+    "fechaHora": "2025-11-16T08:00",
+    "disponible": false
+  },
+  {
+    "id": 554,
+    "idMedico": 1,
+    "fechaHora": "2025-11-16T08:30",
+    "disponible": true
+  },
+  {
+    "id": 555,
+    "idMedico": 2,
+    "fechaHora": "2025-11-16T08:30",
+    "disponible": true
+  },
+  {
+    "id": 556,
+    "idMedico": 3,
+    "fechaHora": "2025-11-16T08:30",
+    "disponible": true
+  },
+  {
+    "id": 557,
+    "idMedico": 1,
+    "fechaHora": "2025-11-16T09:00",
+    "disponible": false
+  },
+  {
+    "id": 558,
+    "idMedico": 2,
+    "fechaHora": "2025-11-16T09:00",
+    "disponible": true
+  },
+  {
+    "id": 559,
+    "idMedico": 3,
+    "fechaHora": "2025-11-16T09:00",
+    "disponible": true
+  },
+  {
+    "id": 560,
+    "idMedico": 1,
+    "fechaHora": "2025-11-16T09:30",
+    "disponible": true
+  },
+  {
+    "id": 561,
+    "idMedico": 2,
+    "fechaHora": "2025-11-16T09:30",
+    "disponible": true
+  },
+  {
+    "id": 562,
+    "idMedico": 3,
+    "fechaHora": "2025-11-16T09:30",
+    "disponible": false
+  },
+  {
+    "id": 563,
+    "idMedico": 1,
+    "fechaHora": "2025-11-16T10:00",
+    "disponible": true
+  },
+  {
+    "id": 564,
+    "idMedico": 2,
+    "fechaHora": "2025-11-16T10:00",
+    "disponible": false
+  },
+  {
+    "id": 565,
+    "idMedico": 3,
+    "fechaHora": "2025-11-16T10:00",
+    "disponible": true
+  },
+  {
+    "id": 566,
+    "idMedico": 4,
+    "fechaHora": "2025-11-16T13:00",
+    "disponible": true
+  },
+  {
+    "id": 567,
+    "idMedico": 5,
+    "fechaHora": "2025-11-16T13:00",
+    "disponible": true
+  },
+  {
+    "id": 568,
+    "idMedico": 4,
+    "fechaHora": "2025-11-16T13:30",
+    "disponible": false
+  },
+  {
+    "id": 569,
+    "idMedico": 5,
+    "fechaHora": "2025-11-16T13:30",
+    "disponible": true
+  },
+  {
+    "id": 570,
+    "idMedico": 4,
+    "fechaHora": "2025-11-16T14:00",
+    "disponible": false
+  },
+  {
+    "id": 571,
+    "idMedico": 5,
+    "fechaHora": "2025-11-16T14:00",
+    "disponible": true
+  },
+  {
+    "id": 572,
+    "idMedico": 4,
+    "fechaHora": "2025-11-16T14:30",
+    "disponible": true
+  },
+  {
+    "id": 573,
+    "idMedico": 5,
+    "fechaHora": "2025-11-16T14:30",
+    "disponible": true
+  },
+  {
+    "id": 574,
+    "idMedico": 4,
+    "fechaHora": "2025-11-16T15:00",
+    "disponible": true
+  },
+  {
+    "id": 575,
+    "idMedico": 5,
+    "fechaHora": "2025-11-16T15:00",
+    "disponible": true
+  },
+  {
+    "id": 576,
+    "idMedico": 1,
+    "fechaHora": "2025-11-17T08:00",
+    "disponible": false
+  },
+  {
+    "id": 577,
+    "idMedico": 2,
+    "fechaHora": "2025-11-17T08:00",
+    "disponible": true
+  },
+  {
+    "id": 578,
+    "idMedico": 3,
+    "fechaHora": "2025-11-17T08:00",
+    "disponible": false
+  },
+  {
+    "id": 579,
+    "idMedico": 1,
+    "fechaHora": "2025-11-17T08:30",
+    "disponible": true
+  },
+  {
+    "id": 580,
+    "idMedico": 2,
+    "fechaHora": "2025-11-17T08:30",
+    "disponible": false
+  },
+  {
+    "id": 581,
+    "idMedico": 3,
+    "fechaHora": "2025-11-17T08:30",
+    "disponible": false
+  },
+  {
+    "id": 582,
+    "idMedico": 1,
+    "fechaHora": "2025-11-17T09:00",
+    "disponible": true
+  },
+  {
+    "id": 583,
+    "idMedico": 2,
+    "fechaHora": "2025-11-17T09:00",
+    "disponible": false
+  },
+  {
+    "id": 584,
+    "idMedico": 3,
+    "fechaHora": "2025-11-17T09:00",
+    "disponible": true
+  },
+  {
+    "id": 585,
+    "idMedico": 1,
+    "fechaHora": "2025-11-17T09:30",
+    "disponible": false
+  },
+  {
+    "id": 586,
+    "idMedico": 2,
+    "fechaHora": "2025-11-17T09:30",
+    "disponible": false
+  },
+  {
+    "id": 587,
+    "idMedico": 3,
+    "fechaHora": "2025-11-17T09:30",
+    "disponible": true
+  },
+  {
+    "id": 588,
+    "idMedico": 1,
+    "fechaHora": "2025-11-17T10:00",
+    "disponible": true
+  },
+  {
+    "id": 589,
+    "idMedico": 2,
+    "fechaHora": "2025-11-17T10:00",
+    "disponible": false
+  },
+  {
+    "id": 590,
+    "idMedico": 3,
+    "fechaHora": "2025-11-17T10:00",
+    "disponible": true
+  },
+  {
+    "id": 591,
+    "idMedico": 4,
+    "fechaHora": "2025-11-17T13:00",
+    "disponible": true
+  },
+  {
+    "id": 592,
+    "idMedico": 5,
+    "fechaHora": "2025-11-17T13:00",
+    "disponible": true
+  },
+  {
+    "id": 593,
+    "idMedico": 4,
+    "fechaHora": "2025-11-17T13:30",
+    "disponible": false
+  },
+  {
+    "id": 594,
+    "idMedico": 5,
+    "fechaHora": "2025-11-17T13:30",
+    "disponible": false
+  },
+  {
+    "id": 595,
+    "idMedico": 4,
+    "fechaHora": "2025-11-17T14:00",
+    "disponible": true
+  },
+  {
+    "id": 596,
+    "idMedico": 5,
+    "fechaHora": "2025-11-17T14:00",
+    "disponible": false
+  },
+  {
+    "id": 597,
+    "idMedico": 4,
+    "fechaHora": "2025-11-17T14:30",
+    "disponible": false
+  },
+  {
+    "id": 598,
+    "idMedico": 5,
+    "fechaHora": "2025-11-17T14:30",
+    "disponible": false
+  },
+  {
+    "id": 599,
+    "idMedico": 4,
+    "fechaHora": "2025-11-17T15:00",
+    "disponible": false
+  },
+  {
+    "id": 600,
+    "idMedico": 5,
+    "fechaHora": "2025-11-17T15:00",
+    "disponible": false
+  },
+  {
+    "id": 601,
+    "idMedico": 1,
+    "fechaHora": "2025-11-18T08:00",
+    "disponible": true
+  },
+  {
+    "id": 602,
+    "idMedico": 2,
+    "fechaHora": "2025-11-18T08:00",
+    "disponible": true
+  },
+  {
+    "id": 603,
+    "idMedico": 3,
+    "fechaHora": "2025-11-18T08:00",
+    "disponible": true
+  },
+  {
+    "id": 604,
+    "idMedico": 1,
+    "fechaHora": "2025-11-18T08:30",
+    "disponible": true
+  },
+  {
+    "id": 605,
+    "idMedico": 2,
+    "fechaHora": "2025-11-18T08:30",
+    "disponible": true
+  },
+  {
+    "id": 606,
+    "idMedico": 3,
+    "fechaHora": "2025-11-18T08:30",
+    "disponible": true
+  },
+  {
+    "id": 607,
+    "idMedico": 1,
+    "fechaHora": "2025-11-18T09:00",
+    "disponible": true
+  },
+  {
+    "id": 608,
+    "idMedico": 2,
+    "fechaHora": "2025-11-18T09:00",
+    "disponible": true
+  },
+  {
+    "id": 609,
+    "idMedico": 3,
+    "fechaHora": "2025-11-18T09:00",
+    "disponible": true
+  },
+  {
+    "id": 610,
+    "idMedico": 1,
+    "fechaHora": "2025-11-18T09:30",
+    "disponible": false
+  },
+  {
+    "id": 611,
+    "idMedico": 2,
+    "fechaHora": "2025-11-18T09:30",
+    "disponible": false
+  },
+  {
+    "id": 612,
+    "idMedico": 3,
+    "fechaHora": "2025-11-18T09:30",
+    "disponible": false
+  },
+  {
+    "id": 613,
+    "idMedico": 1,
+    "fechaHora": "2025-11-18T10:00",
+    "disponible": true
+  },
+  {
+    "id": 614,
+    "idMedico": 2,
+    "fechaHora": "2025-11-18T10:00",
+    "disponible": false
+  },
+  {
+    "id": 615,
+    "idMedico": 3,
+    "fechaHora": "2025-11-18T10:00",
+    "disponible": true
+  },
+  {
+    "id": 616,
+    "idMedico": 4,
+    "fechaHora": "2025-11-18T13:00",
+    "disponible": true
+  },
+  {
+    "id": 617,
+    "idMedico": 5,
+    "fechaHora": "2025-11-18T13:00",
+    "disponible": false
+  },
+  {
+    "id": 618,
+    "idMedico": 4,
+    "fechaHora": "2025-11-18T13:30",
+    "disponible": true
+  },
+  {
+    "id": 619,
+    "idMedico": 5,
+    "fechaHora": "2025-11-18T13:30",
+    "disponible": false
+  },
+  {
+    "id": 620,
+    "idMedico": 4,
+    "fechaHora": "2025-11-18T14:00",
+    "disponible": false
+  },
+  {
+    "id": 621,
+    "idMedico": 5,
+    "fechaHora": "2025-11-18T14:00",
+    "disponible": false
+  },
+  {
+    "id": 622,
+    "idMedico": 4,
+    "fechaHora": "2025-11-18T14:30",
+    "disponible": false
+  },
+  {
+    "id": 623,
+    "idMedico": 5,
+    "fechaHora": "2025-11-18T14:30",
+    "disponible": false
+  },
+  {
+    "id": 624,
+    "idMedico": 4,
+    "fechaHora": "2025-11-18T15:00",
+    "disponible": false
+  },
+  {
+    "id": 625,
+    "idMedico": 5,
+    "fechaHora": "2025-11-18T15:00",
+    "disponible": true
+  },
+  {
+    "id": 626,
+    "idMedico": 1,
+    "fechaHora": "2025-11-19T08:00",
+    "disponible": true
+  },
+  {
+    "id": 627,
+    "idMedico": 2,
+    "fechaHora": "2025-11-19T08:00",
+    "disponible": true
+  },
+  {
+    "id": 628,
+    "idMedico": 3,
+    "fechaHora": "2025-11-19T08:00",
+    "disponible": true
+  },
+  {
+    "id": 629,
+    "idMedico": 1,
+    "fechaHora": "2025-11-19T08:30",
+    "disponible": true
+  },
+  {
+    "id": 630,
+    "idMedico": 2,
+    "fechaHora": "2025-11-19T08:30",
+    "disponible": true
+  },
+  {
+    "id": 631,
+    "idMedico": 3,
+    "fechaHora": "2025-11-19T08:30",
+    "disponible": true
+  },
+  {
+    "id": 632,
+    "idMedico": 1,
+    "fechaHora": "2025-11-19T09:00",
+    "disponible": true
+  },
+  {
+    "id": 633,
+    "idMedico": 2,
+    "fechaHora": "2025-11-19T09:00",
+    "disponible": true
+  },
+  {
+    "id": 634,
+    "idMedico": 3,
+    "fechaHora": "2025-11-19T09:00",
+    "disponible": true
+  },
+  {
+    "id": 635,
+    "idMedico": 1,
+    "fechaHora": "2025-11-19T09:30",
+    "disponible": true
+  },
+  {
+    "id": 636,
+    "idMedico": 2,
+    "fechaHora": "2025-11-19T09:30",
+    "disponible": true
+  },
+  {
+    "id": 637,
+    "idMedico": 3,
+    "fechaHora": "2025-11-19T09:30",
+    "disponible": false
+  },
+  {
+    "id": 638,
+    "idMedico": 1,
+    "fechaHora": "2025-11-19T10:00",
+    "disponible": true
+  },
+  {
+    "id": 639,
+    "idMedico": 2,
+    "fechaHora": "2025-11-19T10:00",
+    "disponible": false
+  },
+  {
+    "id": 640,
+    "idMedico": 3,
+    "fechaHora": "2025-11-19T10:00",
+    "disponible": false
+  },
+  {
+    "id": 641,
+    "idMedico": 4,
+    "fechaHora": "2025-11-19T13:00",
+    "disponible": true
+  },
+  {
+    "id": 642,
+    "idMedico": 5,
+    "fechaHora": "2025-11-19T13:00",
+    "disponible": true
+  },
+  {
+    "id": 643,
+    "idMedico": 4,
+    "fechaHora": "2025-11-19T13:30",
+    "disponible": true
+  },
+  {
+    "id": 644,
+    "idMedico": 5,
+    "fechaHora": "2025-11-19T13:30",
+    "disponible": true
+  },
+  {
+    "id": 645,
+    "idMedico": 4,
+    "fechaHora": "2025-11-19T14:00",
+    "disponible": true
+  },
+  {
+    "id": 646,
+    "idMedico": 5,
+    "fechaHora": "2025-11-19T14:00",
+    "disponible": true
+  },
+  {
+    "id": 647,
+    "idMedico": 4,
+    "fechaHora": "2025-11-19T14:30",
+    "disponible": false
+  },
+  {
+    "id": 648,
+    "idMedico": 5,
+    "fechaHora": "2025-11-19T14:30",
+    "disponible": true
+  },
+  {
+    "id": 649,
+    "idMedico": 4,
+    "fechaHora": "2025-11-19T15:00",
+    "disponible": true
+  },
+  {
+    "id": 650,
+    "idMedico": 5,
+    "fechaHora": "2025-11-19T15:00",
+    "disponible": true
+  },
+  {
+    "id": 651,
+    "idMedico": 1,
+    "fechaHora": "2025-11-20T08:00",
+    "disponible": true
+  },
+  {
+    "id": 652,
+    "idMedico": 2,
+    "fechaHora": "2025-11-20T08:00",
+    "disponible": true
+  },
+  {
+    "id": 653,
+    "idMedico": 3,
+    "fechaHora": "2025-11-20T08:00",
+    "disponible": true
+  },
+  {
+    "id": 654,
+    "idMedico": 1,
+    "fechaHora": "2025-11-20T08:30",
+    "disponible": true
+  },
+  {
+    "id": 655,
+    "idMedico": 2,
+    "fechaHora": "2025-11-20T08:30",
+    "disponible": true
+  },
+  {
+    "id": 656,
+    "idMedico": 3,
+    "fechaHora": "2025-11-20T08:30",
+    "disponible": true
+  },
+  {
+    "id": 657,
+    "idMedico": 1,
+    "fechaHora": "2025-11-20T09:00",
+    "disponible": true
+  },
+  {
+    "id": 658,
+    "idMedico": 2,
+    "fechaHora": "2025-11-20T09:00",
+    "disponible": true
+  },
+  {
+    "id": 659,
+    "idMedico": 3,
+    "fechaHora": "2025-11-20T09:00",
+    "disponible": true
+  },
+  {
+    "id": 660,
+    "idMedico": 1,
+    "fechaHora": "2025-11-20T09:30",
+    "disponible": false
+  },
+  {
+    "id": 661,
+    "idMedico": 2,
+    "fechaHora": "2025-11-20T09:30",
+    "disponible": true
+  },
+  {
+    "id": 662,
+    "idMedico": 3,
+    "fechaHora": "2025-11-20T09:30",
+    "disponible": true
+  },
+  {
+    "id": 663,
+    "idMedico": 1,
+    "fechaHora": "2025-11-20T10:00",
+    "disponible": true
+  },
+  {
+    "id": 664,
+    "idMedico": 2,
+    "fechaHora": "2025-11-20T10:00",
+    "disponible": true
+  },
+  {
+    "id": 665,
+    "idMedico": 3,
+    "fechaHora": "2025-11-20T10:00",
+    "disponible": false
+  },
+  {
+    "id": 666,
+    "idMedico": 4,
+    "fechaHora": "2025-11-20T13:00",
+    "disponible": false
+  },
+  {
+    "id": 667,
+    "idMedico": 5,
+    "fechaHora": "2025-11-20T13:00",
+    "disponible": false
+  },
+  {
+    "id": 668,
+    "idMedico": 4,
+    "fechaHora": "2025-11-20T13:30",
+    "disponible": false
+  },
+  {
+    "id": 669,
+    "idMedico": 5,
+    "fechaHora": "2025-11-20T13:30",
+    "disponible": true
+  },
+  {
+    "id": 670,
+    "idMedico": 4,
+    "fechaHora": "2025-11-20T14:00",
+    "disponible": true
+  },
+  {
+    "id": 671,
+    "idMedico": 5,
+    "fechaHora": "2025-11-20T14:00",
+    "disponible": true
+  },
+  {
+    "id": 672,
+    "idMedico": 4,
+    "fechaHora": "2025-11-20T14:30",
+    "disponible": true
+  },
+  {
+    "id": 673,
+    "idMedico": 5,
+    "fechaHora": "2025-11-20T14:30",
+    "disponible": false
+  },
+  {
+    "id": 674,
+    "idMedico": 4,
+    "fechaHora": "2025-11-20T15:00",
+    "disponible": false
+  },
+  {
+    "id": 675,
+    "idMedico": 5,
+    "fechaHora": "2025-11-20T15:00",
+    "disponible": true
+  },
+  {
+    "id": 676,
+    "idMedico": 1,
+    "fechaHora": "2025-11-21T08:00",
+    "disponible": true
+  },
+  {
+    "id": 677,
+    "idMedico": 2,
+    "fechaHora": "2025-11-21T08:00",
+    "disponible": true
+  },
+  {
+    "id": 678,
+    "idMedico": 3,
+    "fechaHora": "2025-11-21T08:00",
+    "disponible": true
+  },
+  {
+    "id": 679,
+    "idMedico": 1,
+    "fechaHora": "2025-11-21T08:30",
+    "disponible": true
+  },
+  {
+    "id": 680,
+    "idMedico": 2,
+    "fechaHora": "2025-11-21T08:30",
+    "disponible": false
+  },
+  {
+    "id": 681,
+    "idMedico": 3,
+    "fechaHora": "2025-11-21T08:30",
+    "disponible": true
+  },
+  {
+    "id": 682,
+    "idMedico": 1,
+    "fechaHora": "2025-11-21T09:00",
+    "disponible": true
+  },
+  {
+    "id": 683,
+    "idMedico": 2,
+    "fechaHora": "2025-11-21T09:00",
+    "disponible": true
+  },
+  {
+    "id": 684,
+    "idMedico": 3,
+    "fechaHora": "2025-11-21T09:00",
+    "disponible": false
+  },
+  {
+    "id": 685,
+    "idMedico": 1,
+    "fechaHora": "2025-11-21T09:30",
+    "disponible": true
+  },
+  {
+    "id": 686,
+    "idMedico": 2,
+    "fechaHora": "2025-11-21T09:30",
+    "disponible": true
+  },
+  {
+    "id": 687,
+    "idMedico": 3,
+    "fechaHora": "2025-11-21T09:30",
+    "disponible": false
+  },
+  {
+    "id": 688,
+    "idMedico": 1,
+    "fechaHora": "2025-11-21T10:00",
+    "disponible": false
+  },
+  {
+    "id": 689,
+    "idMedico": 2,
+    "fechaHora": "2025-11-21T10:00",
+    "disponible": true
+  },
+  {
+    "id": 690,
+    "idMedico": 3,
+    "fechaHora": "2025-11-21T10:00",
+    "disponible": true
+  },
+  {
+    "id": 691,
+    "idMedico": 4,
+    "fechaHora": "2025-11-21T13:00",
+    "disponible": true
+  },
+  {
+    "id": 692,
+    "idMedico": 5,
+    "fechaHora": "2025-11-21T13:00",
+    "disponible": false
+  },
+  {
+    "id": 693,
+    "idMedico": 4,
+    "fechaHora": "2025-11-21T13:30",
+    "disponible": false
+  },
+  {
+    "id": 694,
+    "idMedico": 5,
+    "fechaHora": "2025-11-21T13:30",
+    "disponible": false
+  },
+  {
+    "id": 695,
+    "idMedico": 4,
+    "fechaHora": "2025-11-21T14:00",
+    "disponible": true
+  },
+  {
+    "id": 696,
+    "idMedico": 5,
+    "fechaHora": "2025-11-21T14:00",
+    "disponible": true
+  },
+  {
+    "id": 697,
+    "idMedico": 4,
+    "fechaHora": "2025-11-21T14:30",
+    "disponible": true
+  },
+  {
+    "id": 698,
+    "idMedico": 5,
+    "fechaHora": "2025-11-21T14:30",
+    "disponible": true
+  },
+  {
+    "id": 699,
+    "idMedico": 4,
+    "fechaHora": "2025-11-21T15:00",
+    "disponible": false
+  },
+  {
+    "id": 700,
+    "idMedico": 5,
+    "fechaHora": "2025-11-21T15:00",
+    "disponible": true
+  },
+  {
+    "id": 701,
+    "idMedico": 1,
+    "fechaHora": "2025-11-22T08:00",
+    "disponible": false
+  },
+  {
+    "id": 702,
+    "idMedico": 2,
+    "fechaHora": "2025-11-22T08:00",
+    "disponible": false
+  },
+  {
+    "id": 703,
+    "idMedico": 3,
+    "fechaHora": "2025-11-22T08:00",
+    "disponible": true
+  },
+  {
+    "id": 704,
+    "idMedico": 1,
+    "fechaHora": "2025-11-22T08:30",
+    "disponible": true
+  },
+  {
+    "id": 705,
+    "idMedico": 2,
+    "fechaHora": "2025-11-22T08:30",
+    "disponible": false
+  },
+  {
+    "id": 706,
+    "idMedico": 3,
+    "fechaHora": "2025-11-22T08:30",
+    "disponible": false
+  },
+  {
+    "id": 707,
+    "idMedico": 1,
+    "fechaHora": "2025-11-22T09:00",
+    "disponible": false
+  },
+  {
+    "id": 708,
+    "idMedico": 2,
+    "fechaHora": "2025-11-22T09:00",
+    "disponible": false
+  },
+  {
+    "id": 709,
+    "idMedico": 3,
+    "fechaHora": "2025-11-22T09:00",
+    "disponible": false
+  },
+  {
+    "id": 710,
+    "idMedico": 1,
+    "fechaHora": "2025-11-22T09:30",
+    "disponible": true
+  },
+  {
+    "id": 711,
+    "idMedico": 2,
+    "fechaHora": "2025-11-22T09:30",
+    "disponible": false
+  },
+  {
+    "id": 712,
+    "idMedico": 3,
+    "fechaHora": "2025-11-22T09:30",
+    "disponible": true
+  },
+  {
+    "id": 713,
+    "idMedico": 1,
+    "fechaHora": "2025-11-22T10:00",
+    "disponible": true
+  },
+  {
+    "id": 714,
+    "idMedico": 2,
+    "fechaHora": "2025-11-22T10:00",
+    "disponible": false
+  },
+  {
+    "id": 715,
+    "idMedico": 3,
+    "fechaHora": "2025-11-22T10:00",
+    "disponible": true
+  },
+  {
+    "id": 716,
+    "idMedico": 4,
+    "fechaHora": "2025-11-22T13:00",
+    "disponible": true
+  },
+  {
+    "id": 717,
+    "idMedico": 5,
+    "fechaHora": "2025-11-22T13:00",
+    "disponible": false
+  },
+  {
+    "id": 718,
+    "idMedico": 4,
+    "fechaHora": "2025-11-22T13:30",
+    "disponible": false
+  },
+  {
+    "id": 719,
+    "idMedico": 5,
+    "fechaHora": "2025-11-22T13:30",
+    "disponible": true
+  },
+  {
+    "id": 720,
+    "idMedico": 4,
+    "fechaHora": "2025-11-22T14:00",
+    "disponible": true
+  },
+  {
+    "id": 721,
+    "idMedico": 5,
+    "fechaHora": "2025-11-22T14:00",
+    "disponible": true
+  },
+  {
+    "id": 722,
+    "idMedico": 4,
+    "fechaHora": "2025-11-22T14:30",
+    "disponible": true
+  },
+  {
+    "id": 723,
+    "idMedico": 5,
+    "fechaHora": "2025-11-22T14:30",
+    "disponible": false
+  },
+  {
+    "id": 724,
+    "idMedico": 4,
+    "fechaHora": "2025-11-22T15:00",
+    "disponible": true
+  },
+  {
+    "id": 725,
+    "idMedico": 5,
+    "fechaHora": "2025-11-22T15:00",
+    "disponible": true
+  },
+  {
+    "id": 726,
+    "idMedico": 1,
+    "fechaHora": "2025-11-23T08:00",
+    "disponible": true
+  },
+  {
+    "id": 727,
+    "idMedico": 2,
+    "fechaHora": "2025-11-23T08:00",
+    "disponible": false
+  },
+  {
+    "id": 728,
+    "idMedico": 3,
+    "fechaHora": "2025-11-23T08:00",
+    "disponible": false
+  },
+  {
+    "id": 729,
+    "idMedico": 1,
+    "fechaHora": "2025-11-23T08:30",
+    "disponible": false
+  },
+  {
+    "id": 730,
+    "idMedico": 2,
+    "fechaHora": "2025-11-23T08:30",
+    "disponible": false
+  },
+  {
+    "id": 731,
+    "idMedico": 3,
+    "fechaHora": "2025-11-23T08:30",
+    "disponible": true
+  },
+  {
+    "id": 732,
+    "idMedico": 1,
+    "fechaHora": "2025-11-23T09:00",
+    "disponible": true
+  },
+  {
+    "id": 733,
+    "idMedico": 2,
+    "fechaHora": "2025-11-23T09:00",
+    "disponible": true
+  },
+  {
+    "id": 734,
+    "idMedico": 3,
+    "fechaHora": "2025-11-23T09:00",
+    "disponible": true
+  },
+  {
+    "id": 735,
+    "idMedico": 1,
+    "fechaHora": "2025-11-23T09:30",
+    "disponible": false
+  },
+  {
+    "id": 736,
+    "idMedico": 2,
+    "fechaHora": "2025-11-23T09:30",
+    "disponible": true
+  },
+  {
+    "id": 737,
+    "idMedico": 3,
+    "fechaHora": "2025-11-23T09:30",
+    "disponible": true
+  },
+  {
+    "id": 738,
+    "idMedico": 1,
+    "fechaHora": "2025-11-23T10:00",
+    "disponible": true
+  },
+  {
+    "id": 739,
+    "idMedico": 2,
+    "fechaHora": "2025-11-23T10:00",
+    "disponible": true
+  },
+  {
+    "id": 740,
+    "idMedico": 3,
+    "fechaHora": "2025-11-23T10:00",
+    "disponible": true
+  },
+  {
+    "id": 741,
+    "idMedico": 4,
+    "fechaHora": "2025-11-23T13:00",
+    "disponible": true
+  },
+  {
+    "id": 742,
+    "idMedico": 5,
+    "fechaHora": "2025-11-23T13:00",
+    "disponible": false
+  },
+  {
+    "id": 743,
+    "idMedico": 4,
+    "fechaHora": "2025-11-23T13:30",
+    "disponible": false
+  },
+  {
+    "id": 744,
+    "idMedico": 5,
+    "fechaHora": "2025-11-23T13:30",
+    "disponible": true
+  },
+  {
+    "id": 745,
+    "idMedico": 4,
+    "fechaHora": "2025-11-23T14:00",
+    "disponible": true
+  },
+  {
+    "id": 746,
+    "idMedico": 5,
+    "fechaHora": "2025-11-23T14:00",
+    "disponible": true
+  },
+  {
+    "id": 747,
+    "idMedico": 4,
+    "fechaHora": "2025-11-23T14:30",
+    "disponible": true
+  },
+  {
+    "id": 748,
+    "idMedico": 5,
+    "fechaHora": "2025-11-23T14:30",
+    "disponible": true
+  },
+  {
+    "id": 749,
+    "idMedico": 4,
+    "fechaHora": "2025-11-23T15:00",
+    "disponible": false
+  },
+  {
+    "id": 750,
+    "idMedico": 5,
+    "fechaHora": "2025-11-23T15:00",
+    "disponible": true
+  },
+  {
+    "id": 751,
+    "idMedico": 1,
+    "fechaHora": "2025-11-24T08:00",
+    "disponible": true
+  },
+  {
+    "id": 752,
+    "idMedico": 2,
+    "fechaHora": "2025-11-24T08:00",
+    "disponible": true
+  },
+  {
+    "id": 753,
+    "idMedico": 3,
+    "fechaHora": "2025-11-24T08:00",
+    "disponible": true
+  },
+  {
+    "id": 754,
+    "idMedico": 1,
+    "fechaHora": "2025-11-24T08:30",
+    "disponible": false
+  },
+  {
+    "id": 755,
+    "idMedico": 2,
+    "fechaHora": "2025-11-24T08:30",
+    "disponible": false
+  },
+  {
+    "id": 756,
+    "idMedico": 3,
+    "fechaHora": "2025-11-24T08:30",
+    "disponible": false
+  },
+  {
+    "id": 757,
+    "idMedico": 1,
+    "fechaHora": "2025-11-24T09:00",
+    "disponible": true
+  },
+  {
+    "id": 758,
+    "idMedico": 2,
+    "fechaHora": "2025-11-24T09:00",
+    "disponible": true
+  },
+  {
+    "id": 759,
+    "idMedico": 3,
+    "fechaHora": "2025-11-24T09:00",
+    "disponible": false
+  },
+  {
+    "id": 760,
+    "idMedico": 1,
+    "fechaHora": "2025-11-24T09:30",
+    "disponible": true
+  },
+  {
+    "id": 761,
+    "idMedico": 2,
+    "fechaHora": "2025-11-24T09:30",
+    "disponible": false
+  },
+  {
+    "id": 762,
+    "idMedico": 3,
+    "fechaHora": "2025-11-24T09:30",
+    "disponible": false
+  },
+  {
+    "id": 763,
+    "idMedico": 1,
+    "fechaHora": "2025-11-24T10:00",
+    "disponible": false
+  },
+  {
+    "id": 764,
+    "idMedico": 2,
+    "fechaHora": "2025-11-24T10:00",
+    "disponible": true
+  },
+  {
+    "id": 765,
+    "idMedico": 3,
+    "fechaHora": "2025-11-24T10:00",
+    "disponible": true
+  },
+  {
+    "id": 766,
+    "idMedico": 4,
+    "fechaHora": "2025-11-24T13:00",
+    "disponible": false
+  },
+  {
+    "id": 767,
+    "idMedico": 5,
+    "fechaHora": "2025-11-24T13:00",
+    "disponible": true
+  },
+  {
+    "id": 768,
+    "idMedico": 4,
+    "fechaHora": "2025-11-24T13:30",
+    "disponible": false
+  },
+  {
+    "id": 769,
+    "idMedico": 5,
+    "fechaHora": "2025-11-24T13:30",
+    "disponible": true
+  },
+  {
+    "id": 770,
+    "idMedico": 4,
+    "fechaHora": "2025-11-24T14:00",
+    "disponible": false
+  },
+  {
+    "id": 771,
+    "idMedico": 5,
+    "fechaHora": "2025-11-24T14:00",
+    "disponible": true
+  },
+  {
+    "id": 772,
+    "idMedico": 4,
+    "fechaHora": "2025-11-24T14:30",
+    "disponible": true
+  },
+  {
+    "id": 773,
+    "idMedico": 5,
+    "fechaHora": "2025-11-24T14:30",
+    "disponible": false
+  },
+  {
+    "id": 774,
+    "idMedico": 4,
+    "fechaHora": "2025-11-24T15:00",
+    "disponible": true
+  },
+  {
+    "id": 775,
+    "idMedico": 5,
+    "fechaHora": "2025-11-24T15:00",
+    "disponible": true
+  },
+  {
+    "id": 776,
+    "idMedico": 1,
+    "fechaHora": "2025-11-25T08:00",
+    "disponible": true
+  },
+  {
+    "id": 777,
+    "idMedico": 2,
+    "fechaHora": "2025-11-25T08:00",
+    "disponible": true
+  },
+  {
+    "id": 778,
+    "idMedico": 3,
+    "fechaHora": "2025-11-25T08:00",
+    "disponible": true
+  },
+  {
+    "id": 779,
+    "idMedico": 1,
+    "fechaHora": "2025-11-25T08:30",
+    "disponible": false
+  },
+  {
+    "id": 780,
+    "idMedico": 2,
+    "fechaHora": "2025-11-25T08:30",
+    "disponible": true
+  },
+  {
+    "id": 781,
+    "idMedico": 3,
+    "fechaHora": "2025-11-25T08:30",
+    "disponible": true
+  },
+  {
+    "id": 782,
+    "idMedico": 1,
+    "fechaHora": "2025-11-25T09:00",
+    "disponible": true
+  },
+  {
+    "id": 783,
+    "idMedico": 2,
+    "fechaHora": "2025-11-25T09:00",
+    "disponible": true
+  },
+  {
+    "id": 784,
+    "idMedico": 3,
+    "fechaHora": "2025-11-25T09:00",
+    "disponible": false
+  },
+  {
+    "id": 785,
+    "idMedico": 1,
+    "fechaHora": "2025-11-25T09:30",
+    "disponible": false
+  },
+  {
+    "id": 786,
+    "idMedico": 2,
+    "fechaHora": "2025-11-25T09:30",
+    "disponible": true
+  },
+  {
+    "id": 787,
+    "idMedico": 3,
+    "fechaHora": "2025-11-25T09:30",
+    "disponible": true
+  },
+  {
+    "id": 788,
+    "idMedico": 1,
+    "fechaHora": "2025-11-25T10:00",
+    "disponible": true
+  },
+  {
+    "id": 789,
+    "idMedico": 2,
+    "fechaHora": "2025-11-25T10:00",
+    "disponible": true
+  },
+  {
+    "id": 790,
+    "idMedico": 3,
+    "fechaHora": "2025-11-25T10:00",
+    "disponible": false
+  },
+  {
+    "id": 791,
+    "idMedico": 4,
+    "fechaHora": "2025-11-25T13:00",
+    "disponible": true
+  },
+  {
+    "id": 792,
+    "idMedico": 5,
+    "fechaHora": "2025-11-25T13:00",
+    "disponible": true
+  },
+  {
+    "id": 793,
+    "idMedico": 4,
+    "fechaHora": "2025-11-25T13:30",
+    "disponible": true
+  },
+  {
+    "id": 794,
+    "idMedico": 5,
+    "fechaHora": "2025-11-25T13:30",
+    "disponible": true
+  },
+  {
+    "id": 795,
+    "idMedico": 4,
+    "fechaHora": "2025-11-25T14:00",
+    "disponible": true
+  },
+  {
+    "id": 796,
+    "idMedico": 5,
+    "fechaHora": "2025-11-25T14:00",
+    "disponible": true
+  },
+  {
+    "id": 797,
+    "idMedico": 4,
+    "fechaHora": "2025-11-25T14:30",
+    "disponible": true
+  },
+  {
+    "id": 798,
+    "idMedico": 5,
+    "fechaHora": "2025-11-25T14:30",
+    "disponible": true
+  },
+  {
+    "id": 799,
+    "idMedico": 4,
+    "fechaHora": "2025-11-25T15:00",
+    "disponible": true
+  },
+  {
+    "id": 800,
+    "idMedico": 5,
+    "fechaHora": "2025-11-25T15:00",
+    "disponible": true
+  },
+  {
+    "id": 801,
+    "idMedico": 1,
+    "fechaHora": "2025-11-26T08:00",
+    "disponible": true
+  },
+  {
+    "id": 802,
+    "idMedico": 2,
+    "fechaHora": "2025-11-26T08:00",
+    "disponible": false
+  },
+  {
+    "id": 803,
+    "idMedico": 3,
+    "fechaHora": "2025-11-26T08:00",
+    "disponible": true
+  },
+  {
+    "id": 804,
+    "idMedico": 1,
+    "fechaHora": "2025-11-26T08:30",
+    "disponible": true
+  },
+  {
+    "id": 805,
+    "idMedico": 2,
+    "fechaHora": "2025-11-26T08:30",
+    "disponible": true
+  },
+  {
+    "id": 806,
+    "idMedico": 3,
+    "fechaHora": "2025-11-26T08:30",
+    "disponible": true
+  },
+  {
+    "id": 807,
+    "idMedico": 1,
+    "fechaHora": "2025-11-26T09:00",
+    "disponible": true
+  },
+  {
+    "id": 808,
+    "idMedico": 2,
+    "fechaHora": "2025-11-26T09:00",
+    "disponible": true
+  },
+  {
+    "id": 809,
+    "idMedico": 3,
+    "fechaHora": "2025-11-26T09:00",
+    "disponible": false
+  },
+  {
+    "id": 810,
+    "idMedico": 1,
+    "fechaHora": "2025-11-26T09:30",
+    "disponible": false
+  },
+  {
+    "id": 811,
+    "idMedico": 2,
+    "fechaHora": "2025-11-26T09:30",
+    "disponible": true
+  },
+  {
+    "id": 812,
+    "idMedico": 3,
+    "fechaHora": "2025-11-26T09:30",
+    "disponible": false
+  },
+  {
+    "id": 813,
+    "idMedico": 1,
+    "fechaHora": "2025-11-26T10:00",
+    "disponible": true
+  },
+  {
+    "id": 814,
+    "idMedico": 2,
+    "fechaHora": "2025-11-26T10:00",
+    "disponible": true
+  },
+  {
+    "id": 815,
+    "idMedico": 3,
+    "fechaHora": "2025-11-26T10:00",
+    "disponible": true
+  },
+  {
+    "id": 816,
+    "idMedico": 4,
+    "fechaHora": "2025-11-26T13:00",
+    "disponible": true
+  },
+  {
+    "id": 817,
+    "idMedico": 5,
+    "fechaHora": "2025-11-26T13:00",
+    "disponible": true
+  },
+  {
+    "id": 818,
+    "idMedico": 4,
+    "fechaHora": "2025-11-26T13:30",
+    "disponible": false
+  },
+  {
+    "id": 819,
+    "idMedico": 5,
+    "fechaHora": "2025-11-26T13:30",
+    "disponible": false
+  },
+  {
+    "id": 820,
+    "idMedico": 4,
+    "fechaHora": "2025-11-26T14:00",
+    "disponible": true
+  },
+  {
+    "id": 821,
+    "idMedico": 5,
+    "fechaHora": "2025-11-26T14:00",
+    "disponible": false
+  },
+  {
+    "id": 822,
+    "idMedico": 4,
+    "fechaHora": "2025-11-26T14:30",
+    "disponible": true
+  },
+  {
+    "id": 823,
+    "idMedico": 5,
+    "fechaHora": "2025-11-26T14:30",
+    "disponible": false
+  },
+  {
+    "id": 824,
+    "idMedico": 4,
+    "fechaHora": "2025-11-26T15:00",
+    "disponible": false
+  },
+  {
+    "id": 825,
+    "idMedico": 5,
+    "fechaHora": "2025-11-26T15:00",
+    "disponible": true
+  },
+  {
+    "id": 826,
+    "idMedico": 1,
+    "fechaHora": "2025-11-27T08:00",
+    "disponible": true
+  },
+  {
+    "id": 827,
+    "idMedico": 2,
+    "fechaHora": "2025-11-27T08:00",
+    "disponible": false
+  },
+  {
+    "id": 828,
+    "idMedico": 3,
+    "fechaHora": "2025-11-27T08:00",
+    "disponible": true
+  },
+  {
+    "id": 829,
+    "idMedico": 1,
+    "fechaHora": "2025-11-27T08:30",
+    "disponible": true
+  },
+  {
+    "id": 830,
+    "idMedico": 2,
+    "fechaHora": "2025-11-27T08:30",
+    "disponible": true
+  },
+  {
+    "id": 831,
+    "idMedico": 3,
+    "fechaHora": "2025-11-27T08:30",
+    "disponible": true
+  },
+  {
+    "id": 832,
+    "idMedico": 1,
+    "fechaHora": "2025-11-27T09:00",
+    "disponible": true
+  },
+  {
+    "id": 833,
+    "idMedico": 2,
+    "fechaHora": "2025-11-27T09:00",
+    "disponible": true
+  },
+  {
+    "id": 834,
+    "idMedico": 3,
+    "fechaHora": "2025-11-27T09:00",
+    "disponible": true
+  },
+  {
+    "id": 835,
+    "idMedico": 1,
+    "fechaHora": "2025-11-27T09:30",
+    "disponible": true
+  },
+  {
+    "id": 836,
+    "idMedico": 2,
+    "fechaHora": "2025-11-27T09:30",
+    "disponible": true
+  },
+  {
+    "id": 837,
+    "idMedico": 3,
+    "fechaHora": "2025-11-27T09:30",
+    "disponible": true
+  },
+  {
+    "id": 838,
+    "idMedico": 1,
+    "fechaHora": "2025-11-27T10:00",
+    "disponible": true
+  },
+  {
+    "id": 839,
+    "idMedico": 2,
+    "fechaHora": "2025-11-27T10:00",
+    "disponible": true
+  },
+  {
+    "id": 840,
+    "idMedico": 3,
+    "fechaHora": "2025-11-27T10:00",
+    "disponible": true
+  },
+  {
+    "id": 841,
+    "idMedico": 4,
+    "fechaHora": "2025-11-27T13:00",
+    "disponible": false
+  },
+  {
+    "id": 842,
+    "idMedico": 5,
+    "fechaHora": "2025-11-27T13:00",
+    "disponible": true
+  },
+  {
+    "id": 843,
+    "idMedico": 4,
+    "fechaHora": "2025-11-27T13:30",
+    "disponible": true
+  },
+  {
+    "id": 844,
+    "idMedico": 5,
+    "fechaHora": "2025-11-27T13:30",
+    "disponible": false
+  },
+  {
+    "id": 845,
+    "idMedico": 4,
+    "fechaHora": "2025-11-27T14:00",
+    "disponible": false
+  },
+  {
+    "id": 846,
+    "idMedico": 5,
+    "fechaHora": "2025-11-27T14:00",
+    "disponible": true
+  },
+  {
+    "id": 847,
+    "idMedico": 4,
+    "fechaHora": "2025-11-27T14:30",
+    "disponible": false
+  },
+  {
+    "id": 848,
+    "idMedico": 5,
+    "fechaHora": "2025-11-27T14:30",
+    "disponible": true
+  },
+  {
+    "id": 849,
+    "idMedico": 4,
+    "fechaHora": "2025-11-27T15:00",
+    "disponible": false
+  },
+  {
+    "id": 850,
+    "idMedico": 5,
+    "fechaHora": "2025-11-27T15:00",
+    "disponible": false
+  },
+  {
+    "id": 851,
+    "idMedico": 1,
+    "fechaHora": "2025-11-28T08:00",
+    "disponible": true
+  },
+  {
+    "id": 852,
+    "idMedico": 2,
+    "fechaHora": "2025-11-28T08:00",
+    "disponible": true
+  },
+  {
+    "id": 853,
+    "idMedico": 3,
+    "fechaHora": "2025-11-28T08:00",
+    "disponible": false
+  },
+  {
+    "id": 854,
+    "idMedico": 1,
+    "fechaHora": "2025-11-28T08:30",
+    "disponible": false
+  },
+  {
+    "id": 855,
+    "idMedico": 2,
+    "fechaHora": "2025-11-28T08:30",
+    "disponible": true
+  },
+  {
+    "id": 856,
+    "idMedico": 3,
+    "fechaHora": "2025-11-28T08:30",
+    "disponible": false
+  },
+  {
+    "id": 857,
+    "idMedico": 1,
+    "fechaHora": "2025-11-28T09:00",
+    "disponible": true
+  },
+  {
+    "id": 858,
+    "idMedico": 2,
+    "fechaHora": "2025-11-28T09:00",
+    "disponible": true
+  },
+  {
+    "id": 859,
+    "idMedico": 3,
+    "fechaHora": "2025-11-28T09:00",
+    "disponible": true
+  },
+  {
+    "id": 860,
+    "idMedico": 1,
+    "fechaHora": "2025-11-28T09:30",
+    "disponible": true
+  },
+  {
+    "id": 861,
+    "idMedico": 2,
+    "fechaHora": "2025-11-28T09:30",
+    "disponible": true
+  },
+  {
+    "id": 862,
+    "idMedico": 3,
+    "fechaHora": "2025-11-28T09:30",
+    "disponible": true
+  },
+  {
+    "id": 863,
+    "idMedico": 1,
+    "fechaHora": "2025-11-28T10:00",
+    "disponible": true
+  },
+  {
+    "id": 864,
+    "idMedico": 2,
+    "fechaHora": "2025-11-28T10:00",
+    "disponible": true
+  },
+  {
+    "id": 865,
+    "idMedico": 3,
+    "fechaHora": "2025-11-28T10:00",
+    "disponible": true
+  },
+  {
+    "id": 866,
+    "idMedico": 4,
+    "fechaHora": "2025-11-28T13:00",
+    "disponible": true
+  },
+  {
+    "id": 867,
+    "idMedico": 5,
+    "fechaHora": "2025-11-28T13:00",
+    "disponible": true
+  },
+  {
+    "id": 868,
+    "idMedico": 4,
+    "fechaHora": "2025-11-28T13:30",
+    "disponible": true
+  },
+  {
+    "id": 869,
+    "idMedico": 5,
+    "fechaHora": "2025-11-28T13:30",
+    "disponible": true
+  },
+  {
+    "id": 870,
+    "idMedico": 4,
+    "fechaHora": "2025-11-28T14:00",
+    "disponible": true
+  },
+  {
+    "id": 871,
+    "idMedico": 5,
+    "fechaHora": "2025-11-28T14:00",
+    "disponible": false
+  },
+  {
+    "id": 872,
+    "idMedico": 4,
+    "fechaHora": "2025-11-28T14:30",
+    "disponible": true
+  },
+  {
+    "id": 873,
+    "idMedico": 5,
+    "fechaHora": "2025-11-28T14:30",
+    "disponible": false
+  },
+  {
+    "id": 874,
+    "idMedico": 4,
+    "fechaHora": "2025-11-28T15:00",
+    "disponible": false
+  },
+  {
+    "id": 875,
+    "idMedico": 5,
+    "fechaHora": "2025-11-28T15:00",
+    "disponible": true
+  },
+  {
+    "id": 876,
+    "idMedico": 1,
+    "fechaHora": "2025-11-29T08:00",
+    "disponible": false
+  },
+  {
+    "id": 877,
+    "idMedico": 2,
+    "fechaHora": "2025-11-29T08:00",
+    "disponible": false
+  },
+  {
+    "id": 878,
+    "idMedico": 3,
+    "fechaHora": "2025-11-29T08:00",
+    "disponible": true
+  },
+  {
+    "id": 879,
+    "idMedico": 1,
+    "fechaHora": "2025-11-29T08:30",
+    "disponible": false
+  },
+  {
+    "id": 880,
+    "idMedico": 2,
+    "fechaHora": "2025-11-29T08:30",
+    "disponible": true
+  },
+  {
+    "id": 881,
+    "idMedico": 3,
+    "fechaHora": "2025-11-29T08:30",
+    "disponible": true
+  },
+  {
+    "id": 882,
+    "idMedico": 1,
+    "fechaHora": "2025-11-29T09:00",
+    "disponible": false
+  },
+  {
+    "id": 883,
+    "idMedico": 2,
+    "fechaHora": "2025-11-29T09:00",
+    "disponible": false
+  },
+  {
+    "id": 884,
+    "idMedico": 3,
+    "fechaHora": "2025-11-29T09:00",
+    "disponible": false
+  },
+  {
+    "id": 885,
+    "idMedico": 1,
+    "fechaHora": "2025-11-29T09:30",
+    "disponible": true
+  },
+  {
+    "id": 886,
+    "idMedico": 2,
+    "fechaHora": "2025-11-29T09:30",
+    "disponible": false
+  },
+  {
+    "id": 887,
+    "idMedico": 3,
+    "fechaHora": "2025-11-29T09:30",
+    "disponible": true
+  },
+  {
+    "id": 888,
+    "idMedico": 1,
+    "fechaHora": "2025-11-29T10:00",
+    "disponible": true
+  },
+  {
+    "id": 889,
+    "idMedico": 2,
+    "fechaHora": "2025-11-29T10:00",
+    "disponible": true
+  },
+  {
+    "id": 890,
+    "idMedico": 3,
+    "fechaHora": "2025-11-29T10:00",
+    "disponible": true
+  },
+  {
+    "id": 891,
+    "idMedico": 4,
+    "fechaHora": "2025-11-29T13:00",
+    "disponible": true
+  },
+  {
+    "id": 892,
+    "idMedico": 5,
+    "fechaHora": "2025-11-29T13:00",
+    "disponible": true
+  },
+  {
+    "id": 893,
+    "idMedico": 4,
+    "fechaHora": "2025-11-29T13:30",
+    "disponible": true
+  },
+  {
+    "id": 894,
+    "idMedico": 5,
+    "fechaHora": "2025-11-29T13:30",
+    "disponible": true
+  },
+  {
+    "id": 895,
+    "idMedico": 4,
+    "fechaHora": "2025-11-29T14:00",
+    "disponible": true
+  },
+  {
+    "id": 896,
+    "idMedico": 5,
+    "fechaHora": "2025-11-29T14:00",
+    "disponible": false
+  },
+  {
+    "id": 897,
+    "idMedico": 4,
+    "fechaHora": "2025-11-29T14:30",
+    "disponible": true
+  },
+  {
+    "id": 898,
+    "idMedico": 5,
+    "fechaHora": "2025-11-29T14:30",
+    "disponible": true
+  },
+  {
+    "id": 899,
+    "idMedico": 4,
+    "fechaHora": "2025-11-29T15:00",
+    "disponible": true
+  },
+  {
+    "id": 900,
+    "idMedico": 5,
+    "fechaHora": "2025-11-29T15:00",
+    "disponible": false
+  },
+  {
+    "id": 901,
+    "idMedico": 1,
+    "fechaHora": "2025-11-30T08:00",
+    "disponible": true
+  },
+  {
+    "id": 902,
+    "idMedico": 2,
+    "fechaHora": "2025-11-30T08:00",
+    "disponible": true
+  },
+  {
+    "id": 903,
+    "idMedico": 3,
+    "fechaHora": "2025-11-30T08:00",
+    "disponible": true
+  },
+  {
+    "id": 904,
+    "idMedico": 1,
+    "fechaHora": "2025-11-30T08:30",
+    "disponible": true
+  },
+  {
+    "id": 905,
+    "idMedico": 2,
+    "fechaHora": "2025-11-30T08:30",
+    "disponible": false
+  },
+  {
+    "id": 906,
+    "idMedico": 3,
+    "fechaHora": "2025-11-30T08:30",
+    "disponible": false
+  },
+  {
+    "id": 907,
+    "idMedico": 1,
+    "fechaHora": "2025-11-30T09:00",
+    "disponible": true
+  },
+  {
+    "id": 908,
+    "idMedico": 2,
+    "fechaHora": "2025-11-30T09:00",
+    "disponible": true
+  },
+  {
+    "id": 909,
+    "idMedico": 3,
+    "fechaHora": "2025-11-30T09:00",
+    "disponible": true
+  },
+  {
+    "id": 910,
+    "idMedico": 1,
+    "fechaHora": "2025-11-30T09:30",
+    "disponible": true
+  },
+  {
+    "id": 911,
+    "idMedico": 2,
+    "fechaHora": "2025-11-30T09:30",
+    "disponible": true
+  },
+  {
+    "id": 912,
+    "idMedico": 3,
+    "fechaHora": "2025-11-30T09:30",
+    "disponible": true
+  },
+  {
+    "id": 913,
+    "idMedico": 1,
+    "fechaHora": "2025-11-30T10:00",
+    "disponible": true
+  },
+  {
+    "id": 914,
+    "idMedico": 2,
+    "fechaHora": "2025-11-30T10:00",
+    "disponible": false
+  },
+  {
+    "id": 915,
+    "idMedico": 3,
+    "fechaHora": "2025-11-30T10:00",
+    "disponible": true
+  },
+  {
+    "id": 916,
+    "idMedico": 4,
+    "fechaHora": "2025-11-30T13:00",
+    "disponible": true
+  },
+  {
+    "id": 917,
+    "idMedico": 5,
+    "fechaHora": "2025-11-30T13:00",
+    "disponible": false
+  },
+  {
+    "id": 918,
+    "idMedico": 4,
+    "fechaHora": "2025-11-30T13:30",
+    "disponible": false
+  },
+  {
+    "id": 919,
+    "idMedico": 5,
+    "fechaHora": "2025-11-30T13:30",
+    "disponible": false
+  },
+  {
+    "id": 920,
+    "idMedico": 4,
+    "fechaHora": "2025-11-30T14:00",
+    "disponible": true
+  },
+  {
+    "id": 921,
+    "idMedico": 5,
+    "fechaHora": "2025-11-30T14:00",
+    "disponible": true
+  },
+  {
+    "id": 922,
+    "idMedico": 4,
+    "fechaHora": "2025-11-30T14:30",
+    "disponible": true
+  },
+  {
+    "id": 923,
+    "idMedico": 5,
+    "fechaHora": "2025-11-30T14:30",
+    "disponible": true
+  },
+  {
+    "id": 924,
+    "idMedico": 4,
+    "fechaHora": "2025-11-30T15:00",
+    "disponible": true
+  },
+  {
+    "id": 925,
+    "idMedico": 5,
+    "fechaHora": "2025-11-30T15:00",
+    "disponible": true
+  }
+]

@@ -1,0 +1,30 @@
+body {
+  background-color: #f0f2f5;
+}
+.login-card {
+  transition: all 0.3s ease;
+}
+#loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 1060;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#loader-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+#loader-overlay .spinner-border {
+  width: 3.5rem;
+  height: 3.5rem;
+}

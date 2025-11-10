@@ -1,30 +1,32 @@
 // js/claseEspecialidad.js
+import { mostrarAlerta } from "./alertas.js";
+
 export class Especialidad {
-  static especialidades = [];
+  static especialidadesLS =
+    JSON.parse(localStorage.getItem("especialidades")) || [];
+
+  static siguienteId = Especialidad.especialidadesLS.length
+    ? Math.max(...Especialidad.especialidadesLS.map((m) => m.id)) + 1
+    : 1;
 
   constructor({ id, nombre }) {
-    this.id = id;
+    this.id = id ?? Especialidad.siguienteId++;
     this.nombre = nombre;
   }
 
-  //nombreEspecialidad() {
-  //    return `${this.id}, ${this.nombre}`;
-  //}
-
   guardarEspecialidad() {
+    // Cargar especialidades actuales
     const especialidades =
       JSON.parse(localStorage.getItem("especialidades")) || [];
+      
     const index = especialidades.findIndex((e) => e.id === this.id);
 
     if (index !== -1) {
       especialidades[index] = this;
+      mostrarAlerta("success", "Especialidad actualizada correctamente.");
     } else {
-      const nuevaId = especialidades.reduce(
-        (max, e) => (e.id > max ? e.id : max),
-        0
-      );
-      this.id = nuevaId + 1;
       especialidades.push(this);
+      mostrarAlerta("success", "Especialidad agregada correctamente.");
     }
     localStorage.setItem("especialidades", JSON.stringify(especialidades));
   }
@@ -37,6 +39,7 @@ export class Especialidad {
     if (index !== -1) {
       especialidades.splice(index, 1);
       localStorage.setItem("especialidades", JSON.stringify(especialidades));
+      mostrarAlerta("success", "Especialidad eliminada correctamente.");
       return true;
     }
     return false;
@@ -48,7 +51,7 @@ export class Especialidad {
     return especialidades.map((e) => new Especialidad(e));
   }
 
-  // ======================= NUEVA FUNCIÓN CENTRAL =======================
+  // ======================= Carga de datos iniciales Especialidades =======================
   static async cargarDatosInicialesEsp() {
     try {
       // Especialidades

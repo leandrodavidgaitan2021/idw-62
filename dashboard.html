@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,13 +22,12 @@
     <!-- Titulo -->
     <title>Clinica La Salud S.A</title>
   </head>
-  <body>
+  <body class="bg-body text-body">
     <!--Header-->
     <header>
-      <!--  Navbar con Bootstrap-->
       <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><h3>Clinica La Salud S.A</h3></a>
+          <a class="navbar-brand" href="#"><h3>Clínica La Salud S.A</h3></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -47,14 +46,21 @@
                 class="nav-link active"
                 aria-current="page"
                 href="dashboard.html"
-                title="Página de Reservas"
+                title="Página de Control"
                 >Panel de Control</a
               >
               <a
                 class="nav-link"
                 aria-current="page"
-                href=""
-                title="Página Turnos"
+                href="reservas.html"
+                title="Página de Reservas"
+                >Reservas</a
+              >
+              <a
+                class="nav-link"
+                aria-current="page"
+                href="turnos.html"
+                title="Página de Turnos"
                 >Turnos</a
               >
               <a
@@ -74,36 +80,24 @@
               <a
                 class="nav-link"
                 aria-current="page"
-                href=""
+                href="obrasSociales.html"
                 title="Página de Obras Sociales"
                 >Obras Sociales</a
               >
-
-              <a
-                class="nav-link"
-                aria-current="page"
-                href=""
-                id="logout"
-                title="Salida del sistema"
-                >Salir
-              </a>
+              <a class="nav-link" aria-current="page" href="#" id="logout"
+                >Salir</a
+              >
             </div>
           </div>
         </div>
       </nav>
     </header>
 
-    <!--Main-->
-    <main>
-      <h2>Panel de Control</h2>
-      <h3>Reservas</h3>
-    </main>
+    <!-- Main -->
+    <main class="pt-1">Lista de reservas actuales</main>
 
-    <footer class="text-center py-4">
-      <p>
-        © 2025 IDW-G62. Reservados todos los derechos
-        <span id="fechaHora"></span>
-      </p>
+    <footer class="text-center py-3 bg-dark text-white sticky-footer">
+      © 2025 IDW-G62. Reservados todos los derechos
     </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
@@ -111,5 +105,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="js/dashboard.js"></script>
     <script type="module" src="./js/alertas.js"></script>
+    <script type="module" src="./js/servicios_reservas.js"></script>
   </body>
 </html>
