@@ -273,9 +273,16 @@ document.addEventListener("DOMContentLoaded", async () => {
               value="${turno ? turno.fechaHora : ""}">
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="swalDisponible"
-                ${turno ? (turno.disponible ? "checked" : "") : "checked"}>
-            <label class="form-check-label" for="swalDisponible">Disponible</label>
+            <label class="form-check-label" for="swalDisponible">
+              <strong>Estado:</strong> 
+              ${
+                turno
+                  ? turno.disponible
+                    ? "Disponible"
+                    : "No disponible"
+                  : "Disponible"
+              }
+            </label>
           </div>
         </div>
       `,

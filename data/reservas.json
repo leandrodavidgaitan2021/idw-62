@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "documento": "30111222",
+    "paciente": "Gomez Laura",
+    "turnoId": 376,
+    "especialidadId": 1,
+    "obraSocialId": 2,
+    "valorTotal": 4500
+  },
+  {
+    "id": 2,
+    "documento": "29445888",
+    "paciente": "Pérez Juan",
+    "turnoId": 377,
+    "especialidadId": 3,
+    "obraSocialId": 1,
+    "valorTotal": 5000
+  },
+  {
+    "id": 3,
+    "documento": "32777111",
+    "paciente": "Lopez Ana",
+    "turnoId": 380,
+    "especialidadId": 2,
+    "obraSocialId": 4,
+    "valorTotal": 4800
+  },
+  {
+    "id": 4,
+    "documento": "35123999",
+    "paciente": "Martinez Carlos",
+    "turnoId": 382,
+    "especialidadId": 4,
+    "obraSocialId": 3,
+    "valorTotal": 5200
+  },
+  {
+    "id": 5,
+    "documento": "29888999",
+    "paciente": "Suarez Maria",
+    "turnoId": 383,
+    "especialidadId": 1,
+    "obraSocialId": 2,
+    "valorTotal": 4700
+  }
+]

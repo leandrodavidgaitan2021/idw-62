@@ -3,10 +3,15 @@ import { mostrarAlerta } from "./alertas.js";
 
 import { ObraSocial } from "./claseObrasSociales.js";
 import { Especialidad } from "./claseEspecialidad.js";
+import { Turnos } from "./claseTurnos.js";
+import { Reservas } from "./claseReservas.js";
 
 export class Medico {
   static especialidades = [];
   static obrasSociales = [];
+  static turnos = [];
+  static reservas = [];
+
   static medicos = JSON.parse(localStorage.getItem("medicos")) || [];
   static siguienteId = Medico.medicos.length
     ? Math.max(...Medico.medicos.map((m) => m.id)) + 1
@@ -114,6 +119,12 @@ export class Medico {
 
       // Obras Sociales
       Medico.obrasSociales = await ObraSocial.cargarDatosInicialesOB();
+
+      // Turnos
+      Medico.turnos = await Turnos.cargarDatosInicialesT();
+
+      // Reservas
+      Medico.reservas = await Reservas.cargarDatosInicialesR();
 
       // Médicos
       let medicosLS = JSON.parse(localStorage.getItem("medicos")) || [];
