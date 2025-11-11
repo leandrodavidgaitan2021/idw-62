@@ -111,6 +111,12 @@ function configurarFormularioModal(medicoId = null) {
       );
     });
 
+    // 🔹 Si no hay turnos disponibles, mostrar mensaje
+    if (disponibles.length === 0) {
+      selTurno.innerHTML = `<option value="">No hay turnos actualmente</option>`;
+      return;
+    }
+
     disponibles.forEach((t) => {
       const fecha = new Date(t.fechaHora);
       const texto = `${fecha.toLocaleDateString(

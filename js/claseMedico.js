@@ -69,13 +69,11 @@ export class Medico {
   }
 
   getObrasSocialesNombres() {
-    return this.obrasSociales
-      .map(
-        (id) =>
-          Medico.obrasSociales.find((o) => o.id === parseInt(id))?.nombre ||
-          "Desconocida"
-      )
-      .join(", ");
+    return this.obrasSociales.map(
+      (id) =>
+        Medico.obrasSociales.find((o) => o.id === parseInt(id))?.nombre ||
+        "Desconocida"
+    );
   }
 
   guardarMedico() {
@@ -109,6 +107,20 @@ export class Medico {
   static obtenerMedicos() {
     const medicos = JSON.parse(localStorage.getItem("medicos")) || [];
     return medicos.map((m) => new Medico(m));
+  }
+
+  // 🔍 NUEVO MÉTODO ESTÁTICO: Buscar Médico por ID
+  // =======================================================================
+
+  /**
+   * Razón: Este método es el que invoca index_medicos.js cuando se hace
+   * clic en el botón, permitiendo obtener el objeto Medico completo.
+   */
+  static buscarMedicoPorId(id) {
+    // Obtenemos una lista de instancias de Medico
+    const medicosInstancias = Medico.obtenerMedicos();
+    // Buscamos el médico que coincida con el ID
+    return medicosInstancias.find((m) => m.id === parseInt(id));
   }
 
   // ======================= Carga de datos iniciales todo =======================
