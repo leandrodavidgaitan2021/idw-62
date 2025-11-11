@@ -229,13 +229,48 @@ document.addEventListener("DOMContentLoaded", async () => {
     const selObra = document.getElementById("swalObra");
     const inputValor = document.getElementById("swalValor");
 
+    // === Cargar obras sociales según médico ===
+    function cargarObrasSocialesPorMedico(idMedico, obraSeleccionada = null) {
+      const medico = medicos.find((m) => m.id === idMedico);
+      selObra.innerHTML = "";
+
+      // Siempre agregar la opción de Consulta Particular
+      const optParticular = document.createElement("option");
+      optParticular.value = "0";
+      optParticular.dataset.porcentaje = "0";
+      optParticular.textContent = "Consulta Particular";
+      selObra.appendChild(optParticular);
+
+      // Si no hay médico, dejar solo esa opción
+      if (!medico) return;
+
+      // Filtrar obras sociales que acepta el médico
+      const obrasAceptadas = obrasSociales.filter((o) =>
+        medico.obrasSociales?.includes(o.id)
+      );
+
+      obrasAceptadas.forEach((o) => {
+        const opt = document.createElement("option");
+        opt.value = o.id;
+        opt.dataset.porcentaje = o.porcentaje;
+        opt.textContent = `${o.nombre} (${o.porcentaje}% desc.)`;
+        selObra.appendChild(opt);
+      });
+
+      // Si estamos editando o vino una obra preseleccionada
+      if (obraSeleccionada !== null) {
+        requestAnimationFrame(() => {
+          selObra.value = String(obraSeleccionada);
+        });
+      }
+    }
+
     // === Cargar turnos por médico ===
     function cargarTurnosPorMedico(idMedico, turnoSeleccionado = null) {
       selTurno.innerHTML = `<option value="">Seleccione un turno</option>`;
-      // Fecha actual en horario de Argentina (UTC-3)
       const ahora = new Date();
-      const offset = ahora.getTimezoneOffset(); // minutos de diferencia con UTC
-      const ahoraArgentina = new Date(ahora.getTime() - (offset + 180) * 60000); // ajusta a GMT-3
+      const offset = ahora.getTimezoneOffset();
+      const ahoraArgentina = new Date(ahora.getTime() - (offset + 180) * 60000);
 
       const disponibles = turnos.filter((t) => {
         const fechaTurno = new Date(t.fechaHora);
@@ -258,21 +293,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         const opt = document.createElement("option");
         opt.value = t.id;
         opt.textContent = texto;
-
-        // Si coincide con el turno que vino desde Turnos, se marca como seleccionado
         if (turnoSeleccionado && String(t.id) === String(turnoSeleccionado)) {
           opt.selected = true;
         }
-
         selTurno.appendChild(opt);
       });
-
-      // Si vino un turno preseleccionado, aseguramos que quede marcado
-      if (turnoSeleccionado) {
-        requestAnimationFrame(() => {
-          selTurno.value = String(turnoSeleccionado);
-        });
-      }
     }
 
     // === Recalcular valor según obra social ===
@@ -290,7 +315,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       const id = parseInt(selMedico.value);
       if (isNaN(id)) return;
       const medico = medicos.find((m) => m.id === id);
+
+      // Cargar turnos del médico seleccionado
       cargarTurnosPorMedico(id);
+
+      // Cargar obras sociales que acepta ese médico
+      cargarObrasSocialesPorMedico(id);
+
+      // Valor base
       inputValor.value = medico ? medico.valorConsulta.toFixed(2) : "";
     });
 
@@ -305,6 +337,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const medico = medicos.find((m) => m.id === medicoId);
       selMedico.value = medicoId;
       cargarTurnosPorMedico(medicoId, turnoId);
+      cargarObrasSocialesPorMedico(medicoId);
       inputValor.value = medico ? medico.valorConsulta.toFixed(2) : "";
     }
 
@@ -316,6 +349,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (medico) {
         selMedico.value = medico.id;
         cargarTurnosPorMedico(medico.id, reserva.turnoId);
+        cargarObrasSocialesPorMedico(medico.id, reserva.obraSocialId || 0);
 
         requestAnimationFrame(() => {
           selTurno.value = String(reserva.turnoId);

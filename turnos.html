@@ -1,157 +1,229 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-  <!-- Font-awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilos-dashboard.css" />
 
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="css/estilos-dashboard.css" />
+    <title>Clínica La Salud S.A</title>
+  </head>
 
-  <title>Clínica La Salud S.A</title>
-</head>
+  <body class="bg-body text-body">
+    <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <h3>Clínica La Salud S.A</h3>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <!-- Se utiliza una lista <ul> para una mejor estructura y alineación -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+              <li class="nav-item">
+                <span class="navbar-text me-3" id="bienvenida"></span>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="dashboard.html"
+                  title="Página de Reservas"
+                  >Reservas</a
+                >
+              </li>
 
-<body class="bg-body text-body">
-  <!-- Header -->
-  <header>
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <h3>Clínica La Salud S.A</h3>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <!-- Se utiliza una lista <ul> para una mejor estructura y alineación -->
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-            <li class="nav-item">
-              <span class="navbar-text me-3" id="bienvenida"></span>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="dashboard.html" title="Página de Control">Panel de Control</a>
-            </li>
+              <!-- INICIO DEL NUEVO MENÚ DESPLEGABLE -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdownGestion"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Gestión
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdownGestion"
+                >
+                  <li>
+                    <a class="dropdown-item" href="turnos.html">Turnos</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="medicos.html">Médicos</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="especialidades.html"
+                      >Especialidades</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="obrasSociales.html"
+                      >Obras Sociales</a
+                    >
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="usuarios.html">Usuarios</a>
+                  </li>
+                </ul>
+              </li>
+              <!-- FIN DEL NUEVO MENÚ DESPLEGABLE -->
 
-            <!-- INICIO DEL NUEVO MENÚ DESPLEGABLE -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGestion" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Gestión
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownGestion">
-                <li><a class="dropdown-item" href="reservas.html">Reservas</a></li>
-                <li><a class="dropdown-item" href="turnos.html">Turnos</a></li>
-                <li><a class="dropdown-item" href="medicos.html">Médicos</a></li>
-                <li><a class="dropdown-item" href="especialidades.html">Especialidades</a></li>
-                <li><a class="dropdown-item" href="obrasSociales.html">Obras Sociales</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item" href="usuarios.html">Usuarios</a></li>
-              </ul>
-            </li>
-            <!-- FIN DEL NUEVO MENÚ DESPLEGABLE -->
-
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="logout">Salir</a>
-            </li>
-          </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="logout">Salir</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <!-- Main -->
-  <main class="pt-1">
-    <section class="bg-light text-dark py-1 my-1">
-      <div class="container-fluid">
-        <div class="container-fluid mb-3">
-          <div class="row align-items-center g-3">
-            <!-- 🟦 Columna 1: Botón Filtros + Total Turnos centrado -->
-            <div class="col-12 col-md-4 d-flex flex-column flex-md-row align-items-center justify-content-between">
-              <button class="btn btn-outline-primary mb-2 mb-md-0" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasFiltrosTurnos">
-                <i class="fa-solid fa-filter"></i> Filtros
-              </button>
-
-              <h5 class="mb-0 text-center ms-md-3 flex-grow-1">
-                Total Turnos: <span id="totalTurnos">0</span>
-              </h5>
-            </div>
-
-            <!-- 🟩 Columna 2: Filtros de fecha -->
-            <div class="col-12 col-md-4 d-flex justify-content-center">
-              <div class="d-flex gap-2 w-100 justify-content-center" style="max-width: 350px">
-                <button id="btnHoyFiltrar" class="btn btn-success btn-sm" type="button">
-                  Hoy
+    <!-- Main -->
+    <main class="pt-1">
+      <section class="bg-light text-dark py-1 my-1">
+        <div class="container-fluid">
+          <div class="container-fluid mb-3">
+            <div class="row align-items-center g-3">
+              <!-- 🟦 Columna 1: Botón Filtros + Total Turnos centrado -->
+              <div
+                class="col-12 col-md-4 d-flex flex-column flex-md-row align-items-center justify-content-between"
+              >
+                <button
+                  class="btn btn-outline-primary mb-2 mb-md-0"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasFiltrosTurnos"
+                >
+                  <i class="fa-solid fa-filter"></i> Filtros
                 </button>
-                <label for="fechaFiltro" class="d-flex align-items-center mb-0 d-none d-md-inline">
-                  Fecha
-                </label>
-                <input type="date" id="fechaFiltro" class="form-control form-control-sm" />
-                <button id="btnFiltrar" class="btn btn-secondary btn-sm" type="button">
-                  Filtrar
-                </button>
-                <button id="btnTodosFiltrar" class="btn btn-warning btn-sm" type="button">
-                  Todos
+
+                <h5 class="mb-0 text-center ms-md-3 flex-grow-1">
+                  Total Turnos: <span id="totalTurnos">0</span>
+                </h5>
+              </div>
+
+              <!-- 🟩 Columna 2: Filtros de fecha -->
+              <div class="col-12 col-md-4 d-flex justify-content-center">
+                <div
+                  class="d-flex gap-2 w-100 justify-content-center"
+                  style="max-width: 350px"
+                >
+                  <button
+                    id="btnHoyFiltrar"
+                    class="btn btn-success btn-sm"
+                    type="button"
+                  >
+                    Hoy
+                  </button>
+                  <label
+                    for="fechaFiltro"
+                    class="d-flex align-items-center mb-0 d-none d-md-inline"
+                  >
+                    Fecha
+                  </label>
+                  <input
+                    type="date"
+                    id="fechaFiltro"
+                    class="form-control form-control-sm"
+                  />
+                  <button
+                    id="btnFiltrar"
+                    class="btn btn-secondary btn-sm"
+                    type="button"
+                  >
+                    Filtrar
+                  </button>
+                  <button
+                    id="btnTodosFiltrar"
+                    class="btn btn-warning btn-sm"
+                    type="button"
+                  >
+                    Todos
+                  </button>
+                </div>
+              </div>
+
+              <!-- 🟥 Columna 3: Botón Nuevo Turno -->
+              <div
+                class="col-12 col-md-4 d-flex justify-content-md-end justify-content-center"
+              >
+                <button
+                  type="button"
+                  id="btnNuevoTurno"
+                  class="btn btn-primary px-3 py-1 py-md-2 px-md-3 fs-6 fs-md-5"
+                >
+                  Nuevo Turno
                 </button>
               </div>
             </div>
+          </div>
 
-            <!-- 🟥 Columna 3: Botón Nuevo Turno -->
-            <div class="col-12 col-md-4 d-flex justify-content-md-end justify-content-center">
-              <button type="button" id="btnNuevoTurno" class="btn btn-primary px-3 py-1 py-md-2 px-md-3 fs-6 fs-md-5">
-                Nuevo Turno
-              </button>
-            </div>
+          <div class="table-responsive mb-3 tabla-scroll">
+            <table
+              class="table table-sm table-striped table-hover align-middle"
+            >
+              <thead class="table-dark">
+                <tr>
+                  <th>Médico</th>
+                  <th class="d-none d-md-table-cell">Especialidad</th>
+                  <!-- solo en md+ -->
+                  <th>Turno</th>
+                  <th class="text-center">
+                    <!-- Disponible: D en móvil, texto completo en md+ -->
+                    <span class="d-none d-md-inline">Disponible</span>
+                    <span class="d-inline d-md-none">D</span>
+                  </th>
+                  <th class="text-center">Opciones</th>
+                </tr>
+              </thead>
+              <tbody id="turnosTableBody">
+                <!-- Tabla con la lista de los turnos-->
+              </tbody>
+            </table>
           </div>
         </div>
+      </section>
+    </main>
 
-        <div class="table-responsive mb-3 tabla-scroll">
-          <table class="table table-sm table-striped table-hover align-middle">
-            <thead class="table-dark">
-              <tr>
-                <th>Médico</th>
-                <th class="d-none d-md-table-cell">Especialidad</th>
-                <!-- solo en md+ -->
-                <th>Turno</th>
-                <th class="text-center">
-                  <!-- Disponible: D en móvil, texto completo en md+ -->
-                  <span class="d-none d-md-inline">Disponible</span>
-                  <span class="d-inline d-md-none">D</span>
-                </th>
-                <th class="text-center">Opciones</th>
-              </tr>
-            </thead>
-            <tbody id="turnosTableBody">
-              <!-- Tabla con la lista de los turnos-->
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  </main>
+    <footer class="text-center py-3 bg-dark text-white sticky-footer">
+      © 2025 IDW-G62. Reservados todos los derechos
+    </footer>
 
-  <footer class="text-center py-3 bg-dark text-white sticky-footer">
-    © 2025 IDW-G62. Reservados todos los derechos
-  </footer>
-
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script type="module" src="js/dashboard.js"></script>
-  <script type="module" src="./js/alertas.js"></script>
-  <script type="module" src="./js/servicios_turnos.js"></script>
-  <script type="module" src="./js/filtrosMedicos.js"></script>
-
-
-</body>
-
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="./js/alertas.js"></script>
+    <script type="module" src="./js/servicios_turnos.js"></script>
+    <script type="module" src="./js/filtrosMedicos.js"></script>
+  </body>
 </html>

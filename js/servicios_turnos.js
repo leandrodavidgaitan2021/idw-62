@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         localStorage.setItem("turnoSeleccionadoParaReserva", turnoId);
 
         // Redirigir al servicio de reservas
-        window.location.href = "reservas.html";
+        window.location.href = "dashboard.html";
       }
 
       // EDITAR

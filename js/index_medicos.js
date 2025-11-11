@@ -6,6 +6,10 @@ import {
   renderizarOffcanvasFiltros,
 } from "./filtrosMedicos.js";
 
+// 🆕 Importamos el módulo donde está la función del modal
+import { abrirModalNuevaReservaVisitante } from "./servicios_reservas_visitante.js";
+// (asegurate que el archivo y export existan con esa función)
+
 document.addEventListener("DOMContentLoaded", async () => {
   const medicos = await Medico.cargarDatosIniciales();
   console.log("Médicos cargados:", medicos);
@@ -70,7 +74,19 @@ function renderizarMedicos(lista) {
 
     obras.appendChild(small);
 
-    body.append(h5, especialidad, obras);
+    // 🆕 Botón "Nueva Reserva"
+    const btnReserva = document.createElement("button");
+    btnReserva.className = "btn btn-primary mt-3 btnNuevaReserva";
+    btnReserva.textContent = "Nueva Reserva";
+    btnReserva.dataset.id = medico.id;
+
+    // Evento al hacer clic
+    btnReserva.addEventListener("click", () => {
+      abrirModalNuevaReservaVisitante(medico.id);
+    });
+
+    // Ensamblar la card
+    body.append(h5, especialidad, obras, btnReserva);
     card.append(img, body);
     col.append(card);
     contenedor.append(col);
