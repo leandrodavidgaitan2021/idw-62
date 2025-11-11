@@ -34,23 +34,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   // === RENDERIZAR TABLA DE RESERVAS ===
   renderizarTabla(reservas);
 
-  // === DETECTAR SI VENIMOS DESDE TURNOS ===
-  const medicoPreseleccionado = localStorage.getItem(
-    "medicoSeleccionadoParaReserva"
-  );
-  const turnoPreseleccionado = localStorage.getItem(
-    "turnoSeleccionadoParaReserva"
-  );
-
-  if (medicoPreseleccionado && turnoPreseleccionado) {
-    abrirModalNuevaReserva(
-      parseInt(medicoPreseleccionado),
-      parseInt(turnoPreseleccionado)
-    );
-    localStorage.removeItem("medicoSeleccionadoParaReserva");
-    localStorage.removeItem("turnoSeleccionadoParaReserva");
-  }
-
   // === NUEVA RESERVA ===
   document.getElementById("btnNuevaReserva").addEventListener("click", () => {
     abrirModalNuevaReserva();
@@ -140,14 +123,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   // =================== MODAL NUEVA RESERVA =================== //
-  async function abrirModalNuevaReserva(medicoId = null, turnoId = null) {
+  async function abrirModalNuevaReserva(medicoId = null) {
     const { value: formValues } = await Swal.fire({
       title: "Nueva Reserva",
       html: construirHTMLReserva(),
       showCancelButton: true,
       confirmButtonText: "Guardar",
       cancelButtonText: "Cancelar",
-      didOpen: () => configurarFormularioModal(medicoId, null, turnoId),
+      didOpen: () => configurarFormularioModal(medicoId, null),
       preConfirm: obtenerValoresFormulario,
     });
 
@@ -219,79 +202,64 @@ document.addEventListener("DOMContentLoaded", async () => {
       </div>`;
   }
 
-  function configurarFormularioModal(
-    medicoId = null,
-    reserva = null,
-    turnoId = null
-  ) {
+  function configurarFormularioModal(medicoId, reserva) {
     const selMedico = document.getElementById("swalMedico");
     const selTurno = document.getElementById("swalTurno");
     const selObra = document.getElementById("swalObra");
     const inputValor = document.getElementById("swalValor");
 
-    // === Cargar turnos por médico ===
-    function cargarTurnosPorMedico(idMedico, turnoSeleccionado = null) {
+    function cargarTurnosPorMedico(idMedico, turnoActualId = null) {
       selTurno.innerHTML = `<option value="">Seleccione un turno</option>`;
-      // Fecha actual en horario de Argentina (UTC-3)
       const ahora = new Date();
-      const offset = ahora.getTimezoneOffset(); // minutos de diferencia con UTC
-      const ahoraArgentina = new Date(ahora.getTime() - (offset + 180) * 60000); // ajusta a GMT-3
-
       const disponibles = turnos.filter((t) => {
         const fechaTurno = new Date(t.fechaHora);
         return (
           t.idMedico === idMedico &&
-          (t.disponible || t.id === turnoSeleccionado) &&
-          fechaTurno >= ahoraArgentina
+          (t.disponible || t.id === turnoActualId) &&
+          fechaTurno >= ahora
         );
       });
 
       disponibles.forEach((t) => {
         const fecha = new Date(t.fechaHora);
-        const texto = `${fecha.toLocaleDateString(
-          "es-AR"
-        )} ${fecha.toLocaleTimeString("es-AR", {
-          hour: "2-digit",
-          minute: "2-digit",
-        })}`;
-
-        const opt = document.createElement("option");
-        opt.value = t.id;
-        opt.textContent = texto;
-
-        // Si coincide con el turno que vino desde Turnos, se marca como seleccionado
-        if (turnoSeleccionado && String(t.id) === String(turnoSeleccionado)) {
-          opt.selected = true;
-        }
-
-        selTurno.appendChild(opt);
+        selTurno.innerHTML += `<option value="${t.id}">
+          ${fecha.toLocaleDateString("es-AR")} ${fecha.toLocaleTimeString(
+          "es-AR",
+          {
+            hour: "2-digit",
+            minute: "2-digit",
+          }
+        )}
+        </option>`;
       });
-
-      // Si vino un turno preseleccionado, aseguramos que quede marcado
-      if (turnoSeleccionado) {
-        requestAnimationFrame(() => {
-          selTurno.value = String(turnoSeleccionado);
-        });
-      }
     }
 
-    // === Recalcular valor según obra social ===
+    function cargarObrasPorMedico(medico) {
+      selObra.innerHTML = `<option value="0" data-porcentaje="0">Consulta Particular</option>`;
+      if (!medico || !Array.isArray(medico.obrasSociales)) return;
+      obrasSociales
+        .filter((o) => medico.obrasSociales.includes(o.id))
+        .forEach((o) => {
+          selObra.innerHTML += `<option value="${o.id}" data-porcentaje="${o.porcentaje}">
+            ${o.nombre} (${o.porcentaje}% desc.)
+          </option>`;
+        });
+    }
+
     function recalcularValor(medicoId, obraId) {
       const medico = medicos.find((m) => m.id === medicoId);
       const obra = obrasSociales.find((o) => o.id === obraId);
       const descuento = obra ? parseFloat(obra.porcentaje) / 100 : 0;
-      inputValor.value = medico
-        ? (medico.valorConsulta * (1 - descuento)).toFixed(2)
-        : "";
+      inputValor.value = (medico.valorConsulta * (1 - descuento)).toFixed(2);
     }
 
-    // === EVENTOS ===
     selMedico.addEventListener("change", () => {
       const id = parseInt(selMedico.value);
       if (isNaN(id)) return;
       const medico = medicos.find((m) => m.id === id);
       cargarTurnosPorMedico(id);
-      inputValor.value = medico ? medico.valorConsulta.toFixed(2) : "";
+      cargarObrasPorMedico(medico);
+      inputValor.value = medico.valorConsulta.toFixed(2);
     });
 
     selObra.addEventListener("change", () => {
@@ -300,15 +268,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       recalcularValor(idMedico, idObra);
     });
 
-    // === Si venimos desde Turnos ===
-    if (medicoId && turnoId) {
-      const medico = medicos.find((m) => m.id === medicoId);
+    // === CONFIGURAR SI ES NUEVA O EDICIÓN ===
+    if (medicoId) {
       selMedico.value = medicoId;
-      cargarTurnosPorMedico(medicoId, turnoId);
-      inputValor.value = medico ? medico.valorConsulta.toFixed(2) : "";
+      selMedico.disabled = true;
+      const medico = medicos.find((m) => m.id === medicoId);
+      cargarTurnosPorMedico(medicoId);
+      cargarObrasPorMedico(medico);
+      inputValor.value = medico.valorConsulta.toFixed(2);
     }
 
-    // === Si estamos editando una reserva existente ===
     if (reserva) {
       const medico = medicos.find(
         (m) => m.especialidad === reserva.especialidadId
@@ -316,12 +285,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (medico) {
         selMedico.value = medico.id;
         cargarTurnosPorMedico(medico.id, reserva.turnoId);
-
+        cargarObrasPorMedico(medico);
         requestAnimationFrame(() => {
-          selTurno.value = String(reserva.turnoId);
-          selObra.value = reserva.obraSocialId
-            ? String(reserva.obraSocialId)
-            : "0";
+          selTurno.value = reserva.turnoId;
+          selObra.value = reserva.obraSocialId || "0";
           document.getElementById("swalDocumento").value = reserva.documento;
           document.getElementById("swalPaciente").value = reserva.paciente;
           inputValor.value = reserva.valorTotal.toFixed(2);
