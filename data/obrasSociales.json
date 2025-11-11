@@ -53,4 +53,10 @@
     "descripcion": "Prepaga enfocada en servicios médicos de alta calidad y acceso a centros de salud exclusivos.",
     "porcentaje": 95
   }
+  {
+    "id": 10,
+    "nombre": "Particular",
+    "descripcion": "No es adjudicado a ninguna obra social, el paciente asume el costo total de la consulta.",
+    "porcentaje": 0
+  }
 ]

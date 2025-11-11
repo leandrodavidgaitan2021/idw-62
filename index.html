@@ -117,7 +117,7 @@
 
       <section class="bg-light text-dark py-1 my-1">
         <div class="container-fluid">
-          <div class="row g-4 justify-content-center">
+          <div class="row g-4 justify-content-center" id="medicosContainer">
             <!--Lista de medicos generada por JS-->
           </div>
         </div>
@@ -195,9 +195,87 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle with Popper -->
+    <!-- Modal Detalle Médico -->
+    <div class="modal fade" id="modalDetalleMedico" tabindex="-1" aria-labelledby="modalDetalleMedicoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="modalDetalleMedicoLabel">
+              Detalles del Profesional
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <img
+                  id="detalleMedicoFoto"
+                  src="https://via.placeholder.com/150"
+                  alt="Foto del Médico"
+                  class="img-fluid rounded-circle mb-3"
+                  style="width: 150px; height: 150px; object-fit: cover"
+                />
+                <h4 id="detalleMedicoNombreCompleto" class="text-primary"></h4>
+                <p class="text-secondary" id="detalleMedicoEspecialidad"></p>
+              </div>
+              <div class="col-md-8">
+                <h6>
+                  <i class="fa-solid fa-id-card me-2"></i> Matrícula:
+                  <span class="fw-normal" id="detalleMedicoMatricula"></span>
+                </h6>
+                <h6>
+                  <i class="fa-solid fa-money-bill-wave me-2"></i> Valor
+                  Consulta:
+                  <span class="fw-normal" id="detalleMedicoValorConsulta"></span>
+                </h6>
+                
+                <hr class="mt-4 mb-3">
+
+                <h5><i class="fa-solid fa-calculator me-2"></i> Calcular Precio con Descuento:</h5>
+                <div class="mb-3">
+                    <label for="selectorObraSocial" class="form-label small text-muted">Selecciona tu Obra Social</label>
+                    <select class="form-select" id="selectorObraSocial">
+                        <option value="">Precio sin Obra Social</option>
+                        </select>
+                </div>
+                
+                <h6><i class="fa-solid fa-tags me-2"></i> Precio Final: <span class="fw-bold text-success" id="detalleMedicoPrecioFinal">$26.000</span></h6>
+                
+                <hr>
+
+                <hr />
+
+                <h5>Descripción:</h5>
+                <p id="detalleMedicoDescripcion"></p>
+
+                <h5 class="mt-4">Obras Sociales y Coberturas:</h5>
+                <ul class="list-unstyled" id="detalleMedicoObrasSociales"></ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a
+              id="btnSacarTurnoModal"
+              href="reservas.html"
+              class="btn btn-success me-auto"
+              ><i class="fa-solid fa-calendar-check me-1"></i> Sacar Turno</a
+            >
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="js/tema.js"></script>
+    <script type="module" src="js/claseMedico.js"></script>
     <script type="module" src="js/index_medicos.js"></script>
   </body>
 </html>
