@@ -113,6 +113,22 @@ document.addEventListener("DOMContentLoaded", async () => {
         fechaFiltro.value = fechaTurno;
       }
 
+      // NUEVA RESERVA
+      if (e.target.closest(".btn-reservar")) {
+        const turnoSeleccionado = turnos.find((t) => t.id === id);
+        if (!turnoSeleccionado) return;
+
+        const medicoId = turnoSeleccionado.idMedico;
+        const turnoId = turnoSeleccionado.id;
+
+        // Guardar temporalmente ambos en localStorage
+        localStorage.setItem("medicoSeleccionadoParaReserva", medicoId);
+        localStorage.setItem("turnoSeleccionadoParaReserva", turnoId);
+
+        // Redirigir al servicio de reservas
+        window.location.href = "dashboard.html";
+      }
+
       // EDITAR
       if (e.target.closest(".btn-editar")) {
         abrirModalTurno(turno);
@@ -153,11 +169,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     const totalTurnosElement = document.getElementById("totalTurnos");
     tbody.innerHTML = "";
 
-    // 📅 Filtrar desde la fecha actual hacia adelante
-    const hoy = new Date();
-    hoy.setHours(0, 0, 0, 0);
+    // 📅 Filtrar turnos que aún no hayan pasado según la hora de Argentina (GMT-3)
+    const ahora = new Date();
+    const offset = ahora.getTimezoneOffset(); // diferencia local con UTC
+    const ahoraArgentina = new Date(ahora.getTime() - (offset + 180) * 60000); // ajusta a UTC-3
 
-    const listaFiltrada = lista.filter((t) => new Date(t.fechaHora) >= hoy);
+    const listaFiltrada = lista.filter((t) => {
+      const fechaTurno = new Date(t.fechaHora);
+      return fechaTurno >= ahoraArgentina; // solo mostrar los turnos futuros
+    });
 
     if (!listaFiltrada.length) {
       tbody.innerHTML = `
@@ -187,6 +207,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         : null;
 
       if (medico) {
+        // 🎨 Colorear según disponibilidad
+        const claseFila = turno.disponible ? "table-success" : "table-danger";
+
+        tr.classList.add(claseFila);
         tr.innerHTML = `
         <td>${
           medico ? `${medico.apellido}, ${medico.nombre}` : "Sin asignar"
@@ -207,18 +231,39 @@ document.addEventListener("DOMContentLoaded", async () => {
         </td>
         <td class="text-center">
           <div class="d-flex justify-content-center gap-2">
-            <button class="btn btn-warning btn-sm btn-editar" data-id="${
-              turno.id
-            }">
+            <button 
+              class="btn btn-success btn-sm btn-reservar" 
+              data-id="${turno.id}" 
+              title="${
+                turno.disponible
+                  ? "Crear reserva para este turno"
+                  : "Turno no disponible para reservar"
+              }"
+              ${turno.disponible ? "" : "disabled"}
+            >
+              <i class="fa-solid fa-calendar-plus"></i>
+            </button>
+
+            <button 
+              class="btn btn-warning btn-sm btn-editar" 
+              data-id="${turno.id}"
+              title="Editar turno"
+              ${turno.disponible ? "" : "disabled"}
+            >
               <i class="fa-solid fa-pen"></i>
             </button>
-            <button class="btn btn-danger btn-sm btn-eliminar" data-id="${
-              turno.id
-            }">
+
+            <button 
+              class="btn btn-danger btn-sm btn-eliminar" 
+              data-id="${turno.id}"
+              title="Eliminar turno"
+              ${turno.disponible ? "" : "disabled"}
+            >
               <i class="fa-solid fa-trash"></i>
             </button>
           </div>
         </td>
+
       `;
         tbody.appendChild(tr);
         turnosRenderizados++;
@@ -294,7 +339,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       preConfirm: () => {
         const idMedico = parseInt(document.getElementById("swalMedico").value);
         const fechaHora = document.getElementById("swalFechaHora").value;
-        const disponible = document.getElementById("swalDisponible").checked;
+        const disponible = true;
 
         if (!idMedico || !fechaHora) {
           Swal.showValidationMessage(
