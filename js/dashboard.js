@@ -1,5 +1,5 @@
-const authToken = sessionStorage.getItem("authToken");
-if (!authToken) {
+const accessToken = sessionStorage.getItem("accessToken");
+if (!accessToken) {
   window.location.replace("login.html");
 }
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!confirmado) return;
 
-      sessionStorage.removeItem("authToken");
+      sessionStorage.removeItem("accessToken");
       sessionStorage.removeItem("usuario");
 
       window.location.replace("index.html");
