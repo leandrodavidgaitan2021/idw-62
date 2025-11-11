@@ -150,8 +150,21 @@ function rellenarModal(medico) {
   // Vuelvo a obtener la referencia limpia
   const nuevoBtnReserva = document.getElementById("btnNuevaReservaModal");
 
-  // Asigno el evento
+  // Asigno el evento: primero oculto el modal bootstrap actual para evitar focus-trap,
+  // luego abro el SweetAlert para la nueva reserva.
   nuevoBtnReserva.addEventListener("click", () => {
+    // Referencia al elemento modal (el que muestra el detalle del médico)
+    const modalEl = document.getElementById("modalDetalleMedico");
+
+    // Intentar obtener la instancia de Bootstrap (si no existe, crear/obtener)
+    const modalInstance =
+      bootstrap.Modal.getInstance(modalEl) ||
+      bootstrap.Modal.getOrCreateInstance(modalEl);
+
+    // Ocultar el modal de detalle para liberar el focus
+    modalInstance.hide();
+
+    // Abrir el SweetAlert para crear la reserva (pasamos el id del médico)
     abrirModalNuevaReservaVisitante(medico.id);
   });
 }

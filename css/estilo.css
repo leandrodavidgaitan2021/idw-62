@@ -34,6 +34,17 @@ body {
   background-color: var(--color-primario-suave);
 }
 
+/* Evita que el footer se mueva al abrir modales de Bootstrap */
+body.modal-open {
+  padding-right: 0 !important;
+  overflow-y: auto;
+}
+
+/* Mantiene el scroll siempre visible para prevenir saltos */
+html {
+  overflow-y: scroll;
+}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -62,8 +73,8 @@ footer i {
 }
 
 /* Estilo títulos tabla especialidades */
-.col-id{
-  width: 15%; 
+.col-id {
+  width: 15%;
 }
 
 .col-esp {
