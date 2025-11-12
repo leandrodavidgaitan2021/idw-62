@@ -269,13 +269,6 @@ function renderizarMedicos(lista) {
     // ms-auto y mt-auto aseguran que los botones se peguen al final si la tarjeta es alta
     botonera.className = "d-grid gap-2 d-md-block mt-3 w-100 mt-auto";
 
-    /*    // 1. Botón Sacar Turno
-    const btnTurno = document.createElement("a");
-    btnTurno.className = "btn btn-primary btn-sm";
-    btnTurno.href = `reservas.html?medico_id=${medico.id}`;
-    btnTurno.innerHTML =
-      '<i class="fa-solid fa-calendar-check me-1"></i> Sacar Turno';
-*/
     // 🆕 Botón "Nueva Reserva"
     const btnReserva = document.createElement("button");
     btnReserva.className = "btn btn-primary mt-3 btnNuevaReserva";
@@ -288,12 +281,14 @@ function renderizarMedicos(lista) {
     });
 
     // 2. Botón Más Información
-    const btnInfo = document.createElement("button");
-    btnInfo.className = "btn btn-outline-secondary btn-sm";
-    // Asumimos que tiene generarUrlDetalle(), si no, usamos el fallback
+    const btnInfo = document.createElement("a"); // mejor usar <a> si tiene href
+    btnInfo.className = "btn btn-info btn-sm fw-semibold shadow-sm";
+
+    // Generar la URL
     const urlDetalle = medico.generarUrlDetalle
       ? medico.generarUrlDetalle()
       : `medico-detalle.html?id=${medico.id}`;
+
     btnInfo.href = urlDetalle;
     btnInfo.textContent = "Más Información";
 
@@ -309,74 +304,3 @@ function renderizarMedicos(lista) {
     contenedor.append(col);
   });
 }
-
-/*
-
-function renderizarMedicos(lista) {
-  const contenedor = document.querySelector(".row.g-4.justify-content-center");
-  contenedor.innerHTML = "";
-
-  if (lista.length === 0) {
-    contenedor.innerHTML =
-      '<p class="text-center text-muted mt-4">No hay médicos para mostrar</p>';
-    return;
-  }
-
-  lista.forEach((medico) => {
-    const col = document.createElement("div");
-    col.className = "col-12 col-sm-6 col-lg-4 col-xl-3";
-
-    const card = document.createElement("div");
-    card.className = "card text-center h-100 shadow-sm border-0";
-
-    const img = document.createElement("img");
-    img.src = medico.fotografia || "https://via.placeholder.com/120";
-    img.alt = `Foto de ${medico.nombreCompleto()}`;
-    img.className = "card-img-top rounded-circle mx-auto mt-4";
-    img.style.width = "120px";
-    img.style.height = "120px";
-    img.style.objectFit = "cover";
-
-    const body = document.createElement("div");
-    body.className = "card-body";
-
-    const h5 = document.createElement("h5");
-    h5.className = "card-title fs-4";
-    h5.textContent = medico.nombreCompleto();
-
-    const especialidad = document.createElement("p");
-    especialidad.className = "card-text fs-6";
-    especialidad.textContent = `Especialidad: ${medico.getEspecialidadNombre()}`;
-
-    const obras = document.createElement("p");
-    obras.className = "card-text";
-    const small = document.createElement("small");
-    small.className = "text-muted";
-
-    const obrasText = medico.getObrasSocialesNombres();
-    small.textContent = obrasText
-      ? `Obras Sociales : ${obrasText}`
-      : "Consultas Privadas";
-
-    obras.appendChild(small);
-
-    // 🆕 Botón "Nueva Reserva"
-    const btnReserva = document.createElement("button");
-    btnReserva.className = "btn btn-primary mt-3 btnNuevaReserva";
-    btnReserva.textContent = "Nueva Reserva";
-    btnReserva.dataset.id = medico.id;
-
-    // Evento al hacer clic
-    btnReserva.addEventListener("click", () => {
-      abrirModalNuevaReservaVisitante(medico.id);
-    });
-
-    // Ensamblar la card
-    body.append(h5, especialidad, obras, btnReserva);
-    card.append(img, body);
-    col.append(card);
-    contenedor.append(col);
-  });
-
-  }
-*/
