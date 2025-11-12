@@ -299,6 +299,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
   function abrirModalEditarMedico(medico) {
+    document.getElementById("editarId").value = medico.id;
     document.getElementById("editarMatricula").value = medico.matricula;
     document.getElementById("editarApellido").value = medico.apellido;
     document.getElementById("editarNombre").value = medico.nombre;

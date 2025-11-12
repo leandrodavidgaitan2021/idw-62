@@ -77,14 +77,20 @@ export class Medico {
   }
 
   guardarMedico() {
-    const medicos = JSON.parse(localStorage.getItem("medicos")) || [];
-    const index = medicos.findIndex((m) => m.id === this.id);
+    let medicos = JSON.parse(localStorage.getItem("medicos")) || [];
+
+    // Buscar el índice asegurando igualdad numérica
+    const index = medicos.findIndex(
+      (m) => parseInt(m.id) === parseInt(this.id)
+    );
 
     if (index !== -1) {
-      medicos[index] = this;
+      // Actualizar existente
+      medicos[index] = { ...this }; // Guardamos solo datos planos
       mostrarAlerta("success", "Médico actualizado correctamente.");
     } else {
-      medicos.push(this);
+      // Crear nuevo
+      medicos.push({ ...this });
       mostrarAlerta("success", "Médico agregado correctamente.");
     }
 

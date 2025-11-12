@@ -28,13 +28,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   configurarModalMedico();
 });
 
-// 🧠 LÓGICA DEL MODAL
-// =================================================================
 
-/**
- * Razón: Esta función configura el escuchador de eventos de Bootstrap para
- * interceptar el momento en que se va a mostrar el modal y rellenarlo.
- */
+// MODAL
+
 function configurarModalMedico() {
   // El ID 'modalDetalleMedico' debe coincidir con el ID en index.html
   const modalDetalleMedico = document.getElementById("modalDetalleMedico");
