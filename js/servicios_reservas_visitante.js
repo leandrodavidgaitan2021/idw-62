@@ -1,5 +1,6 @@
-// reservasVisitantes.js
+// servicios_reservas_visitante.js
 import { Reservas } from "./claseReservas.js";
+import { confirmarReserva, mostrarAlerta } from "./alertas.js"; // 🔹 Importamos las nuevas alertas
 
 // === CARGAR DATOS DESDE LOCALSTORAGE ===
 const medicos = JSON.parse(localStorage.getItem("medicos")) || [];
@@ -23,16 +24,20 @@ export async function abrirModalNuevaReservaVisitante(medicoId = null) {
 
   if (!formValues) return;
 
+  // 🔹 Mostrar confirmación con los datos ingresados
+  const confirmado = await confirmarReserva(formValues);
+  if (confirmado) {
+    mostrarAlerta("success", "¡Reserva confirmada!");
+  } else {
+    mostrarAlerta("info", "Reserva cancelada.");
+  }
+
   const nueva = new Reservas(formValues);
   nueva.guardarReserva();
 
   reservas = Reservas.obtenerReservas();
 
-  Swal.fire(
-    "Reserva creada",
-    "Tu reserva fue registrada correctamente.",
-    "success"
-  );
+  mostrarAlerta("success", "¡Reserva confirmada con éxito!");
 }
 
 // =================== FUNCIONES AUXILIARES =================== //
