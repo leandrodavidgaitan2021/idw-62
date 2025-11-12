@@ -295,6 +295,8 @@ export const modalEditarMedico = `
                         required
                       />
                     </div>
+                    <!-- 👇 agregá este campo oculto -->
+                    <input type="hidden" id="editarId" />
                   </div>
                 </div>
               </div>
