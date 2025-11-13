@@ -28,4 +28,4 @@ Integrantes:
     usuario:	emilys
     contraseña: 	emilyspass
     usuario: 	michaelw
-    contraseña: 	michaelw
+    contraseña: 	michaelwpass
